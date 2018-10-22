@@ -1,0 +1,113 @@
+imports:
+    - { resource: "@BackendBaseBundle/Resources/config/default_parameters.yml" }
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: parameters.yml }
+    - { resource: "@BackendBaseBundle/Resources/config/assets/assets.yml" }
+# Put parameters here that don't need to change on each machine where the app is deployed
+# http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+
+framework:
+    #esi:             ~
+    translator:      { fallbacks: ["%locale%"] }
+    secret:          "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: ~
+    validation:      { enable_annotations: true }
+    serializer:      { enable_annotations: true }
+    templating:
+        engines: ['twig']
+        assets_base_urls:
+            -        %assets_base_url%
+        assets_version: %assets_version%
+        packages:
+            photo:
+                base_urls:     %photo_base_url%
+                version:       %assets_version%
+    default_locale:  "%locale%"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        cookie_httponly:        true
+        cookie_lifetime:        0
+        save_path:              %kernel.root_dir%/var/sessions
+        gc_maxlifetime:         86400
+    fragments:       ~
+    http_method_override: true
+
+assetic:
+    debug:            %kernel.debug%
+    use_controller:   false
+    bundles:
+        -             BackendBaseBundle
+    filters:
+        cssrewrite:
+            apply_to:    "\.css$"
+        compass:
+            apply_to:    "\.s[a|c]ss$"
+        coffee:
+            apply_to:   "\.coffee$"
+
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+
+# Swiftmailer Configuration
+swiftmailer:
+    default_mailer: default
+    mailers:
+        default:
+            transport: "%mailer_transport%"
+            host:      "%mailer_host%"
+            username:  "%mailer_user%"
+            password:  "%mailer_password%"
+            spool:     { type: memory }
+        site:
+            transport: 'smtp'
+            host:      ''
+            username:  ''
+            password:  ''
+
+propel:
+    path:                     "%kernel.root_dir%/../vendor/propel/propel1"
+    phing_path:               "%kernel.root_dir%/../vendor/phing"
+    logging:                  %kernel.debug%
+    build_properties:
+        propel.mysql.tableType:     InnoDB
+        propel.database.encoding:   utf8_unicode_ci
+    behaviors:
+        addrandompk:          Backend\BaseBundle\Propel\Behavior\AddRandomPkBehavior
+        equalnest:            EqualNestBehavior
+        i18n:                  %i18n_behavior%
+    dbal:
+        driver:               %database_driver%
+        user:                 %database_user%
+        password:             %database_password%
+        dsn:                  %database_driver%:host=%database_host%;dbname=%database_name%;charset=UTF8
+        options:              {}
+        attributes:           {}
+
+sensio_framework_extra:
+    security:
+        expression_language:  backend_security_expression_language
+
+jms_serializer:
+    metadata:
+        auto_detection: true
+    handlers:
+        datetime:
+            default_format:    'Y-m-d\TH:i:sP'
+
+aws:
+    region:                  %aws_region%
+    version:                 %aws_version%
+    credentials:
+        key:                 %aws_key%
+        secret:              %aws_secret%
+
+backend_base:
+    function_checker_service:  site.function.checker.disabled

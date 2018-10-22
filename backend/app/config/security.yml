@@ -1,0 +1,47 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    encoders:
+        Backend\BaseBundle\Security\SecurityEncoderInterface: sha256
+
+    providers:
+        backend_base_bundle:
+            id:     site_user_provider
+        backend_api_user_provider:
+            id:     backend_api_user_provider
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern:                ^/(_(profiler|wdt)|css|images|js)/
+            security:               false
+        api:
+            stateless:              true
+            pattern:                ^/api/
+            security:               false 
+        site_backend_api_login:
+            pattern:                ^/admin/api/login$
+            stateless:              true
+            anonymous:              ~   
+        backend_api:
+            pattern:                ^/admin/api/
+            stateless:              true
+            simple_preauth:
+                authenticator:      backend_api_authenticator
+            provider:               backend_api_user_provider
+    access_control:
+        -
+            path:                ^/admin/api/login$
+            role:                IS_AUTHENTICATED_ANONYMOUSLY
+            requires_channel:    "%env_https%"
+        -
+            path:                ^/api/
+            role:                IS_AUTHENTICATED_ANONYMOUSLY
+            requires_channel:    "%env_https%"
+        -
+            path:                ^/admin/
+            role:                IS_AUTHENTICATED_FULLY
+            requires_channel:    "%env_https%"
+        -
+            path:                .*
+            requires_channel:    "%env_https%"

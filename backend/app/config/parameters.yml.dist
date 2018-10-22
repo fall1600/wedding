@@ -1,0 +1,52 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_driver: pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     dgcm4
+    database_user:     test
+    database_password: 12345
+    test_database_driver: pdo_mysql
+    test_database_host: 127.0.0.1
+    test_database_port: ~
+    test_database_name: dgcm4_test
+    test_database_user: test
+    test_database_password: 12345
+
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    env_http: http
+    env_https: http
+    env_http_port: 8000
+    env_https_port: 8000
+
+    locale:    zh_TW
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt
+    locale:    zh_TW
+    support_locales:
+        -      zh_TW
+        -      en_US
+    fallback_locale:  zh_TW
+    assets_version:     v01
+    assets_base_url:   '//localhost:8000'
+    photo_base_url:    '//localhost:8000'
+    web.upload.prefix: 'upload'
+
+    file.store.service: file_store.local.random
+    aws_key:            ~
+    aws_secret:         ~
+    aws_s3_bucket:      ~
+    aws_region:         ~
+
+    allow_origins:
+        -              localhost:8080
+        -              127.0.0.1:8080
