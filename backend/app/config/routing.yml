@@ -1,3 +1,6 @@
 BackendBaseBundle:
     resource: "@BackendBaseBundle/Resources/config/routing.yml"
 
+WidgetInvitationBundle:
+    resource: "@WidgetInvitationBundle/Resources/config/routing.yml"
+
