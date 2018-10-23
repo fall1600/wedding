@@ -28,7 +28,6 @@ class InvitationControllerTest extends BaseWebTestCase
         $response = $this->client->getResponse();
         $result = json_decode($response->getContent(), true);
 
-        var_dump($response);
         //assert
         $this->assertTrue($response->isOk());
         $this->assertArrayHasKey("id", $result);
