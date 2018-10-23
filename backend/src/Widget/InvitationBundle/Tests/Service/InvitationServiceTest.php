@@ -27,8 +27,9 @@ class InvitationServiceTest extends BaseKernelTestCase
         $formFactory = $this->container->get("form.factory");
         $this->setObjectAttribute($service, 'formFactory', $formFactory);
         $parameter = array(
-          "name" => '魏餅餅',
-          "phone" => '0988777888'
+            "name" => '魏餅餅',
+            "phone" => '0988777888',
+            'number_of_people' => 1
         );
 
         //act

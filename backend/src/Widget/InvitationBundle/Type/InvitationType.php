@@ -26,7 +26,14 @@ class InvitationType extends AbstractType
                     ))
                 )
             ))
-            ->add('number_of_people')
+            ->add('number_of_people', null, array(
+                'constraints' => array(
+                    new Assert\GreaterThanOrEqual(array(
+                        'value' => 1,
+                        'message' => 'error.invitation.number_of_people.wrong'
+                    ))
+                )
+            ))
             ->add('address')
             ->add('email')
             ->add('attend')
