@@ -4,7 +4,6 @@ namespace Widget\InvitationBundle\Service;
 
 use JMS\DiExtraBundle\Annotation as DI;
 use Symfony\Component\Form\FormFactory;
-use Symfony\Component\HttpFoundation\Request;
 use Widget\InvitationBundle\Model\Invitation;
 use Widget\InvitationBundle\Type\InvitationType;
 
@@ -26,10 +25,13 @@ class InvitationService
         $this->formFactory = $formFactory;
     }
 
-    public function create(Request $request): Invitation
+    public function create($parameter)
     {
-        $parameter = json_decode($request->getContent(), true);
-        $form = $this->formFactory->create(InvitationType::class, $course = new Invitation(), array('csrf_protection' => false));
+        $form = $this->formFactory->create(InvitationType::class, $invitation = new Invitation(), array('csrf_protection' => false));
         $form->submit($parameter);
+        if (!$form->isValid()) {
+            throw new \Exception();
+        }
+        return $invitation;
     }
 }

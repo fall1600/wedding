@@ -4,6 +4,8 @@ namespace Widget\InvitationBundle\Tests\Service;
 
 use Backend\BaseBundle\Tests\Fixture\BaseKernelTestCase;
 use Symfony\Component\Form\FormFactory;
+use Widget\InvitationBundle\Model\Invitation;
+use Widget\InvitationBundle\Service\InvitationService;
 
 class InvitationServiceTest extends BaseKernelTestCase
 {
@@ -16,5 +18,23 @@ class InvitationServiceTest extends BaseKernelTestCase
 
         //assert
         $this->assertInstanceOf(FormFactory::class, $this->getObjectAttribute($service, 'formFactory'));
+    }
+
+    public function test_create()
+    {
+        //arrange
+        $service = new InvitationService();
+        $formFactory = $this->container->get("form.factory");
+        $this->setObjectAttribute($service, 'formFactory', $formFactory);
+        $parameter = array(
+          "name" => '魏餅餅',
+          "phone" => '0988777888'
+        );
+
+        //act
+        $result = $service->create($parameter);
+
+        //assert
+        $this->assertInstanceOf(Invitation::class, $result);
     }
 }

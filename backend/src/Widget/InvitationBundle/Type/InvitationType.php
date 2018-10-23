@@ -14,11 +14,26 @@ class InvitationType extends AbstractType
             ->add('name', null, array(
                 'constraints' => array(
                     new Assert\NotBlank(array(
-                        'message' => 'error.invitation.required',
+                        'message' => 'error.invitation.name.required',
                     )),
                 ),
             ))
-            ->add('')
+            ->add('nickname')
+            ->add('phone', null, array(
+                'constraints' => array(
+                    new Assert\NotBlank(array(
+                        'message' => 'error.invitation.phone.required'
+                    ))
+                )
+            ))
+            ->add('number_of_people')
+            ->add('address')
+            ->add('email')
+            ->add('attend')
+            ->add('known_from')
+            ->add('is_vegetarian')
+            ->add('baby_seat')
+            ->add('note')
         ;
     }
 }
