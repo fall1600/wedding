@@ -11,6 +11,7 @@
 /backend/build/
 /backend/vendor/
 /backend/bin/
+/backend/vue
 .idea/
 *~
 /backend/web/css/
