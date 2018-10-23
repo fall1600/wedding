@@ -1,0 +1,59 @@
+Widget\InvitationBundle\Model\Invitation:
+    virtual_properties:
+        getId:
+            groups:
+                -                   list
+                -                   detail
+            serialized_name:        id
+        getName:
+            groups:
+                -                   detail
+            serialized_name:        name
+        getNickName:
+            groups:
+                -                   detail
+            serialized_name:        nick_name
+        getPhone:
+            groups:
+                -                   detail
+            serialized_name:        phone
+        getNumberOfPeople:
+            groups:
+                -                   detail
+            serialized_name:        number_of_people
+        getAddress:
+            groups:
+                -                   detail
+            serialized_name:        address
+        getEmail:
+            groups:
+                -                   detail
+            serialized_name:        email
+        getAttend:
+            groups:
+                -                   detail
+            serialized_name:        attend
+        getKnownFrom:
+            groups:
+                -                   detail
+            serialized_name:        known_from
+        getIsVegetarian:
+            groups:
+                -                   detail
+            serialized_name:        is_vegetarian
+        getBabySeat:
+            groups:
+                -                   detail
+            serialized_name:        baby_seat
+        getNote:
+            groups:
+                -                   detail
+            serialized_name:        note
+        getCreatedAt:
+            groups:
+                -                   detail
+            serialized_name:        created_at
+        getUpdatedAt:
+            groups:
+                -                   detail
+            serialized_name:        updated_at
