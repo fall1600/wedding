@@ -5,7 +5,6 @@ namespace Widget\InvitationBundle\Service;
 use Backend\BaseBundle\Form\Type\APIFormTypeItem;
 use JMS\DiExtraBundle\Annotation as DI;
 use Symfony\Component\Form\FormErrorIterator;
-use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Validator\Constraints as Assert;
 use Widget\InvitationBundle\Model\Invitation;
 
@@ -15,19 +14,6 @@ use Widget\InvitationBundle\Model\Invitation;
 class InvitationService
 {
     use FormBinder;
-
-    /** @var FormFactory */
-    protected $formFactory;
-
-    /**
-     * @DI\InjectParams({
-     *   "formFactory" = @DI\Inject("form.factory")
-     * })
-     */
-    public function injectFormFactory(FormFactory $formFactory)
-    {
-        $this->formFactory = $formFactory;
-    }
 
     /**
      * @param $parameter
@@ -52,11 +38,11 @@ class InvitationService
         return array(
             (new APIFormTypeItem('name'))
                 ->setOptions(array(
-                        'constraints' => array(
-                            new Assert\NotBlank(array(
-                                'message' => 'error.invitation.name.required',
-                            )),
-                        ))
+                    'constraints' => array(
+                        new Assert\NotBlank(array(
+                            'message' => 'error.invitation.name.required',
+                        )),
+                    ))
                 ),
             (new APIFormTypeItem('nickname')),
             (new APIFormTypeItem('phone'))
