@@ -39,7 +39,14 @@ class InvitationType extends AbstractType
             ->add('attend')
             ->add('known_from')
             ->add('is_vegetarian')
-            ->add('baby_seat')
+            ->add('baby_seat', null, array(
+                'constraints' => array(
+                    new Assert\GreaterThanOrEqual(array(
+                        'value' => 0,
+                        'message' => 'error.invitation.baby_seat.wrong'
+                    ))
+                )
+            ))
             ->add('note')
         ;
     }
