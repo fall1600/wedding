@@ -1,0 +1,12 @@
+Widget\InvitationBundle\Model\Invitation:
+<?php for($i=1;$i<=4;$i++):?>
+
+    invitation<?=$i?>:
+
+        name: <?=$faker('name')?>
+
+        phone: <?=$faker('phoneNumber')?>
+
+        number_of_people: <?=$faker('numberBetween', 1, 6)?>
+
+<?php endfor?>

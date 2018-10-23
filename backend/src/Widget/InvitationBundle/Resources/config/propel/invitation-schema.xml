@@ -6,6 +6,8 @@
         <column name="name" type="varchar" required="true" />
         <!-- 別名 -->
         <column name="nickname" type="varchar" />
+        <!-- 聯絡電話 -->
+        <column name="phone" type="varchar" required="true" />
         <!-- 人數(含自己) -->
         <column name="number_of_people" type="integer" required="true" default="1" />
         <!-- 喜帖形式: 實體喜帖, 有填就寄 -->
