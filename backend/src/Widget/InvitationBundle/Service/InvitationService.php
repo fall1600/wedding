@@ -28,15 +28,17 @@ class InvitationService
 
     /**
      * @param $parameter
-     * @return Invitation|FormErrorIterator
+     * @param \PropelPDO|null $conn
+     * @return FormErrorIterator|Invitation
      */
-    public function create($parameter)
+    public function create($parameter, \PropelPDO $conn = null)
     {
         $form = $this->formFactory->create(InvitationType::class, $invitation = new Invitation(), array('csrf_protection' => false));
-        $form->submit($parameter);
+        $form->submit($parameter, false);
         if (!$form->isValid()) {
             return $form->getErrors(true, false);
         }
+        $invitation->save($conn);
         return $invitation;
     }
 }
