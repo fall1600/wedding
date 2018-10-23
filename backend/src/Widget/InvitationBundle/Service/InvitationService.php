@@ -34,7 +34,7 @@ class InvitationService
     public function create($parameter, \PropelPDO $conn = null)
     {
         $form = $this->formFactory->create(InvitationType::class, $invitation = new Invitation(), array('csrf_protection' => false));
-        $form->submit($parameter, false);
+        $form->submit($parameter);
         if (!$form->isValid()) {
             return $form->getErrors(true, false);
         }

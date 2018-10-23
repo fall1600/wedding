@@ -28,6 +28,7 @@ class InvitationControllerTest extends BaseWebTestCase
         $response = $this->client->getResponse();
         $result = json_decode($response->getContent(), true);
 
+        var_dump($response);
         //assert
         $this->assertTrue($response->isOk());
         $this->assertArrayHasKey("id", $result);
@@ -53,16 +54,24 @@ class InvitationControllerTest extends BaseWebTestCase
     {
         //arrange
         $parameter = array(
-            "name" => "魏餅餅",
-            "phone" => "0988555666",
             "baby_seat" => -1,
+            "number_of_people" => 0,
         );
 
         $expected = array(
             'msg' => array(
+                'name' => array(
+                    '姓名必填'
+                ),
+                'phone' => array(
+                    '聯絡電話必填'
+                ),
                 'baby_seat' => array(
                     '兒童座椅數量錯誤'
-                )
+                ),
+                'number_of_people' => array(
+                    '出席人數錯誤'
+                ),
             )
         );
 

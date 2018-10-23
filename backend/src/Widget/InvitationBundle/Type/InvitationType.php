@@ -3,6 +3,8 @@
 namespace Widget\InvitationBundle\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -11,7 +13,7 @@ class InvitationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', null, array(
+            ->add('name', TextType::class, array(
                 'constraints' => array(
                     new Assert\NotBlank(array(
                         'message' => 'error.invitation.name.required',
@@ -19,14 +21,15 @@ class InvitationType extends AbstractType
                 ),
             ))
             ->add('nickname')
-            ->add('phone', null, array(
+            ->add('phone', TextType::class, array(
                 'constraints' => array(
                     new Assert\NotBlank(array(
                         'message' => 'error.invitation.phone.required'
                     ))
                 )
             ))
-            ->add('number_of_people', null, array(
+            ->add('number_of_people', IntegerType::class, array(
+                'required' => false,
                 'constraints' => array(
                     new Assert\GreaterThanOrEqual(array(
                         'value' => 1,
@@ -46,7 +49,8 @@ class InvitationType extends AbstractType
             ->add('attend')
             ->add('known_from')
             ->add('is_vegetarian')
-            ->add('baby_seat', null, array(
+            ->add('baby_seat', IntegerType::class, array(
+                'required' => false,
                 'constraints' => array(
                     new Assert\GreaterThanOrEqual(array(
                         'value' => 0,
