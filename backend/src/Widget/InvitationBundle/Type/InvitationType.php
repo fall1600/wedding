@@ -35,7 +35,14 @@ class InvitationType extends AbstractType
                 )
             ))
             ->add('address')
-            ->add('email')
+            ->add('email', null, array(
+                'constraints' => array(
+                    new Assert\Email(array(
+                        'strict' => true,
+                        'message' => 'error.invitation.email.wrong'
+                    ))
+                )
+            ))
             ->add('attend')
             ->add('known_from')
             ->add('is_vegetarian')
