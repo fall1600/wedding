@@ -1,3 +1,9 @@
-widget_invitation_homepage:
-    path:     /
-    defaults: { _controller: WidgetInvitationBundle:Default:index }
+api:
+    resource: "@WidgetInvitationBundle/Controller/API"
+    type:     annotation
+    prefix:   /api
+
+#backend_api:
+#    resource: "@WidgetInvitationBundle/Controller/BackendAPI"
+#    type:     annotation
+#    prefix:   /admin/api

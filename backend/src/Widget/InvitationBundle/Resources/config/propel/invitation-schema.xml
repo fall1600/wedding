@@ -21,7 +21,7 @@
         <!-- 兒童座椅 -->
         <column name="baby_seat" type="integer" default="0" />
         <!-- 祝福的話 -->
-        <column name="note" type="text" />
+        <column name="note" type="longvarchar" />
 
         <behavior name="addrandompk" />
         <behavior name="timestampable" />
