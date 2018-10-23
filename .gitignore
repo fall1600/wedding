@@ -7,6 +7,7 @@
 !backend/app/cache/.gitkeep
 !backend/app/logs/.gitkeep
 /backend/app/phpunit.xml
+/backend/app/propel/migrations/
 /backend/build/
 /backend/vendor/
 /backend/bin/
