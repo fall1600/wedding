@@ -4,9 +4,11 @@ error:
             required:                          '姓名必填'
         phone:
             required:                          '聯絡電話必填'
-        baby_seat:
+        number_of_baby_seat:
             wrong:                             '兒童座椅數量錯誤'
         number_of_people:
             wrong:                             '出席人數錯誤'
+        number_of_vegetarian:
+            wrong:                             '素食人數錯誤'
         email:
             wrong:                             'email 格式錯誤'

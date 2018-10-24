@@ -10,7 +10,6 @@ module.exports =
     name: 'nickname'
     text: 'form.label.edit.invitation.nickname'
     type: 'input'
-    required: true
   },
   {
     name: 'phone'
@@ -23,6 +22,17 @@ module.exports =
     text: 'form.label.edit.invitation.number_of_people'
     type: 'input'
     required: true
+  },
+  {
+    name: 'number_of_vegetarian'
+    text: 'form.label.edit.invitation.number_of_vegetarian'
+    type: 'input'
+    required: true
+  },
+  {
+    name: 'number_of_baby_seat'
+    text: 'form.label.edit.invitation.number_of_baby_seat'
+    type: 'input'
   },
   {
     name: 'address'
@@ -55,21 +65,8 @@ module.exports =
       label: 'key'
   },
   {
-    name: 'is_vegetarian'
-    text: 'form.label.edit.invitation.is_vegetarian'
-    type: 'input'
-    required: true
-  },
-  {
-    name: 'baby_seat'
-    text: 'form.label.edit.invitation.baby_seat'
-    type: 'input'
-    required: true
-  },
-  {
     name: 'note'
     text: 'form.label.edit.invitation.note'
     type: 'input'
-    required: true
   }
 ]
