@@ -28,25 +28,31 @@ module.exports =
     name: 'address'
     text: 'form.label.edit.invitation.address'
     type: 'input'
-    required: true
   },
   {
     name: 'email'
     text: 'form.label.edit.invitation.email'
     type: 'input'
-    required: true
   },
   {
     name: 'attend'
     text: 'form.label.edit.invitation.attend'
-    type: 'input'
+    type: 'choice'
     required: true
+    config:
+      api:  "invitation.getAllAttends"
+      value: "value"
+      label: "key"
   },
   {
     name: 'known_from'
     text: 'form.label.edit.invitation.known_from'
-    type: 'input'
+    type: 'choice'
     required: true
+    config:
+      api: 'invitation.getAllKnownFrom'
+      value: 'value'
+      label: 'key'
   },
   {
     name: 'is_vegetarian'

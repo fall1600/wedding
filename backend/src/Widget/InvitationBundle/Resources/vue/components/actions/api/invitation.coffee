@@ -28,3 +28,16 @@ module.exports = (api) ->
           }
         ]
         resolve result
+    getAllKnownFrom: () ->
+      return new Promise (resolve, reject) ->
+        result = [
+          {
+            key: "男方"
+            value: "男方"
+          }
+          {
+            key: "女方"
+            value: "女方"
+          }
+        ]
+        resolve result
