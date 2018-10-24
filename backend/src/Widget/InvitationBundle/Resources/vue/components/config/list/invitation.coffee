@@ -1,10 +1,10 @@
 module.exports =
   list:
-    id:
-      label: 'fields.invitation.id'
-      type: 'text'
-      sort: true
-      defaultSorting: 'desc'
+#    id:
+#      label: 'fields.invitation.id'
+#      type: 'text'
+#      sort: true
+#      defaultSorting: 'desc'
     name:
       label: 'fields.invitation.name'
       type: 'text'
@@ -18,10 +18,18 @@ module.exports =
       label: 'fields.invitation.attend'
       type: 'text'
       sort: true
+      search: true
+      searchConfig:
+        key: 'attend'
+        type: 'text'
     known_from:
       label: 'fields.invitation.known_from'
       type: 'text'
       sort: true
+      search: true
+      searchConfig:
+        key: 'known_from'
+        type: 'text'
   extra: [
     {
       "name": "new"
