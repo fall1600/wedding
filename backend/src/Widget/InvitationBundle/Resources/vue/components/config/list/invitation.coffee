@@ -23,13 +23,19 @@ module.exports =
         key: 'attend'
         type: 'text'
     known_from:
-      label: 'fields.invitation.known_from'
+      label: 'fields.invitation.known_from.title'
       type: 'text'
       sort: true
       search: true
       searchConfig:
         key: 'known_from'
-        type: 'text'
+        type: 'radio'
+        label:
+          true: 'fields.invitation.known_from.male'
+          false: 'fields.invitation.known_from.female'
+        value:
+          true: "男方"
+          false: "女方"
   extra: [
     {
       "name": "new"

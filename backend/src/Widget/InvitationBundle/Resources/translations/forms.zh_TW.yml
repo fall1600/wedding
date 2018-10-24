@@ -6,4 +6,7 @@ fields:
     id:                               'id'
     name:                             '姓名'
     attend:                           '參與意願'
-    known_from:                       '男女方親友'
+    known_from:
+      title:                          '男女方親友'
+      male:                           '男方'
+      female:                         '女方'
