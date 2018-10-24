@@ -3,5 +3,10 @@
     "path": "/invitations",
     "name": "invitation-list",
     "component": "components/widgetinvitation/router/list/invitation.vue"
+  },
+  {
+    "path": "/invitation",
+    "name": "invitation-edit",
+    "component": "components/widgetinvitation/router/edit/invitation.vue"
   }
 ]

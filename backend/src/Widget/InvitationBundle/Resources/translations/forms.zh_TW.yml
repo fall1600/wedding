@@ -10,3 +10,22 @@ fields:
       title:                          '男女方親友'
       male:                           '男方'
       female:                         '女方'
+
+invitation:
+  update:                             '邀請函資訊'
+
+form:
+  label:
+    edit:
+      invitation:
+        name:                         '姓名'
+        nickname:                     '暱稱'
+        phone:                        '聯絡電話'
+        number_of_people:             '參與人數'
+        address:                      '喜帖寄送地址'
+        email:                        '喜帖寄送email'
+        attend:                       '參與意願'
+        known_from:                   '男女方親友'
+        is_vegetarian:                '是否吃素'
+        baby_seat:                    '兒童座椅數量'
+        note:                         '祝福的話'
