@@ -10,6 +10,10 @@
         <column name="phone" type="varchar" required="true" />
         <!-- 人數(含自己) -->
         <column name="number_of_people" type="integer" required="true" default="1" />
+        <!-- 素食數量 -->
+        <column name="number_of_vegetarian" type="integer" required="true" default="0" />
+        <!-- 兒童座椅數量 -->
+        <column name="number_of_baby_seat" type="integer" default="0" />
         <!-- 喜帖形式: 實體喜帖, 有填就寄 -->
         <column name="address" type="varchar" />
         <!-- 喜帖形式: 電子喜帖, 有填就寄 -->
@@ -18,10 +22,6 @@
         <column name="attend" type="enum" valueSet="不出席, 出席, 禮到人未到" />
         <!-- 男方或女方的親友 -->
         <column name="known_from" type="enum" valueSet="男方, 女方"/>
-        <!-- 是否素食 -->
-        <column name="is_vegetarian" type="boolean" default="false" />
-        <!-- 兒童座椅 -->
-        <column name="baby_seat" type="integer" default="0" />
         <!-- 祝福的話 -->
         <column name="note" type="longvarchar" />
 

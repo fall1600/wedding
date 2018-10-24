@@ -9,6 +9,10 @@ Widget\InvitationBundle\Model\Invitation:
 
         number_of_people: <?=$faker('numberBetween', 1, 6)?>
 
+        number_of_vegetarian: <?=$faker('numberBetween', 0, 2)?>
+
+        number_of_baby_seat: <?=$faker('numberBetween', 0, 1)?>
+
         known_from: <?=$faker('numberBetween', 0, 1)?>
 
         attend: <?=$faker('numberBetween', 0, 2)?>
