@@ -22,7 +22,19 @@ class InvitationController extends BaseBackendAPIController
      */
     protected function getFormConfig()
     {
-        return array();
+        return array(
+            new APIFormTypeItem('name'),
+            new APIFormTypeItem('nickname'),
+            new APIFormTypeItem('phone'),
+            new APIFormTypeItem('number_of_people'),
+            new APIFormTypeItem('number_of_vegetarian'),
+            new APIFormTypeItem('number_of_baby_seat'),
+            new APIFormTypeItem('address'),
+            new APIFormTypeItem('email'),
+            new APIFormTypeItem('attend'),
+            new APIFormTypeItem('known_from'),
+            new APIFormTypeItem('note'),
+        );
     }
 
     /**
