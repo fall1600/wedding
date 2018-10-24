@@ -1,13 +1,13 @@
 {
   "menu.invitation": {
-    "icon": "fa fa-shopping-cart",
+    "icon": "fa fa-envelope",
     "role": [
       "ROLE_INVITATION_READ",
       "ROLE_INVITATION_WRITE"
     ],
     "route": {
       "menu.invitation": {
-        "icon": "fa fa-shopping-cart",
+        "icon": "fa fa-envelope",
         "route": "invitation-list",
         "role": [
           "ROLE_INVITATION_READ",
