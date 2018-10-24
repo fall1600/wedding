@@ -31,15 +31,15 @@ class InvitationControllerTest extends BaseWebTestCase
         $this->assertTrue($response->isOk());
         $this->assertArrayHasKey("id", $result);
         $this->assertArrayHasKey("name", $result);
-        $this->assertArrayHasKey("nick_name", $result);
+        $this->assertArrayHasKey("nickname", $result);
         $this->assertArrayHasKey("phone", $result);
         $this->assertArrayHasKey("number_of_people", $result);
         $this->assertArrayHasKey("address", $result);
         $this->assertArrayHasKey("email", $result);
         $this->assertArrayHasKey("attend", $result);
         $this->assertArrayHasKey("known_from", $result);
-        $this->assertArrayHasKey("is_vegetarian", $result);
-        $this->assertArrayHasKey("baby_seat", $result);
+        $this->assertArrayHasKey("number_of_vegetarian", $result);
+        $this->assertArrayHasKey("number_of_baby_seat", $result);
         $this->assertArrayHasKey("note", $result);
         $this->assertArrayHasKey("created_at", $result);
         $this->assertArrayHasKey("updated_at", $result);

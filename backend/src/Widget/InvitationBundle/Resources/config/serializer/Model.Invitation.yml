@@ -13,7 +13,7 @@ Widget\InvitationBundle\Model\Invitation:
         getNickName:
             groups:
                 -                   detail
-            serialized_name:        nick_name
+            serialized_name:        nickname
         getPhone:
             groups:
                 -                   detail
@@ -40,14 +40,14 @@ Widget\InvitationBundle\Model\Invitation:
                 -                   list
                 -                   detail
             serialized_name:        known_from
-        getIsVegetarian:
+        getNumberOfVegetarian:
             groups:
                 -                   detail
-            serialized_name:        is_vegetarian
-        getBabySeat:
+            serialized_name:        number_of_vegetarian
+        getNumberOfBabySeat:
             groups:
                 -                   detail
-            serialized_name:        baby_seat
+            serialized_name:        number_of_baby_seat
         getNote:
             groups:
                 -                   detail
