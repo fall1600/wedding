@@ -1,0 +1,7 @@
+[
+  {
+    "path": "/invitations",
+    "name": "invitation-list",
+    "component": "components/widgetinvitation/router/list/invitation.vue"
+  }
+]

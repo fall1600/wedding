@@ -1,0 +1,19 @@
+{
+  "menu.invitation": {
+    "icon": "fa fa-shopping-cart",
+    "role": [
+      "ROLE_INVITATION_READ",
+      "ROLE_INVITATION_WRITE"
+    ],
+    "route": {
+      "menu.invitation": {
+        "icon": "fa fa-shopping-cart",
+        "route": "invitation-list",
+        "role": [
+          "ROLE_INVITATION_READ",
+          "ROLE_INVITATION_WRITE"
+        ]
+      }
+    }
+  }
+}
