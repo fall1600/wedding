@@ -1,5 +1,5 @@
 Widget\InvitationBundle\Model\Invitation:
-<?php for($i=1;$i<=4;$i++):?>
+<?php for($i=1;$i<=25;$i++):?>
 
     invitation<?=$i?>:
 
@@ -8,5 +8,9 @@ Widget\InvitationBundle\Model\Invitation:
         phone: <?=$faker('phoneNumber')?>
 
         number_of_people: <?=$faker('numberBetween', 1, 6)?>
+
+        known_from: <?=$faker('numberBetween', 0, 1)?>
+
+        attend: <?=$faker('numberBetween', 0, 2)?>
 
 <?php endfor?>
