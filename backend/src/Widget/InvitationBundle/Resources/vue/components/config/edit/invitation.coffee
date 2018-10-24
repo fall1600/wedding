@@ -67,6 +67,6 @@ module.exports =
   {
     name: 'note'
     text: 'form.label.edit.invitation.note'
-    type: 'input'
+    type: 'textarea'
   }
 ]
