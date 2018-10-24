@@ -21,7 +21,10 @@ module.exports =
       search: true
       searchConfig:
         key: 'attend'
-        type: 'text'
+        type: 'select'
+        api: 'invitation.getAllAttends'
+        choiceValue: 'value'
+        choiceLabel: 'key'
     known_from:
       label: 'fields.invitation.known_from.title'
       type: 'text'

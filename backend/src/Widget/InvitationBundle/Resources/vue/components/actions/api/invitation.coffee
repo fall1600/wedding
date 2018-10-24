@@ -11,3 +11,20 @@ module.exports = (api) ->
       return api.request "PUT", "/invitation/#{id}", data
     delete: (id) ->
       return api.request "DELETE", "/invitation/#{id}"
+    getAllAttends: () ->
+      return new Promise (resolve, reject) ->
+        result = [
+          {
+            key: "不出席"
+            value: "不出席"
+          }
+          {
+            key: "出席"
+            value: "出席"
+          }
+          {
+            key: "禮到人未到"
+            value: "禮到人未到"
+          }
+        ]
+        resolve result
