@@ -50,7 +50,7 @@ class InvitationServiceTest extends BaseKernelTestCase
             "name" => '魏餅餅',
             "phone" => '0988777888',
             'number_of_people' => 0,
-            'baby_seat' => -1,
+            'number_of_baby_seat' => -1,
             'email' => 'foobar',
         );
 

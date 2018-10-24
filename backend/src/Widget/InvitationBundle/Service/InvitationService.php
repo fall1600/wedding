@@ -63,6 +63,26 @@ class InvitationService
                         ))
                     )
                 )),
+            (new APIFormTypeItem('number_of_vegetarian'))
+                ->setOptions(array(
+                    'required' => false,
+                    'constraints' => array(
+                        new Assert\GreaterThanOrEqual(array(
+                            'value' => 0,
+                            'message' => 'error.invitation.number_of_vegetarian.wrong'
+                        ))
+                    )
+                )),
+            (new APIFormTypeItem('number_of_baby_seat'))
+                ->setOptions(array(
+                    'required' => false,
+                    'constraints' => array(
+                        new Assert\GreaterThanOrEqual(array(
+                            'value' => 0,
+                            'message' => 'error.invitation.number_of_baby_seat.wrong'
+                        ))
+                    )
+                )),
             (new APIFormTypeItem('address')),
             (new APIFormTypeItem('email'))
                 ->setOptions(array(
@@ -75,17 +95,6 @@ class InvitationService
                 )),
             (new APIFormTypeItem('attend')),
             (new APIFormTypeItem('known_from')),
-            (new APIFormTypeItem('is_vegetarian')),
-            (new APIFormTypeItem('baby_seat'))
-                ->setOptions(array(
-                    'required' => false,
-                    'constraints' => array(
-                        new Assert\GreaterThanOrEqual(array(
-                            'value' => 0,
-                            'message' => 'error.invitation.baby_seat.wrong'
-                        ))
-                    )
-                )),
             (new APIFormTypeItem('note')),
         );
     }
