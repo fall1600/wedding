@@ -3,7 +3,7 @@ api:
     type:     annotation
     prefix:   /api
 
-#backend_api:
-#    resource: "@WidgetInvitationBundle/Controller/BackendAPI"
-#    type:     annotation
-#    prefix:   /admin/api
+backend_api:
+    resource: "@WidgetInvitationBundle/Controller/BackendAPI"
+    type:     annotation
+    prefix:   /admin/api

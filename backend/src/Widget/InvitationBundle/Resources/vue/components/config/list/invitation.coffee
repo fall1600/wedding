@@ -14,6 +14,14 @@ module.exports =
         key: 'name'
         type: 'text'
         like: true
+    attend:
+      label: 'fields.invitation.attend'
+      type: 'text'
+      sort: true
+    known_from:
+      label: 'fields.invitation.known_from'
+      type: 'text'
+      sort: true
   extra: [
     {
       "name": "new"

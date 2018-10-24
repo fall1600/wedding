@@ -1,0 +1,9 @@
+menu:
+  invitation:                         '邀請函'
+
+fields:
+  invitation:
+    id:                               'id'
+    name:                             '姓名'
+    attend:                           '參與意願'
+    known_from:                       '男女方親友'
