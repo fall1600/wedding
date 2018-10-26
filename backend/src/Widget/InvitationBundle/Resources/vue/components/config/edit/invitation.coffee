@@ -20,19 +20,19 @@ module.exports =
   {
     name: 'number_of_people'
     text: 'form.label.edit.invitation.number_of_people'
-    type: 'input'
+    type: 'number'
     required: true
+    default: 1
   },
   {
     name: 'number_of_vegetarian'
     text: 'form.label.edit.invitation.number_of_vegetarian'
-    type: 'input'
-    required: true
+    type: 'number'
   },
   {
     name: 'number_of_baby_seat'
     text: 'form.label.edit.invitation.number_of_baby_seat'
-    type: 'input'
+    type: 'number'
   },
   {
     name: 'address'

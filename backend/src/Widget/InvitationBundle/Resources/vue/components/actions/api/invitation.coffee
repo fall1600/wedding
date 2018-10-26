@@ -26,6 +26,10 @@ module.exports = (api) ->
             key: "禮到人未到"
             value: "禮到人未到"
           }
+          {
+            key: "尚未確定"
+            value: "尚未確定"
+          }
         ]
         resolve result
     getAllKnownFrom: () ->
