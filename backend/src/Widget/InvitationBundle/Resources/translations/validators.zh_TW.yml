@@ -10,5 +10,7 @@ error:
             wrong:                             '出席人數錯誤'
         number_of_vegetarian:
             wrong:                             '素食人數錯誤'
+            greater_than:
+                number_of_people:              '素食人數不應比出席人數多'
         email:
             wrong:                             'email 格式錯誤'

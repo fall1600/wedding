@@ -61,6 +61,13 @@ class InvitationController extends BaseBackendAPIController
                             "value" => 0,
                             "message" => 'error.invitation.number_of_vegetarian.wrong',
                         )),
+                        new Callback(function($value, ExecutionContextInterface $context) {
+                            /** @var Invitation $object */
+                            $object = $context->getRoot()->getData();
+                            if ($value > $object->getNumberOfPeople()) {
+                                $context->addViolation('error.invitation.number_of_vegetarian.greater_than.number_of_people');
+                            }
+                        }),
                     )
                 )),
             (new APIFormTypeItem('number_of_baby_seat'))
