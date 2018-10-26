@@ -2,49 +2,109 @@
 
 namespace Widget\InvitationBundle\Controller\API;
 
-use Backend\BaseBundle\Controller\API\BaseController;
-use JMS\DiExtraBundle\Annotation as DI;
+use Backend\BaseBundle\Controller\BackendAPI\BaseBackendAPIController;
+use Backend\BaseBundle\Form\Type\APIFormTypeItem;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Component\Form\FormErrorIterator;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Callback;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Widget\InvitationBundle\Model\Invitation;
+use Widget\InvitationBundle\Model\InvitationPeer;
 use Widget\InvitationBundle\Model\InvitationQuery;
-use Widget\InvitationBundle\Service\InvitationService;
 
 /**
  * @Route("/invitation")
  */
-class InvitationController extends BaseController
+class InvitationController extends BaseBackendAPIController
 {
-    /**
-     * @var InvitationService
-     * @DI\Inject()
-     */
-    protected $invitationService;
-
     /**
      * @Route("s")
      * @Method({"POST"})
      */
-    public function createAction(Request $request)
+    public function create(Request $request)
     {
-        $parameter = json_decode($request->getContent(), true);
-        $result = $this->invitationService->create($parameter);
-
-        if ($result instanceof FormErrorIterator) {
-            return $this->createJsonSerializeResponse(array('msg' => $result), array(), Response::HTTP_BAD_REQUEST);
+        $invitation = new Invitation();
+        $form = $this->bindObject($invitation, $request->getContent());
+        if (!$form->isValid()) {
+            return $this->createJsonSerializeResponse($form->getErrors(true));
         }
-        return $this->createJsonSerializeResponse($result, array("detail"));
+        $invitation->save();
+        return $this->createJsonSerializeResponse($invitation, array("detail"));
     }
 
     /**
-     * @Route("s")
-     * @Method({"GET"})
+     * @return APIFormTypeItem[]
      */
-    public function indexAction(Request $request)
+    protected function getFormConfig()
     {
-        $result = InvitationQuery::create()->find();
-        return $this->createJsonSerializeResponse($result, array("list"));
+        return array(
+            (new APIFormTypeItem('name'))
+                ->setOptions(array(
+                    "constraints" => array(
+                        new NotBlank(array(
+                            "message" => 'error.invitation.name.required',
+                        ))
+                    )
+                )),
+            new APIFormTypeItem('nickname'),
+            (new APIFormTypeItem('phone'))
+                ->setOptions(array(
+                    "constraints" => array(
+                        new NotBlank(array(
+                            "message" => 'error.invitation.phone.required',
+                        ))
+                    )
+                )),
+            (new APIFormTypeItem('number_of_people'))
+                ->setOptions(array(
+                    "constraints" => array(
+                        new GreaterThanOrEqual(array(
+                            "value" => 1,
+                            "message" => 'error.invitation.number_of_people.wrong',
+                        ))
+                    )
+                )),
+            (new APIFormTypeItem('number_of_vegetarian'))
+                ->setOptions(array(
+                    "constraints" => array(
+                        new GreaterThanOrEqual(array(
+                            "value" => 0,
+                            "message" => 'error.invitation.number_of_vegetarian.wrong',
+                        )),
+                        new Callback(function($value, ExecutionContextInterface $context) {
+                            /** @var Invitation $object */
+                            $object = $context->getRoot()->getData();
+                            if ($value > $object->getNumberOfPeople()) {
+                                $context->addViolation('error.invitation.number_of_vegetarian.greater_than.number_of_people');
+                            }
+                        }),
+                    )
+                )),
+            (new APIFormTypeItem('number_of_baby_seat'))
+                ->setOptions(array(
+                    "constraints" => array(
+                        new GreaterThanOrEqual(array(
+                            "value" => 0,
+                            "message" => 'error.invitation.number_of_baby_seat.wrong',
+                        )),
+                    )
+                )),
+            new APIFormTypeItem('address'),
+            (new APIFormTypeItem('email'))
+                ->setOptions(array(
+                    "constraints" => array(
+                        new Email(array(
+                            "message" => 'error.invitation.email.wrong',
+                        ))
+                    )
+                )),
+            new APIFormTypeItem('attend'),
+            new APIFormTypeItem('known_from'),
+            new APIFormTypeItem('note'),
+        );
     }
 }

@@ -16,6 +16,7 @@ Widget\InvitationBundle\Model\Invitation:
             serialized_name:        nickname
         getPhone:
             groups:
+                -                   list
                 -                   detail
             serialized_name:        phone
         getNumberOfPeople:
