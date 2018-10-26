@@ -34,7 +34,7 @@
  *    "number_of_baby_seat": 0,
  *    "address": "民族西路296號",
  *    "email": "fall1600@gmail.com",
- *    "attend": "參加",
+ *    "attend": "出席",
  *    "known_from": "男方",
  *    "note": "新婚快樂 <3"
  * }
