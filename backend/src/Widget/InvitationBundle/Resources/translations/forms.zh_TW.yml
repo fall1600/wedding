@@ -1,3 +1,13 @@
+ROLE_INVITATION:
+  type:                               '邀請函'
+ROLE_INVITATION_READ:                 '讀取邀請函'
+ROLE_INVITATION_WRITE:                '編輯邀請函'
+
+index_value:
+  operation_log:
+    modify_table:
+      invitation:                     '邀請函'
+
 menu:
   invitation:                         '邀請函'
 
@@ -13,6 +23,7 @@ fields:
 
 invitation:
   update:                             '邀請函資訊'
+  create:                             '新增邀請函'
 
 form:
   label:
