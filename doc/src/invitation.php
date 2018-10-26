@@ -47,9 +47,17 @@
 
 /**
  * @apiDefine InvitationResponse
- * @apiSuccess {Invitation} Invitation 邀請函
- * @apiSuccess {String} Invitation.name 姓名
  * @apiSuccessExample Invitation
  * {
- *     "name":    "fall1600",
+ *    "name": "fall1600",
+ *    "nickname": "小費勿",
+ *    "phone": "0988555666",
+ *    "number_of_people": 2,
+ *    "number_of_vegetarian": 0,
+ *    "number_of_baby_seat": 0,
+ *    "address": "民族西路296號",
+ *    "email": "fall1600@gmail.com",
+ *    "attend": "出席",
+ *    "known_from": "男方",
+ *    "note": "新婚快樂 <3"
  */
