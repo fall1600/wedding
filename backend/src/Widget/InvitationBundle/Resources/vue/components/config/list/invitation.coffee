@@ -14,6 +14,15 @@ module.exports =
         key: 'name'
         type: 'text'
         like: true
+    phone:
+      label: 'fields.invitation.phone'
+      type: 'text'
+      sort: true
+      search: true
+      searchConfig:
+        key: 'phone'
+        type: 'text'
+        like: true
     attend:
       label: 'fields.invitation.attend'
       type: 'text'
