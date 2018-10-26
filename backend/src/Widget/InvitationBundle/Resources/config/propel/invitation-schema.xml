@@ -11,7 +11,7 @@
         <!-- 人數(含自己) -->
         <column name="number_of_people" type="integer" required="true" default="1" />
         <!-- 素食數量 -->
-        <column name="number_of_vegetarian" type="integer" required="true" default="0" />
+        <column name="number_of_vegetarian" type="integer" default="0" />
         <!-- 兒童座椅數量 -->
         <column name="number_of_baby_seat" type="integer" default="0" />
         <!-- 喜帖形式: 實體喜帖, 有填就寄 -->
