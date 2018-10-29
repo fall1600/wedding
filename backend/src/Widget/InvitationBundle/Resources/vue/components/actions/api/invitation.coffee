@@ -32,6 +32,23 @@ module.exports = (api) ->
           }
         ]
         resolve result
+    getAllSessions: () ->
+      return new Promise (resolve, reject) ->
+        result = [
+          {
+            key: "台北"
+            value: "台北"
+          }
+          {
+            key: "嘉義"
+            value: "嘉義"
+          }
+          {
+            key: "都參加"
+            value: "都參加"
+          }
+        ]
+        resolve result
     getAllKnownFrom: () ->
       return new Promise (resolve, reject) ->
         result = [

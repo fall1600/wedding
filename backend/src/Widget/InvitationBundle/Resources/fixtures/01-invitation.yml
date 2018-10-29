@@ -17,4 +17,6 @@ Widget\InvitationBundle\Model\Invitation:
 
         attend: <?=$faker('numberBetween', 0, 2)?>
 
+        session: <?=$faker('numberBetween', 0, 2)?>
+
 <?php endfor?>

@@ -48,6 +48,17 @@ module.exports =
         value:
           true: "男方"
           false: "女方"
+    session:
+      label: 'fields.invitation.session'
+      type: 'text'
+      sort: true
+      search: true
+      searchConfig:
+        key: 'session'
+        type: 'select'
+        api: 'invitation.getAllSessions'
+        choiceValue: 'value'
+        choiceLabel: 'key'
   extra: [
     {
       "name": "new"

@@ -55,6 +55,16 @@ module.exports =
       label: "key"
   },
   {
+    name: "session"
+    text: 'form.label.edit.invitation.session'
+    type: 'choice'
+    required: true
+    config:
+      api: 'invitation.getAllSessions'
+      value: 'value'
+      label: 'key'
+  },
+  {
     name: 'known_from'
     text: 'form.label.edit.invitation.known_from'
     type: 'choice'
