@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-weddingform',
@@ -8,13 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class WeddingformComponent implements OnInit {
 
   constructor(
-    // private fb: FormBuilder,
+    private fb: FormBuilder,
     ) {}
 
-  // weddingForm = this.fb.group({
-  //   vendorNo: '',
-  //   vendorType: ['D', Validators.required],
-  // });
+  weddingForm = this.fb.group({
+    fullname: ['', Validators.required],
+    nickname: ['', Validators.required],
+  });
 
   submitForm(): void {
 

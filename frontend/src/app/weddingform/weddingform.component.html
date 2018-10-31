@@ -1,21 +1,21 @@
 <div class="wedding-form">
-  <form  (ngSubmit)="submitForm()">
+  <form [formGroup]="weddingForm" (ngSubmit)="submitForm()">
 
     <div class="required field-area">
       <label for="">姓名(請填全名)：</label>
-      <input type="text" class="name">
+      <input type="text" class="fullname" formControlName="fullname">
     </div>
 
     <div class="field-area">
       <label>暱稱：</label>
-      <input type="text" class="nickname">
+      <input type="text" class="nickname" formControlName="nickname">
     </div>
 
     <div class="required field-area">
       <label>是否參加婚宴：</label>
       <span class="radio-group">
         <label><input type="radio" name="attendence" id="attend">出席</label>
-        <label><input type="radio" name="attendence" id="notAttend">不克前往</label>
+        <label><input type="radio" name="attendence" id="no">無法出席</label>
         <label><input type="radio" name="attendence" id="gift">會送禮但不克前往</label>
       </span>
     </div>
@@ -23,17 +23,17 @@
     <div class="required field-area">
       <label>出席狀態：</label>
       <span class="radio-group">
-        <label><input type="radio" name="taipei" id="taipei">台北</label>
-        <label><input type="radio" name="chaiyi" id="chaiyi">嘉義</label>
-        <label><input type="radio" name="both" id="both">兩場都到</label>
+        <label><input type="radio" name="q" id="taipei">台北</label>
+        <label><input type="radio" name="q" id="chaiyi">嘉義</label>
+        <label><input type="radio" name="q" id="both">兩場都到</label>
       </span>
     </div>
 
     <div class="required field-area">
       <label>是哪方的親友：</label>
       <span class="radio-group">
-        <label><input type="radio" name="" id="">男方親友</label>
-        <label><input type="radio" name="" id="">女方親友</label>
+        <label><input type="radio" name="frends" id="male">男方親友</label>
+        <label><input type="radio" name="frends" id="female">女方親友</label>
       </span>
     </div>
 
