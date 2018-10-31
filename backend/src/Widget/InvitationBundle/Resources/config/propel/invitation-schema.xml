@@ -18,8 +18,8 @@
         <column name="address" type="varchar" />
         <!-- 喜帖形式: 電子喜帖, 有填就寄 -->
         <column name="email" type="varchar" />
-        <!-- 出席意願 (不出席, 台北場, 嘉義場, 禮到人不到, 不確定)-->
-        <column name="attend" type="enum" valueSet="no, taipei, chiayi, blessing, notsure" required="true" />
+        <!-- 出席意願 (不出席, 台北場, 嘉義場, 都參加, 禮到人不到, 不確定)-->
+        <column name="attend" type="enum" valueSet="no, taipei, chiayi, both, blessing, notsure" required="true" />
         <!-- 男方或女方的親友 -->
         <column name="known_from" type="enum" valueSet="male, female" required="true" />
         <!-- 祝福的話 -->

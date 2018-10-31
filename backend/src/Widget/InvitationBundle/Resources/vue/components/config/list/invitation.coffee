@@ -46,19 +46,8 @@ module.exports =
           true: 'fields.invitation.known_from.male'
           false: 'fields.invitation.known_from.female'
         value:
-          true: "男方"
-          false: "女方"
-    session:
-      label: 'fields.invitation.session'
-      type: 'text'
-      sort: true
-      search: true
-      searchConfig:
-        key: 'session'
-        type: 'select'
-        api: 'invitation.getAllSessions'
-        choiceValue: 'value'
-        choiceLabel: 'key'
+          true: "male"
+          false: "female"
   extra: [
     {
       "name": "new"

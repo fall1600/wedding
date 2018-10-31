@@ -88,8 +88,32 @@ class InvitationController extends BaseBackendAPIController
                         ))
                     )
                 )),
-            new APIFormTypeItem('attend'),
-            new APIFormTypeItem('known_from'),
+            (new APIFormTypeItem('attend'))
+                ->setOptions(array(
+                    "constraints" => array(
+                        new NotBlank(array(
+                            "message" => 'error.invitation.attend.required',
+                        )),
+                        new Callback(function($value, ExecutionContextInterface $context) {
+                            if (!in_array($value, InvitationPeer::getValueSets()[InvitationPeer::ATTEND])) {
+                                $context->addViolation('error.invitation.attend.wrong');
+                            }
+                        })
+                    )
+                )),
+            (new APIFormTypeItem('known_from'))
+                ->setOptions(array(
+                    "constraints" => array(
+                        new NotBlank(array(
+                            "message" => 'error.invitation.known_from.required',
+                        )),
+                        new Callback(function($value, ExecutionContextInterface $context) {
+                            if (!in_array($value, InvitationPeer::getValueSets()[InvitationPeer::KNOWN_FROM])) {
+                                $context->addViolation('error.invitation.known_from.wrong');
+                            }
+                        })
+                    )
+                )),
             new APIFormTypeItem('note'),
         );
     }

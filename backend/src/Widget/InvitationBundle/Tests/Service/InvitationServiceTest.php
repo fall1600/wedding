@@ -6,6 +6,7 @@ use Backend\BaseBundle\Tests\Fixture\BaseKernelTestCase;
 use Symfony\Component\Form\FormErrorIterator;
 use Symfony\Component\Form\FormFactory;
 use Widget\InvitationBundle\Model\Invitation;
+use Widget\InvitationBundle\Model\InvitationPeer;
 use Widget\InvitationBundle\Service\InvitationService;
 
 class InvitationServiceTest extends BaseKernelTestCase
