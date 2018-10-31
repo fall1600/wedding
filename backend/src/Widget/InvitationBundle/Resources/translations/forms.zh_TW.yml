@@ -21,6 +21,7 @@ fields:
       title:                          '男女方親友'
       male:                           '男方'
       female:                         '女方'
+    session:                          '場次'
 
 invitation:
   update:                             '邀請函資訊'
@@ -40,4 +41,5 @@ form:
         email:                        '喜帖寄送email'
         attend:                       '參與意願'
         known_from:                   '男女方親友'
+        session:                      '場次'
         note:                         '祝福的話'

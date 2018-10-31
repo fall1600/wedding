@@ -6,6 +6,7 @@ use Backend\BaseBundle\Tests\Fixture\BaseKernelTestCase;
 use Symfony\Component\Form\FormErrorIterator;
 use Symfony\Component\Form\FormFactory;
 use Widget\InvitationBundle\Model\Invitation;
+use Widget\InvitationBundle\Model\InvitationPeer;
 use Widget\InvitationBundle\Service\InvitationService;
 
 class InvitationServiceTest extends BaseKernelTestCase
@@ -30,7 +31,9 @@ class InvitationServiceTest extends BaseKernelTestCase
         $parameter = array(
             "name" => '魏餅餅',
             "phone" => '0988777888',
-            'email' => 'a@a.com'
+            'email' => 'a@a.com',
+            'attend' => 'taipei',
+            'known_from' => 'male',
         );
 
         //act

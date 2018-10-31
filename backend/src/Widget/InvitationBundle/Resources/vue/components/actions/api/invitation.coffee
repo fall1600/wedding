@@ -16,19 +16,27 @@ module.exports = (api) ->
         result = [
           {
             key: "不出席"
-            value: "不出席"
+            value: "no"
           }
           {
-            key: "出席"
-            value: "出席"
+            key: "出席台北場"
+            value: "taipei"
+          }
+          {
+            key: "出席嘉義場"
+            value: "chiayi"
+          }
+          {
+            key: "出席兩場"
+            value: "both"
           }
           {
             key: "禮到人未到"
-            value: "禮到人未到"
+            value: "blessing"
           }
           {
             key: "尚未確定"
-            value: "尚未確定"
+            value: "notsure"
           }
         ]
         resolve result
@@ -37,11 +45,11 @@ module.exports = (api) ->
         result = [
           {
             key: "男方"
-            value: "男方"
+            value: "male"
           }
           {
             key: "女方"
-            value: "女方"
+            value: "female"
           }
         ]
         resolve result

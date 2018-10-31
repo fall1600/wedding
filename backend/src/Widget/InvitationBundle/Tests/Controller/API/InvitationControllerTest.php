@@ -12,7 +12,9 @@ class InvitationControllerTest extends BaseWebTestCase
         //arrange
         $parameter = array(
             "name" => "魏餅餅",
-            "phone" => "0988555666"
+            "phone" => "0988555666",
+            "attend" => "taipei",
+            "known_from" => "male"
         );
 
         //act

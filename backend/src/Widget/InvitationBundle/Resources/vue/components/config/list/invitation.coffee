@@ -46,8 +46,8 @@ module.exports =
           true: 'fields.invitation.known_from.male'
           false: 'fields.invitation.known_from.female'
         value:
-          true: "男方"
-          false: "女方"
+          true: "male"
+          false: "female"
   extra: [
     {
       "name": "new"
