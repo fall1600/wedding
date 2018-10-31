@@ -30,7 +30,9 @@ class InvitationServiceTest extends BaseKernelTestCase
         $parameter = array(
             "name" => '魏餅餅',
             "phone" => '0988777888',
-            'email' => 'a@a.com'
+            'email' => 'a@a.com',
+            'attend' => 'taipei',
+            'known_from' => 'male',
         );
 
         //act

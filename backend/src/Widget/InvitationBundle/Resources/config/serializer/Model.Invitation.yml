@@ -61,8 +61,3 @@ Widget\InvitationBundle\Model\Invitation:
             groups:
                 -                   detail
             serialized_name:        updated_at
-        getSession:
-            groups:
-                -                   list
-                -                   detail
-            serialized_name:        session

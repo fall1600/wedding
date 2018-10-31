@@ -15,8 +15,7 @@ Widget\InvitationBundle\Model\Invitation:
 
         known_from: <?=$faker('numberBetween', 0, 1)?>
 
-        attend: <?=$faker('numberBetween', 0, 2)?>
+        attend: <?=$faker('numberBetween', 0, 4)?>
 
-        session: <?=$faker('numberBetween', 0, 2)?>
 
 <?php endfor?>

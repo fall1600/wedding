@@ -18,14 +18,12 @@
         <column name="address" type="varchar" />
         <!-- 喜帖形式: 電子喜帖, 有填就寄 -->
         <column name="email" type="varchar" />
-        <!-- 出席意願 -->
-        <column name="attend" type="enum" valueSet="不出席, 出席, 禮到人未到, 尚未確定" required="true"/>
+        <!-- 出席意願 (不出席, 台北場, 嘉義場, 禮到人不到, 不確定)-->
+        <column name="attend" type="enum" valueSet="no, taipei, chiayi, blessing, notsure" required="true" />
         <!-- 男方或女方的親友 -->
-        <column name="known_from" type="enum" valueSet="男方, 女方" required="true" />
+        <column name="known_from" type="enum" valueSet="male, female" required="true" />
         <!-- 祝福的話 -->
         <column name="note" type="longvarchar" />
-        <!-- 參與場次 -->
-        <column name="session" type="enum" valueSet="台北, 嘉義, 都參加" default="台北" />
 
         <behavior name="addrandompk" />
         <behavior name="timestampable" />
