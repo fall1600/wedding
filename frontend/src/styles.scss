@@ -1,0 +1,310 @@
+/* You can add global styles to this file, and also import other style files */
+$primary-color: palegreen;
+$primary-color--active: rgb(97, 212, 97);
+$primary-color--hover:rgb(97, 197, 97); 
+$text-background: white;
+$grey-28: #ddd;
+
+label {
+  color: rgb(128, 128, 128);
+  font-size: 14px;
+  padding: 0.2rem;
+  font-weight: 600;
+}
+
+/* required star*/
+.required >label::before {
+  content: '*';
+}
+
+
+/* select*/
+select {
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 1px 20px -4px rgb(170, 170, 170);
+  width: 160px;
+  height: 40px;
+  padding: 0px 40px 0px 14px;
+  margin: 0.1rem;
+  background-color: $text-background;
+  &:focus {
+    box-shadow: 0px 0px 0px 1px $primary-color;
+  }
+  &:disabled {
+    background-color: rgba(238, 241, 245, 0.5);
+    cursor: not-allowed;
+  }
+}
+/* Loading dropdown animation */
+.loading-dropdown .select-wrapper .content{
+  position: relative;
+  &::after{
+    content: '';
+    position: absolute;
+    right: 45px;
+    top: 0;
+    width: 44px;
+    background-size: 44px 44px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(/assets/img/spinner.gif);
+    height: 44px;
+    z-index: 2;
+  }
+}
+
+option {
+  font-size: 14px;
+  line-height: 36px;
+  &:hover {
+    background-color: red;
+  }
+}
+
+/* Dropdown*/
+
+.dropdown__wrapper {
+  &:hover {
+    background-color: $primary-color--active;
+    .dropdown {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(70px);
+      li {
+        display: block;
+      }
+    }
+  }
+}
+
+.side-dropdown__wrapper{
+  &:hover{
+    .side-dropdown{
+      visibility: visible;
+      opacity: 1;
+      transform: translateX(20px);
+      li {
+        display: block;
+      }
+    }
+  }
+}
+
+.dropdown__wrapper.active {
+  background-color: $primary-color--active;
+}
+
+.dropdown {
+  line-height: initial;
+  width: 120px;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  color: #427f71;
+  transform: translateY(0);
+  transition: all 0.28s ease-in-out;
+  >li {
+    display: none;
+    color: $grey-28;
+    background-color: #fff;
+    padding: 12px 16px;
+    z-index: 101;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary-color--active;
+      color: #fff;
+    }
+  }
+}
+
+/* dropdown from side
+ * Use .side-dropdown__wrapper  and .side-dropdown
+ */
+.side-dropdown {
+  position: absolute;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  color: #427f71;
+  transform: translateX(0);
+  transition: all 0.13s ease-in-out;
+  >li {
+    display: none;
+    color: $grey-28;
+    background-color: #fff;
+    padding: 12px 16px;
+    z-index: 101;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary-color--active;
+      color: #fff;
+    }
+  }
+}
+
+/* input*/
+
+input:not([type=radio]):not([type=checkbox]) {
+  border: none;
+  box-shadow: 0px 1px 20px -4px rgb(170, 170, 170);
+  height: 40px;
+  padding: 0px 14px;
+  margin: 0.1rem;
+  font-size: 16px;
+  background-color: $text-background;
+  &:focus {
+    box-shadow: 0px 0px 0px 1px $primary-color;
+  }
+  &:disabled {
+    background-color: rgba(238, 241, 245, 0.5);
+    cursor: not-allowed;
+  }
+}
+
+input[type=search] {
+  padding: 0px 14px;
+  height: 40px;
+  font-size: x-large;
+  border: 2px solid #CCC;
+  border-radius: 20px;
+  &:focus {
+    border-color: $primary-color;
+    border-radius: 20px;
+  }
+}
+
+/* input check box*/
+
+/* The container */
+
+.container__checkbox {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Helvetica;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/* Radio button */
+
+.container__radio {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: Helvetica;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+
+.container__radio input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+
+.checkmark__radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  border: solid 1px black;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+
+.container__radio:hover input[type=radio]~.checkmark__radio {}
+
+/* When the radio button is checked, add a blue background */
+
+.container__radio input[type=radio]:checked~.checkmark__radio {}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.checkmark__radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+
+.container__radio input[type=radio]:checked~.checkmark__radio:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+
+.container__radio .checkmark__radio:after {
+  top: 4px;
+  left: 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: black;
+}
+
+/* Radio button end*/
+
+.field-area {
+    display: flex;
+    height: 55px;
+    font-size: 16px;
+    width: 600px;
+    justify-content: space-between;
+    align-content: center;
+    .__label {
+      flex: 1;
+      position: inherit;
+      height: min-content;
+      font-size: 16px; // align-self: center;
+    }
+  }
+
+  .wedding-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-btn {
+    cursor: pointer;
+    color: white;
+    width: 160px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    border: none;
+    background: $primary-color;
+    box-shadow: 2px 3px 1px rgb(230, 230, 230);
+    &:hover {
+        background: $primary-color--hover;
+    }
+    &:active {
+        box-shadow: 2px 0px 5px rgb(66, 65, 65) inset;
+        background: $primary-color--active;
+    }
+  }

@@ -1,0 +1,97 @@
+<div class="wedding-form">
+  <form  (ngSubmit)="submitForm()">
+
+    <div class="required field-area">
+      <label for="">姓名(請填全名)：</label>
+      <input type="text" class="name">
+    </div>
+
+    <div class="field-area">
+      <label>暱稱：</label>
+      <input type="text" class="nickname">
+    </div>
+
+    <div class="required field-area">
+      <label>是否參加婚宴：</label>
+      <span class="radio-group">
+        <label><input type="radio" name="attendence" id="attend">出席</label>
+        <label><input type="radio" name="attendence" id="notAttend">不克前往</label>
+        <label><input type="radio" name="attendence" id="gift">會送禮但不克前往</label>
+      </span>
+    </div>
+
+    <div class="required field-area">
+      <label>出席狀態：</label>
+      <span class="radio-group">
+        <label><input type="radio" name="taipei" id="taipei">台北</label>
+        <label><input type="radio" name="chaiyi" id="chaiyi">嘉義</label>
+        <label><input type="radio" name="both" id="both">兩場都到</label>
+      </span>
+    </div>
+
+    <div class="required field-area">
+      <label>是哪方的親友：</label>
+      <span class="radio-group">
+        <label><input type="radio" name="" id="">男方親友</label>
+        <label><input type="radio" name="" id="">女方親友</label>
+      </span>
+    </div>
+
+    <div class="field-area">
+      <label for="numPeople">出席人數： </label>
+      <select name="numPeople" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+    </div>
+
+    <div class="field-area">
+      <label for="numVegetarian">其中有幾位吃素：</label>
+      <select name="numVegetarian" id="">
+        <option value="0">無</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
+    <div class="field-area">
+      <label for="numBabyseat">兒童座椅數量：</label>
+      <select name="numBabyseat" id="">
+        <option value="0">無</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+
+    <div class="required field-area">
+      <label for="phone">聯絡手機/電話：</label>
+      <input type="text" class="phone">
+    </div>
+
+    <div class="field-area">
+      <label for="address">喜帖地址：</label>
+      <input type="text" class="address">
+    </div>
+
+    <div class="field-area">
+      <label for="">電子喜帖email：</label>
+      <input type="text" class="email">
+    </div>
+
+    <div class="field-area">
+      <label for="">給我們的話：</label>
+      <input type="text" class="note">
+    </div>
+
+  </form>
+
+  <button class="main-btn">送出</button>
+</div>
