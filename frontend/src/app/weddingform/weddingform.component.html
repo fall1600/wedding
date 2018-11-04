@@ -1,6 +1,6 @@
 <div class="wedding-form">
   <form [formGroup]="weddingForm" (ngSubmit)="submitForm()">
-
+    <!-- {{weddingForm.value | json }} -->
     <div class="required field-area">
       <label for="">姓名(請填全名)：</label>
       <input type="text" class="fullname" formControlName="fullname">
@@ -12,34 +12,42 @@
     </div>
 
     <div class="required field-area">
+      <label for="phone">聯絡手機/電話：</label>
+      <input type="text" class="phone" formControlName="phone">
+    </div>
+
+    <!-- <div class="required field-area">
       <label>是否參加婚宴：</label>
       <span class="radio-group">
-        <label><input type="radio" name="attendence" id="attend">出席</label>
-        <label><input type="radio" name="attendence" id="no">無法出席</label>
-        <label><input type="radio" name="attendence" id="gift">會送禮但不克前往</label>
+        <label><input type="radio" name="attendence" formControlName="attendence" value="attend">出席</label>
+        <label><input type="radio" name="attendence" formControlName="attendence" value="no">無法出席</label>
+        <label><input type="radio" name="attendence" formControlName="attendence" value="gift">會送禮但不克前往</label>
+      </span>
+    </div> -->
+
+    <div class="required field-area">
+      <label>是哪方的親友：</label>
+      <span class="radio-group">
+        <label><input type="radio" name="frends" formControlName="frends" value="male">男方親友</label>
+        <label><input type="radio" name="frends" formControlName="frends" value="female">女方親友</label>
       </span>
     </div>
 
     <div class="required field-area">
       <label>出席狀態：</label>
       <span class="radio-group">
-        <label><input type="radio" name="q" id="taipei">台北</label>
-        <label><input type="radio" name="q" id="chaiyi">嘉義</label>
-        <label><input type="radio" name="q" id="both">兩場都到</label>
-      </span>
-    </div>
-
-    <div class="required field-area">
-      <label>是哪方的親友：</label>
-      <span class="radio-group">
-        <label><input type="radio" name="frends" id="male">男方親友</label>
-        <label><input type="radio" name="frends" id="female">女方親友</label>
+        <label><input type="radio" name="attendence" formControlName="attendence" value="taipei">台北場(3/24)</label>
+        <!-- TODO: 補上嘉義場日期 by Zoe -->
+        <label><input type="radio" name="attendence" formControlName="attendence" value="chaiyi">嘉義(未定)</label>
+        <label><input type="radio" name="attendence" formControlName="attendence" value="both">兩場都到</label>
+        <label><input type="radio" name="attendence" formControlName="attendence" value="no">無法出席</label>
+        <label><input type="radio" name="attendence" formControlName="attendence" value="gift">會送禮但不克前往</label>
       </span>
     </div>
 
     <div class="field-area">
       <label for="numPeople">出席人數： </label>
-      <select name="numPeople" id="">
+      <select name="numPeople" formControlName="numPeople">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -51,7 +59,7 @@
 
     <div class="field-area">
       <label for="numVegetarian">其中有幾位吃素：</label>
-      <select name="numVegetarian" id="">
+      <select name="numVegetarian"  formControlName="numVegetarian">
         <option value="0">無</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -63,7 +71,7 @@
 
     <div class="field-area">
       <label for="numBabyseat">兒童座椅數量：</label>
-      <select name="numBabyseat" id="">
+      <select name="numBabyseat"  formControlName="numBabyseat">
         <option value="0">無</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -72,23 +80,27 @@
     </div>
 
     <div class="required field-area">
-      <label for="phone">聯絡手機/電話：</label>
-      <input type="text" class="phone">
+      <label>喜帖方式：</label>
+      <span class="radio-group">
+        <label><input type="radio" name="invitation" value="email" (click)="setInvitation('email')" checked>電子喜帖</label>
+        <label><input type="radio" name="invitation" value="address" (click)="setInvitation('address')">紙本喜帖</label>
+        <label><input type="radio" name="invitation" value="sendBoth" (click)="setInvitation('sendBoth')">兩種都要</label>
+      </span>
     </div>
 
-    <div class="field-area">
+    <div class="field-area" *ngIf="isShow('address')">
       <label for="address">喜帖地址：</label>
-      <input type="text" class="address">
+      <input type="text" class="address" formControlName="address">
     </div>
 
-    <div class="field-area">
+    <div class="field-area" *ngIf="isShow('email')">
       <label for="">電子喜帖email：</label>
-      <input type="text" class="email">
+      <input type="text" class="email" formControlName="email">
     </div>
 
     <div class="field-area">
-      <label for="">給我們的話：</label>
-      <input type="text" class="note">
+      <label for="">想跟毓柔和璟鴻說：</label>
+      <input type="text" class="note" formControlName="note">
     </div>
 
   </form>
