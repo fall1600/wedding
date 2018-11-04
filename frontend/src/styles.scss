@@ -10,6 +10,7 @@ label {
   font-size: 14px;
   padding: 0.2rem;
   font-weight: 50%;
+  width: 250px;
 }
 
 /* required star*/
@@ -23,10 +24,10 @@ select {
   cursor: pointer;
   border: none;
   box-shadow: 0px 1px 20px -4px rgb(170, 170, 170);
-  width: 160px;
-  height: 40px;
-  padding: 0px 40px 0px 14px;
-  margin: 0.1rem;
+  width: 170px;
+  height: 35px;
+  padding: 0px 0px 0px 14px;
+  margin: 0px 20px 0px 0px;
   background-color: $text-background;
   &:focus {
     box-shadow: 0px 0px 0px 1px $primary-color;
@@ -149,11 +150,12 @@ option {
 /* input*/
 
 input:not([type=radio]):not([type=checkbox]) {
+  width: 160px;
   border: none;
   box-shadow: 0px 1px 20px -4px rgb(170, 170, 170);
-  height: 40px;
-  padding: 0px 14px;
-  margin: 0.1rem;
+  height: 35px;
+  padding: 0px 0px 0px 14px;
+  margin: 0px 20px 0px 0px;
   font-size: 16px;
   background-color: $text-background;
   &:focus {
@@ -269,17 +271,11 @@ input[type=search] {
 
 .field-area {
     display: flex;
-    height: 55px;
+    height: 50px;
     font-size: 16px;
     width: 600px;
     justify-content: space-between;
     align-content: center;
-    .__label {
-      flex: 1;
-      position: inherit;
-      height: min-content;
-      font-size: 16px; // align-self: center;
-    }
   }
 
   .wedding-form{
@@ -308,3 +304,19 @@ input[type=search] {
         background: $primary-color--active;
     }
   }
+
+  @media screen and (max-width:767px){
+    .field-area {
+      display: flex;
+      font-size: 16px;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    label {
+      width: 135px;
+    }
+    select, input:not([type=radio]):not([type=checkbox]) {
+      width: 140px;
+    }
+ }
