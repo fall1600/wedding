@@ -14,7 +14,8 @@ class InvitationControllerTest extends BaseWebTestCase
             "name" => "魏餅餅",
             "phone" => "0988555666",
             "attend" => "taipei",
-            "known_from" => "male"
+            "known_from" => "male",
+            "number_of_people" => 1
         );
 
         //act
@@ -48,5 +49,25 @@ class InvitationControllerTest extends BaseWebTestCase
 
         //teardown
         InvitationQuery::create()->findOneById($result['id'])->delete();
+    }
+
+    public function test_createAction_來亂的那種()
+    {
+        //arrange
+        $parameter = array();
+
+        //act
+        $this->client->request(
+            'POST',
+            $this->generateUrl('widget_invitation_api_invitation_create'),
+            array(),
+            array(),
+            array(),
+            json_encode($parameter)
+        );
+        $response = $this->client->getResponse();
+        $result = json_decode($response->getContent(), true);
+
+        //assert
     }
 }

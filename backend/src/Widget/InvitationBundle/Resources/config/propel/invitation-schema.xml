@@ -9,7 +9,7 @@
         <!-- 聯絡電話 -->
         <column name="phone" type="varchar" required="true" />
         <!-- 人數(含自己) -->
-        <column name="number_of_people" type="integer" required="true" default="1" />
+        <column name="number_of_people" type="integer" required="true" defaultValue="1" />
         <!-- 素食數量 -->
         <column name="number_of_vegetarian" type="integer" default="0" />
         <!-- 兒童座椅數量 -->

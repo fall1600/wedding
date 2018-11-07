@@ -6,6 +6,10 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\Callback;
+use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Widget\InvitationBundle\Model\Invitation;
 
 class InvitationType extends AbstractType
 {
@@ -47,8 +51,23 @@ class InvitationType extends AbstractType
             ))
             ->add('attend')
             ->add('known_from')
-            ->add('is_vegetarian')
-            ->add('baby_seat', IntegerType::class, array(
+            ->add('number_of_vegetarian', IntegerType::class, array(
+                'required' => false,
+                'constraints' => array(
+                    new GreaterThanOrEqual(array(
+                        "value" => 0,
+                        "message" => 'error.invitation.number_of_vegetarian.wrong',
+                    )),
+                    new Callback(function($value, ExecutionContextInterface $context) {
+                        /** @var Invitation $object */
+                        $object = $context->getRoot()->getData();
+                        if ($value > $object->getNumberOfPeople()) {
+                            $context->addViolation('error.invitation.number_of_vegetarian.greater_than.number_of_people');
+                        }
+                    }),
+                )
+            ))
+            ->add('number_of_baby_seat', IntegerType::class, array(
                 'required' => false,
                 'constraints' => array(
                     new Assert\GreaterThanOrEqual(array(

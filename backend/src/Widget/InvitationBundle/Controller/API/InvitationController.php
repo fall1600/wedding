@@ -13,8 +13,7 @@ use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Widget\InvitationBundle\Model\Invitation;
-use Widget\InvitationBundle\Model\InvitationPeer;
-use Widget\InvitationBundle\Model\InvitationQuery;
+use Widget\InvitationBundle\Type\InvitationType;
 
 /**
  * @Route("/invitation")
@@ -27,8 +26,13 @@ class InvitationController extends BaseBackendAPIController
      */
     public function create(Request $request)
     {
-        $invitation = new Invitation();
-        $form = $this->bindObject($invitation, $request->getContent());
+        $params = json_decode($request->getContent(), true);
+        $form = $this->createForm(
+            InvitationType::class,
+            $invitation = new Invitation(),
+            array('csrf_protection' => false)
+        );
+        $form->submit($params);
         if (!$form->isValid()) {
             return $this->createJsonSerializeResponse($form->getErrors(true));
         }
