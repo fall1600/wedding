@@ -10,6 +10,8 @@ use Symfony\Component\Validator\Constraints\Callback;
 use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Widget\InvitationBundle\Model\Invitation;
+use Widget\InvitationBundle\Model\InvitationPeer;
+use Widget\InvitationBundle\Model\om\BaseInvitationPeer;
 
 class InvitationType extends AbstractType
 {
@@ -32,8 +34,10 @@ class InvitationType extends AbstractType
                 )
             ))
             ->add('number_of_people', IntegerType::class, array(
-                'required' => false,
                 'constraints' => array(
+                    new Assert\NotBlank(array(
+                        'message' => 'error.invitation.number_of_people.required',
+                    )),
                     new Assert\GreaterThanOrEqual(array(
                         'value' => 1,
                         'message' => 'error.invitation.number_of_people.wrong'
@@ -49,7 +53,19 @@ class InvitationType extends AbstractType
                     ))
                 )
             ))
-            ->add('attend')
+            ->add('attend', null, array(
+                'constraints' => array(
+                    new Assert\NotBlank(array(
+                        'message' => 'error.invitation.attend.required',
+                    )),
+                    new Callback(function($value, ExecutionContextInterface $context) {
+                        $expects = InvitationPeer::getValueSet(InvitationPeer::ATTEND);
+                        if (!in_array($value, $expects)) {
+                            $context->addViolation('error.invitation.attend.wrong');
+                        }
+                    })
+                )
+            ))
             ->add('known_from')
             ->add('number_of_vegetarian', IntegerType::class, array(
                 'required' => false,

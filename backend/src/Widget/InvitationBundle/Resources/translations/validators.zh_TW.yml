@@ -7,6 +7,7 @@ error:
         number_of_baby_seat:
             wrong:                             '兒童座椅數量錯誤'
         number_of_people:
+            required:                          '出席人數必填'
             wrong:                             '出席人數錯誤'
         number_of_vegetarian:
             wrong:                             '素食人數錯誤'
@@ -14,3 +15,6 @@ error:
                 number_of_people:              '素食人數不應比出席人數多'
         email:
             wrong:                             'email 格式錯誤'
+        attend:
+            required:                          '出席意願必填'
+            wrong:                             '出席意願不要給我亂亂填 (╯°▽°)╯ ┻━┻ '

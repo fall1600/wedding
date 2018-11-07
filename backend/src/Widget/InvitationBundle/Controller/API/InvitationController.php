@@ -6,6 +6,7 @@ use Backend\BaseBundle\Controller\BackendAPI\BaseBackendAPIController;
 use Backend\BaseBundle\Form\Type\APIFormTypeItem;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\Callback;
 use Symfony\Component\Validator\Constraints\Email;
@@ -34,7 +35,11 @@ class InvitationController extends BaseBackendAPIController
         );
         $form->submit($params);
         if (!$form->isValid()) {
-            return $this->createJsonSerializeResponse($form->getErrors(true));
+            return $this->createJsonSerializeResponse(
+                $form->getErrors(true),
+                array(),
+                Response::HTTP_BAD_REQUEST
+            );
         }
         $invitation->save();
         return $this->createJsonSerializeResponse($invitation, array("detail"));

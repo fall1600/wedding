@@ -3,6 +3,7 @@
 namespace Widget\InvitationBundle\Tests\Controller\API;
 
 use Backend\BaseBundle\Tests\Fixture\BaseWebTestCase;
+use Symfony\Component\HttpFoundation\Response;
 use Widget\InvitationBundle\Model\InvitationQuery;
 
 class InvitationControllerTest extends BaseWebTestCase
@@ -55,6 +56,12 @@ class InvitationControllerTest extends BaseWebTestCase
     {
         //arrange
         $parameter = array();
+        $expects = array(
+            'name' => array("姓名必填"),
+            'phone' => array("聯絡電話必填"),
+            'number_of_people' => array("出席人數必填"),
+            'attend' => array("出席意願必填", "出席意願不要給我亂亂填 (╯°▽°)╯ ┻━┻ "),
+        );
 
         //act
         $this->client->request(
@@ -69,5 +76,7 @@ class InvitationControllerTest extends BaseWebTestCase
         $result = json_decode($response->getContent(), true);
 
         //assert
+        $this->assertEquals(Response::HTTP_BAD_REQUEST, $response->getStatusCode());
+        $this->assertEquals($expects, $result);
     }
 }
