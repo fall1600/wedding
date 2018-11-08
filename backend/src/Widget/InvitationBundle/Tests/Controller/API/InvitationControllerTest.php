@@ -59,7 +59,6 @@ class InvitationControllerTest extends BaseWebTestCase
         $expects = array(
             'name' => array("姓名必填"),
             'phone' => array("聯絡電話必填"),
-            'number_of_people' => array("出席人數必填"),
             'attend' => array("出席意願必填", "出席意願不要給我亂亂填 (╯°▽°)╯ ┻━┻ "),
         );
 

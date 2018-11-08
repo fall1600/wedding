@@ -35,9 +35,6 @@ class InvitationType extends AbstractType
             ))
             ->add('number_of_people', IntegerType::class, array(
                 'constraints' => array(
-                    new Assert\NotBlank(array(
-                        'message' => 'error.invitation.number_of_people.required',
-                    )),
                     new Assert\GreaterThanOrEqual(array(
                         'value' => 1,
                         'message' => 'error.invitation.number_of_people.wrong'
