@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { WeddingformComponent } from './weddingform/weddingform.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { WeddingphotoComponent } from './weddingphoto/weddingphoto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeddingformComponent
+    WeddingformComponent,
+    WeddingphotoComponent
   ],
   imports: [
     BrowserModule,
