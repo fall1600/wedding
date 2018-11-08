@@ -14,10 +14,10 @@ export class WeddingService {
 
 
   getNameBonus(name) {
-  const messageData = this.nameBunus.filter( v => {
+    const messageData = this.nameBunus.filter( v => {
       return v.name === name;
     });
-    console.log( messageData);
-    return messageData;
+
+    return messageData.length === 1 ? messageData[0].message : '';
   }
 }
