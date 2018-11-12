@@ -1,5 +1,7 @@
+import { environment } from './../environments/environment.prod';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 
 @Injectable()
 export class WeddingService {
@@ -22,8 +24,8 @@ export class WeddingService {
   }
 
   postWeddingForm(body) {
-    const url = 'http://localhost:8000/api/invitations';
-    console.warn(body);
+    const url = environment.apiurl + '/api/invitations';
+    // console.warn(body);
     return this.httpClient.post(url, body);
   }
 }

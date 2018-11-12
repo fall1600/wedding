@@ -1,7 +1,7 @@
 import { WeddingService } from './../wedding.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { SweetalertService } from '../sweetalert.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-weddingform',
@@ -13,19 +13,18 @@ export class WeddingformComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private weddingService: WeddingService,
-    private sweetalertService: SweetalertService
   ) { }
 
 
-  _hasMessage = true;
+  _hasMessage = false;
   _nameBonusMessage;
   _invitation = 'email';
 
   weddingForm = this.fb.group({
     name: ['', Validators.required],
     nickname: 0,
-    attend: ['', Validators.required],
-    known_from: ['', Validators.required],
+    attend: ['taipei', Validators.required],
+    known_from: ['male', Validators.required],
     number_of_people: ['1', Validators.required],
     number_of_vegetarian: ['0', Validators.required],
     number_of_baby_seat: ['0', Validators.required],
@@ -36,12 +35,29 @@ export class WeddingformComponent implements OnInit {
   });
 
 
-
-
   submitForm(): void {
-    this.weddingService.postWeddingForm(this.weddingForm.value).subscribe(res => {
-      console.log(res);
+    Object.keys(this.weddingForm.controls).forEach(key => {
+      this.weddingForm.get(key).markAsTouched();
     });
+
+    if (this.weddingForm.valid) {
+      this.weddingService.postWeddingForm(this.weddingForm.value).subscribe(res => {
+        console.log(res);
+        swal({
+          title: '送出成功!',
+          text: `我們收到${this.weddingForm.get('name').value} 你的祝福囉!謝謝你!`,
+          type: 'success',
+          confirmButtonText: 'OK'
+        });
+      });
+    } else {
+      swal({
+        title: '資料未填',
+        text: `請填寫必填欄位`,
+        type: 'error',
+        confirmButtonText: 'OK'
+      });
+    }
   }
 
   ngOnInit() {
@@ -83,6 +99,5 @@ export class WeddingformComponent implements OnInit {
     const fc = this.weddingForm.get(v);
     return (fc.invalid) && (fc.dirty || fc.touched);
   }
-
 
 }
