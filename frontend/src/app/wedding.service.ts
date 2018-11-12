@@ -8,7 +8,7 @@ export class WeddingService {
 
   nameBunus = [
     // {"name":"","message":""},
-    {"name":"Chia","message":"Hi Chia"},
+    {"name":"Chia","message":"Hi Chia Hi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi Chia"},
     {"name":"Zoe","message":"HI Zoe"},
   ];
 

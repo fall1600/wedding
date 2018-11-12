@@ -1,6 +1,7 @@
 import { WeddingService } from './../wedding.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { SweetalertService } from '../sweetalert.service';
 
 @Component({
   selector: 'app-weddingform',
@@ -12,22 +13,23 @@ export class WeddingformComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private weddingService: WeddingService,
+    private sweetalertService: SweetalertService
   ) { }
 
 
-  _hasMessage = false;
+  _hasMessage = true;
   _nameBonusMessage;
   _invitation = 'email';
 
   weddingForm = this.fb.group({
-    fullname: ['', Validators.required],
+    fullname: ['Zoe', Validators.required],
     nickname: 0,
-    attendence: ['', Validators.required],
-    frends: ['', Validators.required],
+    attendence: ['taipei', Validators.required],
+    frends: ['male', Validators.required],
     numPeople: ['1', Validators.required],
     numVegetarian: ['0', Validators.required],
     numBabyseat: ['0', Validators.required],
-    phone: '',
+    phone: ['', Validators.required],
     address: '',
     email: '',
     note: ''
@@ -37,7 +39,13 @@ export class WeddingformComponent implements OnInit {
 
 
   submitForm(): void {
-
+    this.sweetalertService.confirm('Are you sure to insert this record?').subscribe(result => {
+      if (result) {
+        // codes..
+      } else {
+        // codes..
+      }
+    });
   }
 
   ngOnInit() {
@@ -74,5 +82,11 @@ export class WeddingformComponent implements OnInit {
       this._nameBonusMessage = '';
     }
   }
+
+  checkValid(v) {
+    const fc = this.weddingForm.get(v);
+    return (fc.invalid) && (fc.dirty || fc.touched);
+  }
+
 
 }

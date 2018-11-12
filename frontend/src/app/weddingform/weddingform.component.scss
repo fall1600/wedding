@@ -1,1 +1,14 @@
 @import "src/styles.scss";
+
+.letter {
+  position: relative;
+    background: white url(../../assets/letter.png) right no-repeat;
+    background-size: contain;
+    min-height: 65px;
+    padding: 15px 10px 20px 15px;
+    margin: 0px 35px 15px 15px;
+}
+
+.required input.invalid-input {
+  border: 1px solid red;
+}

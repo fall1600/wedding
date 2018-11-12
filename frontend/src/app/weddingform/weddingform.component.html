@@ -3,14 +3,14 @@
     <!-- {{weddingForm.value | json }} -->
     <div class="required field-area">
       <label for="">姓名(請填全名)：</label>
-      <input type="text" class="fullname" formControlName="fullname" (blur)="showNameBonus() ">
+      <input type="text" class="fullname" formControlName="fullname" (blur)="showNameBonus() " [ngClass]="checkValid('fullname')? 'invalid-input' : ''">
     </div>
 
-    <div *ngIf="_hasMessage">{{_nameBonusMessage}}</div>
+    <div class="letter" *ngIf="_hasMessage">{{_nameBonusMessage}}</div>
 
        <div class="required field-area">
       <label for="phone">聯絡手機/電話：</label>
-      <input type="text" class="phone" formControlName="phone">
+      <input type="text" class="phone" formControlName="phone" [ngClass]="checkValid('phone')? 'invalid-input' : ''">
     </div>
 
     <!-- <div class="required field-area">
