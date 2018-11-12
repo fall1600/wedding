@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class WeddingService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   nameBunus = [
     // {"name":"","message":""},
@@ -19,5 +19,11 @@ export class WeddingService {
     });
 
     return messageData.length === 1 ? messageData[0].message : '';
+  }
+
+  postWeddingForm(body) {
+    const url = 'http://localhost:8000/api/invitations';
+    console.warn(body);
+    return this.httpClient.post(url, body);
   }
 }

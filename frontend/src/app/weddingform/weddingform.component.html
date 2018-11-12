@@ -3,7 +3,7 @@
     <!-- {{weddingForm.value | json }} -->
     <div class="required field-area">
       <label for="">姓名(請填全名)：</label>
-      <input type="text" class="fullname" formControlName="fullname" (blur)="showNameBonus() " [ngClass]="checkValid('fullname')? 'invalid-input' : ''">
+      <input type="text" class="fullname" formControlName="name" (blur)="showNameBonus()"  [ngClass]="checkValid('fullname')? 'invalid-input' : ''">
     </div>
 
     <div class="letter" *ngIf="_hasMessage">{{_nameBonusMessage}}</div>
@@ -25,26 +25,26 @@
     <div class="required field-area">
       <label>是哪方的親友：</label>
       <span class="radio-group">
-        <label><input type="radio" name="frends" formControlName="frends" value="male">男方親友</label>
-        <label><input type="radio" name="frends" formControlName="frends" value="female">女方親友</label>
+        <label><input type="radio" name="frends" formControlName="known_from" value="male">男方親友</label>
+        <label><input type="radio" name="frends" formControlName="known_from" value="female">女方親友</label>
       </span>
     </div>
 
     <div class="required field-area">
       <label>出席狀態：</label>
       <span class="radio-group">
-        <label><input type="radio" name="attendence" formControlName="attendence" value="taipei">台北場(3/24)</label>
+        <label><input type="radio" name="attendence" formControlName="attend" value="taipei">台北場(3/24)</label>
         <!-- TODO: 補上嘉義場日期 by Zoe -->
-        <label><input type="radio" name="attendence" formControlName="attendence" value="chaiyi">嘉義(未定)</label>
-        <label><input type="radio" name="attendence" formControlName="attendence" value="both">兩場都到</label>
-        <label><input type="radio" name="attendence" formControlName="attendence" value="no">無法出席</label>
-        <label><input type="radio" name="attendence" formControlName="attendence" value="gift">會送禮但不克前往</label>
+        <label><input type="radio" name="attendence" formControlName="attend" value="chaiyi">嘉義(未定)</label>
+        <label><input type="radio" name="attendence" formControlName="attend" value="both">兩場都到</label>
+        <label><input type="radio" name="attendence" formControlName="attend" value="no">無法出席</label>
+        <label><input type="radio" name="attendence" formControlName="attend" value="gift">會送禮但不克前往</label>
       </span>
     </div>
 
     <div class="field-area">
       <label for="numPeople">出席人數： </label>
-      <select name="numPeople" formControlName="numPeople">
+      <select name="numPeople" formControlName="number_of_people">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -56,7 +56,7 @@
 
     <div class="field-area">
       <label for="numVegetarian">其中有幾位吃素：</label>
-      <select name="numVegetarian"  formControlName="numVegetarian">
+      <select name="numVegetarian"  formControlName="number_of_vegetarian">
         <option value="0">無</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -68,7 +68,7 @@
 
     <div class="field-area">
       <label for="numBabyseat">兒童座椅數量：</label>
-      <select name="numBabyseat"  formControlName="numBabyseat">
+      <select name="numBabyseat"  formControlName="number_of_baby_seat">
         <option value="0">無</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -102,5 +102,5 @@
 
   </form>
 
-  <button class="main-btn">送出</button>
+  <button class="main-btn" (click)="submitForm()">送出</button>
 </div>

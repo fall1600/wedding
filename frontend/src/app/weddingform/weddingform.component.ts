@@ -22,13 +22,13 @@ export class WeddingformComponent implements OnInit {
   _invitation = 'email';
 
   weddingForm = this.fb.group({
-    fullname: ['Zoe', Validators.required],
+    name: ['', Validators.required],
     nickname: 0,
-    attendence: ['taipei', Validators.required],
-    frends: ['male', Validators.required],
-    numPeople: ['1', Validators.required],
-    numVegetarian: ['0', Validators.required],
-    numBabyseat: ['0', Validators.required],
+    attend: ['', Validators.required],
+    known_from: ['', Validators.required],
+    number_of_people: ['1', Validators.required],
+    number_of_vegetarian: ['0', Validators.required],
+    number_of_baby_seat: ['0', Validators.required],
     phone: ['', Validators.required],
     address: '',
     email: '',
@@ -39,12 +39,8 @@ export class WeddingformComponent implements OnInit {
 
 
   submitForm(): void {
-    this.sweetalertService.confirm('Are you sure to insert this record?').subscribe(result => {
-      if (result) {
-        // codes..
-      } else {
-        // codes..
-      }
+    this.weddingService.postWeddingForm(this.weddingForm.value).subscribe(res => {
+      console.log(res);
     });
   }
 

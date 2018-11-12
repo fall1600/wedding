@@ -6,6 +6,7 @@ import { WeddingformComponent } from './weddingform/weddingform.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { WeddingphotoComponent } from './weddingphoto/weddingphoto.component';
 import { WeddingService } from './wedding.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { WeddingService } from './wedding.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
   ],
