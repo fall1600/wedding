@@ -55,7 +55,8 @@ export class WeddingformComponent implements OnInit {
         title: '資料未填',
         text: `請填寫必填欄位`,
         type: 'error',
-        confirmButtonText: 'OK'
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#dd3333',
       });
     }
   }

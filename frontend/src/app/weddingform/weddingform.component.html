@@ -3,12 +3,12 @@
     <!-- {{weddingForm.value | json }} -->
     <div class="required field-area">
       <label for="">姓名(請填全名)：</label>
-      <input type="text" class="name" formControlName="name" (blur)="showNameBonus()"  [ngClass]="checkValid('name')? 'invalid-input' : ''">
+      <input type="text" class="name" formControlName="name" (blur)="showNameBonus()" [ngClass]="checkValid('name')? 'invalid-input' : ''">
     </div>
 
     <div class="letter" *ngIf="_hasMessage">{{_nameBonusMessage}}</div>
 
-       <div class="required field-area">
+    <div class="required field-area">
       <label for="phone">聯絡手機/電話：</label>
       <input type="text" class="phone" formControlName="phone" [ngClass]="checkValid('phone')? 'invalid-input' : ''">
     </div>
@@ -56,7 +56,7 @@
 
     <div class="field-area">
       <label for="number_of_vegetarian">其中有幾位吃素：</label>
-      <select name="number_of_vegetarian"  formControlName="number_of_vegetarian">
+      <select name="number_of_vegetarian" formControlName="number_of_vegetarian">
         <option value="0">無</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -68,7 +68,7 @@
 
     <div class="field-area">
       <label for="number_of_baby_seat">兒童座椅數量：</label>
-      <select name="number_of_baby_seat"  formControlName="number_of_baby_seat">
+      <select name="number_of_baby_seat" formControlName="number_of_baby_seat">
         <option value="0">無</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -102,5 +102,11 @@
 
   </form>
 
-  <button class="main-btn" (click)="submitForm()">送出</button>
+  <img src="../../assets/moon.png" alt="moon_decoration" class="moon">
+  <div class="ribbon" (click)="submitForm()">
+    <div class="ribbon-stitches-top"></div><strong class="ribbon-content">
+      <h1>SUBMIT</h1>
+    </strong>
+    <div class="ribbon-stitches-bottom"></div>
+  </div>
 </div>
