@@ -83,7 +83,7 @@ export class WeddingformComponent implements OnInit {
   }
 
   showNameBonus() {
-    const msg = this.weddingService.getNameBonus(this.weddingForm.get('fullname').value);
+    const msg = this.weddingService.getNameBonus(this.weddingForm.get('name').value);
     console.log(msg);
     if (msg.length !== 0) {
       this._hasMessage = true;
