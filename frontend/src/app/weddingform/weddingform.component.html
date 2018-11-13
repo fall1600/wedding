@@ -1,79 +1,74 @@
 <div class="wedding-form">
   <form [formGroup]="weddingForm" (ngSubmit)="submitForm()">
     <!-- {{weddingForm.value | json }} -->
-    <div class="required field-area">
-      <label for="">姓名(請填全名)：</label>
-      <input type="text" class="name" formControlName="name" (blur)="showNameBonus()" [ngClass]="checkValid('name')? 'invalid-input' : ''">
+    <h2>璟鴻與毓柔婚宴出席調查</h2>
+
+    <div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="請填姓名(全名)" formControlName="name">
+        <mat-error *ngIf="!weddingForm.get('name').valid && weddingForm.get('name').touched">'請填寫姓名(全名)'</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="請填連絡電話" formControlName="phone">
+        <mat-error *ngIf="!weddingForm.get('phone').valid && weddingForm.get('phone').touched">'請填連絡電話'</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="哪方親友" formControlName="known_from">
+          <mat-option [value]="'male'">男方親友</mat-option>
+          <mat-option [value]="'female'">女方親友</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!weddingForm.get('known_from').valid && weddingForm.get('known_from').touched">請選擇任一項</mat-error>
+      </mat-form-field>
     </div>
 
-    <div class="letter" *ngIf="_hasMessage">{{_nameBonusMessage}}</div>
-
-    <div class="required field-area">
-      <label for="phone">聯絡手機/電話：</label>
-      <input type="text" class="phone" formControlName="phone" [ngClass]="checkValid('phone')? 'invalid-input' : ''">
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="出席狀態" formControlName="attend">
+          <mat-option [value]="'taipei'">台北場 3/24</mat-option>
+          <mat-option [value]="'chaiyi'">嘉義場 4/21</mat-option>
+          <mat-option [value]="'both'">兩場都到</mat-option>
+          <mat-option [value]="'no'">無法出席</mat-option>
+          <mat-option [value]="'gift'">會送禮但不克前往</mat-option>
+        </mat-select>
+        <mat-error *ngIf="!weddingForm.get('attend').valid && weddingForm.get('attend').touched">請選擇任一項</mat-error>
+      </mat-form-field>
     </div>
 
-    <!-- <div class="required field-area">
-      <label>是否參加婚宴：</label>
-      <span class="radio-group">
-        <label><input type="radio" name="attendence" formControlName="attendence" value="attend">出席</label>
-        <label><input type="radio" name="attendence" formControlName="attendence" value="no">無法出席</label>
-        <label><input type="radio" name="attendence" formControlName="attendence" value="gift">會送禮但不克前往</label>
-      </span>
-    </div> -->
-
-    <div class="required field-area">
-      <label>是哪方的親友：</label>
-      <span class="radio-group">
-        <label><input type="radio" name="known_from" formControlName="known_from" value="male">男方親友</label>
-        <label><input type="radio" name="known_from" formControlName="known_from" value="female">女方親友</label>
-      </span>
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="出席人數" formControlName="number_of_people">
+          <mat-option *ngFor="let numAttend of numAttends" [value]="numAttend">
+            {{numAttend}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="!weddingForm.get('number_of_people').valid && weddingForm.get('number_of_people').touched">請選擇任一項</mat-error>
+      </mat-form-field>
     </div>
 
-    <div class="required field-area">
-      <label>出席狀態：</label>
-      <span class="radio-group">
-        <label><input type="radio" name="attend" formControlName="attend" value="taipei">台北場(3/24)</label>
-        <!-- TODO: 補上嘉義場日期 by Zoe -->
-        <label><input type="radio" name="attend" formControlName="attend" value="chaiyi">嘉義(未定)</label>
-        <label><input type="radio" name="attend" formControlName="attend" value="both">兩場都到</label>
-        <label><input type="radio" name="attend" formControlName="attend" value="no">無法出席</label>
-        <label><input type="radio" name="attend" formControlName="attend" value="gift">會送禮但不克前往</label>
-      </span>
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="有幾位吃素" formControlName="number_of_vegetarian">
+          <mat-option *ngFor="let numAttend of numAttends" [value]="numAttend">
+            {{numAttend}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="!weddingForm.get('number_of_vegetarian').valid && weddingForm.get('number_of_vegetarian').touched">請選擇任一項</mat-error>
+      </mat-form-field>
     </div>
 
-    <div class="field-area">
-      <label for="numPeople">出席人數： </label>
-      <select name="numPeople" formControlName="number_of_people">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-
-    </div>
-
-    <div class="field-area">
-      <label for="number_of_vegetarian">其中有幾位吃素：</label>
-      <select name="number_of_vegetarian" formControlName="number_of_vegetarian">
-        <option value="0">無</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </div>
-
-    <div class="field-area">
-      <label for="number_of_baby_seat">兒童座椅數量：</label>
-      <select name="number_of_baby_seat" formControlName="number_of_baby_seat">
-        <option value="0">無</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
+    <div>
+      <mat-form-field>
+        <mat-select placeholder="兒童座椅數量" formControlName="number_of_baby_seat">
+          <mat-option *ngFor="let numAttend of numAttends" [value]="numAttend">
+            {{numAttend}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="!weddingForm.get('number_of_baby_seat').valid && weddingForm.get('number_of_baby_seat').touched">請選擇任一項</mat-error>
+      </mat-form-field>
     </div>
 
     <div class="required field-area">
@@ -85,21 +80,23 @@
       </span>
     </div>
 
-    <div class="field-area" *ngIf="isShow('address')">
-      <label for="address">喜帖地址：</label>
-      <input type="text" class="address" formControlName="address">
+    <div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="請填喜帖地址" formControlName="address">
+        <mat-error *ngIf="!weddingForm.get('address').valid && weddingForm.get('address').touched">'請填收帖地址'</mat-error>
+      </mat-form-field>
     </div>
 
-    <div class="field-area" *ngIf="isShow('email')">
-      <label for="">電子喜帖email：</label>
-      <input type="text" class="email" formControlName="email">
+    <div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="請填E-mail" formControlName="email">
+        <mat-error *ngIf="!weddingForm.get('email').valid && weddingForm.get('email').touched">'請填E-MAIL'</mat-error>
+      </mat-form-field>
     </div>
 
-    <div class="field-area">
-      <label for="">想跟毓柔和璟鴻說：</label>
-      <input type="text" class="note" formControlName="note">
-    </div>
-
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="想跟毓柔和璟鴻說" class="note" formControlName="note"></textarea>
+    </mat-form-field>
   </form>
 
   <img src="../../assets/moon.png" alt="moon_decoration" class="moon">
@@ -109,4 +106,5 @@
     </strong>
     <div class="ribbon-stitches-bottom"></div>
   </div>
+
 </div>

@@ -15,7 +15,7 @@ export class WeddingformComponent implements OnInit {
     private weddingService: WeddingService,
   ) { }
 
-
+  numAttends = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   _hasMessage = false;
   _nameBonusMessage;
   _invitation = 'email';
@@ -23,11 +23,11 @@ export class WeddingformComponent implements OnInit {
   weddingForm = this.fb.group({
     name: ['', Validators.required],
     nickname: 0,
-    attend: ['taipei', Validators.required],
-    known_from: ['male', Validators.required],
-    number_of_people: ['1', Validators.required],
-    number_of_vegetarian: ['0', Validators.required],
-    number_of_baby_seat: ['0', Validators.required],
+    attend: ['', Validators.required],
+    known_from: ['', Validators.required],
+    number_of_people: [1, Validators.required],
+    number_of_vegetarian: [0, Validators.required],
+    number_of_baby_seat: [0, Validators.required],
     phone: ['', Validators.required],
     address: '',
     email: '',

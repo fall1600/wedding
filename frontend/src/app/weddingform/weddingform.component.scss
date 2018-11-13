@@ -10,15 +10,18 @@ $form-border:3px solid rgb(235, 218, 72);
     margin: 0px 35px 15px 15px;
 }
 
-.required input.invalid-input {
-  border: 1px solid red;
+.full-width{
+  width: 95%;
 }
+
 
 form {
   border: $form-border;
   border-radius: 15px;
   padding: 25px 15px 95px 15px;
   margin: 5px;
+  width: 75%;
+  max-width: 670px;
 }
 
 .moon {
@@ -27,6 +30,16 @@ form {
   position: relative;
   top: -115px;
 }
+
+
+@media screen and (max-width:767px){
+ form{
+   width: 95%;
+   padding: 25px 0px 95px 0px;
+ }
+}
+
+
 
 .radio-group {
   width: 285px;
