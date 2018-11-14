@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiurl: 'http://service.fall1600n.com'
+  apiurl: 'https://service.fall1600n.com'
 };
 
 /*
