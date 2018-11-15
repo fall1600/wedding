@@ -1,5 +1,5 @@
 @import "src/styles.scss";
-$form-border:3px solid rgb(235, 218, 72);
+$form-border:3px solid #ad8b63;
 
 .letter {
   position: relative;
@@ -10,18 +10,29 @@ $form-border:3px solid rgb(235, 218, 72);
     margin: 0px 35px 15px 15px;
 }
 
-.full-width{
+.input-width{
   width: 95%;
 }
 
 
 form {
   border: $form-border;
+  box-shadow: 0px 0px 20px #65472b inset;
   border-radius: 15px;
   padding: 25px 15px 95px 15px;
   margin: 5px;
   width: 75%;
   max-width: 670px;
+  background-color: seashell;
+  color: #333;
+}
+
+.sun{
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  background-image: url(../../assets/sun.png);
+  background-repeat: no-repeat;
 }
 
 .moon {

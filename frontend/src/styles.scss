@@ -19,20 +19,31 @@ label {
   content: '*';
 }
 
-/* The container */
 
-.container__checkbox {
-  display: block;
+/* Loading dropdown animation */
+.loading-dropdown .select-wrapper .content{
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 12px;
-  cursor: pointer;
+  &::after{
+    content: '';
+    position: absolute;
+    right: 45px;
+    top: 0;
+    width: 44px;
+    background-size: 44px 44px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(/assets/img/spinner.gif);
+    height: 44px;
+    z-index: 2;
+  }
+}
+
+option {
   font-size: 14px;
-  font-family: Helvetica;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  line-height: 36px;
+  &:hover {
+    background-color: red;
+  }
 }
 
 
@@ -53,7 +64,6 @@ label {
 }
 
 /* Hide the browser's default radio button */
-
 .container__radio input[type=radio] {
   position: absolute;
   opacity: 0;
@@ -61,7 +71,6 @@ label {
 }
 
 /* Create a custom radio button */
-
 .checkmark__radio {
   position: absolute;
   top: 0;
@@ -99,11 +108,11 @@ label {
 
 .field-area {
     display: flex;
-    padding: 5px 0px;
+    height: 50px;
     font-size: 16px;
-    width: 100%;
-    justify-content: space-between;
+    width: 600px;
     align-content: center;
+    font-family: 'Diplomata SC', cursive;
   }
 
   .wedding-form{
@@ -112,24 +121,44 @@ label {
     align-items: center;
   }
 
+  .main-btn {
+    cursor: pointer;
+    color: white;
+    width: 160px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    border: none;
+    background: $primary-color;
+    box-shadow: 2px 3px 1px rgb(230, 230, 230);
+    &:hover {
+        background: $primary-color--hover;
+    }
+    &:active {
+        box-shadow: 2px 0px 5px rgb(66, 65, 65) inset;
+        background: $primary-color--active;
+    }
+  }
+
   @media screen and (max-width:767px){
+    form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2{
+      margin-top: 100px;
+    }
+
     .field-area {
       font-size: 16px;
-      justify-content: space-between;
+      width: 85%;
     }
 
     label {
-      width: 46%;
-      min-width: 120px;
-    }
-    select, input:not([type=radio]):not([type=checkbox]) {
-      width: 40%;
-      min-width: 100px;
-    }
-    radio-group {
-      width: 50%;
-      label{
-        width: 110px;
-      }
+      width: 135px;
     }
  }

@@ -1,4 +1,3 @@
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,34 +7,31 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { WeddingphotoComponent } from './weddingphoto/weddingphoto.component';
 import { WeddingService } from './wedding.service';
 import { HttpClientModule } from '@angular/common/http';
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
-import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeddingformComponent,
-    WeddingphotoComponent,
+    WeddingphotoComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
+    MatButtonModule,
     MatCheckboxModule,
     MatInputModule,
     MatSelectModule,
-
+    MatFormFieldModule
   ],
-  providers: [WeddingService ,
-    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
-  ],
+  providers: [WeddingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

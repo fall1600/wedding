@@ -15,10 +15,11 @@ export class WeddingformComponent implements OnInit {
     private weddingService: WeddingService,
   ) { }
 
-  numAttends = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  numAttends = Array.from({length: 10}, (v, k) => k + 1);
+  numVegs =  Array.from({length: 5}, (v, k) => k );
+  numBabys =  Array.from({length: 5}, (v, k) => k );
   _hasMessage = false;
   _nameBonusMessage;
-  _invitation = 'email';
 
   weddingForm = this.fb.group({
     name: ['', Validators.required],
@@ -31,7 +32,8 @@ export class WeddingformComponent implements OnInit {
     phone: ['', Validators.required],
     address: '',
     email: '',
-    note: ''
+    note: '',
+    way: ['', Validators.required],
   });
 
 
@@ -65,17 +67,11 @@ export class WeddingformComponent implements OnInit {
     console.log();
   }
 
-  setInvitation(invitation) {
-    this._invitation = invitation;
-    if (invitation === 'address') {
-      this.weddingForm.get('phone').reset();
-    } else if (invitation === 'phone') {
-      this.weddingForm.get('address').reset();
-    }
-  }
 
-  isShow(invitation) {
-    if (this._invitation === 'sendBoth' || this._invitation === invitation) {
+  isShow(invitationWay) {
+    console.log(invitationWay);
+    const way = this.weddingForm.get('way').value;
+    if (way === 'sendBoth' || way === invitationWay) {
       return true;
     } else {
       return false;
