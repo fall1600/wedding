@@ -6,7 +6,7 @@
 
     <div>
       <mat-form-field class="input-width">
-        <input matInput placeholder="請填姓名(全名)" formControlName="name">
+        <input matInput placeholder="請填姓名(全名)" formControlName="name" (blur)="showNameBonus()" >
         <mat-error *ngIf="!weddingForm.get('name').valid && weddingForm.get('name').touched">'請填寫姓名(全名)'</mat-error>
       </mat-form-field>
     </div>

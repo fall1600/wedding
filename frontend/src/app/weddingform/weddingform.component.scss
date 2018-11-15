@@ -28,6 +28,7 @@ form {
 }
 
 .sun{
+  margin-top: 5px;
   width: 300px;
   height: 200px;
   position: absolute;
@@ -41,19 +42,26 @@ form {
   position: relative;
   top: -115px;
 }
-
-
 @media screen and (max-width:767px){
- form{
-   width: 95%;
-   padding: 25px 0px 95px 0px;
- }
-}
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
 
+  h2{
+    margin-top: 100px;
+  }
 
+  .input-width{
+    width: 100%;
+  }
 
-.radio-group {
-  width: 285px;
+  .field-area {
+    font-size: 16px;
+    width: 85%;
+  }
 }
 
 .ribbon {

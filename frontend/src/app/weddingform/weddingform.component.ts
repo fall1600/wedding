@@ -69,7 +69,6 @@ export class WeddingformComponent implements OnInit {
 
 
   isShow(invitationWay) {
-    console.log(invitationWay);
     const way = this.weddingForm.get('way').value;
     if (way === 'sendBoth' || way === invitationWay) {
       return true;
