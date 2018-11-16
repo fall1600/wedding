@@ -74,7 +74,7 @@ export class WeddingformComponent implements OnInit {
       this.weddingForm.get(invitationWay).setValidators(Validators.required);
       return true;
     } else {
-      this.weddingForm.get(invitationWay).setValue('');
+      this.weddingForm.get(invitationWay).reset();
       return false;
     }
   }
