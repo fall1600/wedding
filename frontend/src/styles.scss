@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 $primary-color: palegreen;
 $primary-color--active: rgb(97, 212, 97);
 $primary-color--hover:rgb(97, 197, 97);
@@ -154,8 +154,8 @@ option {
       margin-top: 100px;
     }
 
-    .field-area {
-      font-size: 16px;
-      width: 85%;
-    }
+    // .field-area {
+    //   font-size: 16px;
+    //   width: 85%;
+    // }
  }
