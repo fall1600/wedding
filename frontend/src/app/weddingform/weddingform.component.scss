@@ -25,6 +25,12 @@ form {
   max-width: 670px;
   background-color: #de95ab;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  >div{
+    width: 80%;
+  }
 }
 
 .sun{
@@ -35,7 +41,11 @@ form {
   background-image: url(../../assets/fullsun.png);
   background-repeat: no-repeat;
   transform-origin: 142px 139px;
-  animation: spin 7s infinite linear
+  animation: spin 13s infinite linear
+}
+
+h2{
+  margin-top: 100px;
 }
 
 @keyframes spin {
@@ -69,10 +79,6 @@ form {
     flex-direction: column;
     align-items: center;
     width: 90%;
-  }
-
-  h2{
-    margin-top: 100px;
   }
 
   .input-width{
