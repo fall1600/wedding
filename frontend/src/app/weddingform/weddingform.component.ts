@@ -71,8 +71,10 @@ export class WeddingformComponent implements OnInit {
   isShow(invitationWay) {
     const way = this.weddingForm.get('way').value;
     if (way === 'sendBoth' || way === invitationWay) {
+      this.weddingForm.get(invitationWay).setValidators(Validators.required);
       return true;
     } else {
+      this.weddingForm.get(invitationWay).setValue('');
       return false;
     }
   }
