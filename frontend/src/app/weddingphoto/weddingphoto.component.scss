@@ -1,0 +1,86 @@
+.coverflow{
+  box-shadow: 2px 2px 15px #666;
+  margin: auto;
+  width: 60%;
+  height: 490px;
+  position: relative;
+  }
+  .coverflow>img{
+  margin: 1%;
+  display: block;
+  position: absolute;
+  top:0;
+  left:0;
+  opacity: 0;
+      filter: alpha(opacity=0);
+
+      -webkit-animation: silder 10s linear infinite;
+      animation: silder 10s linear infinite;
+  }
+  .coverflow>img{
+  max-width: 97%;
+  max-height: 97%;
+  }
+
+  @-webkit-keyframes silder {
+      3% {
+          opacity: 1;
+          filter: alpha(opacity=100);
+      }
+      27% {
+          opacity: 1;
+          filter: alpha(opacity=100);
+      }
+      30% {
+          opacity: 0;
+          filter: alpha(opacity=0);
+      }
+  }
+  @keyframes silder {
+      3% {
+          opacity: 1;
+          filter: alpha(opacity=100);
+      }
+      27% {
+          opacity: 1;
+          filter: alpha(opacity=100);
+      }
+      30% {
+          opacity: 0;
+          filter: alpha(opacity=0);
+      }
+  }
+
+  .coverflow>img:nth-child(5) {
+    -webkit-animation-delay: 8s;
+            animation-delay: 8s;
+    }
+
+  .coverflow>img:nth-child(4) {
+    -webkit-animation-delay: 6s;
+            animation-delay: 6s;
+    }
+
+  .coverflow>img:nth-child(3) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  }
+
+  .coverflow>img:nth-child(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  }
+
+  .coverflow>img:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  }
+  /*滑入時停止播放*/
+  // .coverflow:hover>img{
+  //     -webkit-animation-play-state: paused;
+  //             animation-play-state: paused;
+  // }
+
+  h2{
+    margin-left: 20%;
+  }

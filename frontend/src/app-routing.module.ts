@@ -1,14 +1,16 @@
+import { WeddingphotoComponent } from './app/weddingphoto/weddingphoto.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { WeddingformComponent } from './app/weddingform/weddingform.component';
 
 const appRoutes: Routes = [
   {
-    path: 'login',
-    loadChildren: './login/login.module#LoginModule'
+    path: 'tks',
+    component: WeddingphotoComponent,
   },
   {
     path: '**',
-    redirectTo: ''
+    component: WeddingformComponent,
   }
 ];
 

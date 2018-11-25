@@ -85,7 +85,7 @@ export class WeddingService {
   postWeddingForm(body) {
     const url = environment.apiurl + '/api/invitations';
     // console.warn(body);
-    console.log(url);
+    // console.log(url);
     return this.httpClient.post(url, body);
   }
 }
