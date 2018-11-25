@@ -15,9 +15,9 @@ export class WeddingformComponent implements OnInit {
     private weddingService: WeddingService,
   ) { }
 
-  numAttends = Array.from({length: 10}, (v, k) => k + 1);
-  numVegs =  Array.from({length: 5}, (v, k) => k );
-  numBabys =  Array.from({length: 5}, (v, k) => k );
+  numAttends = Array.from({ length: 10 }, (v, k) => k + 1);
+  numVegs = Array.from({ length: 5 }, (v, k) => k);
+  numBabys = Array.from({ length: 5 }, (v, k) => k);
   _hasMessage = false;
   _nameBonusMessage;
 
@@ -81,15 +81,20 @@ export class WeddingformComponent implements OnInit {
   }
 
   showNameBonus() {
-    const msg = this.weddingService.getNameBonus(this.weddingForm.get('name').value);
-    if (msg.length !== 0) {
-      this._hasMessage = true;
-      const playtimes = this.weddingForm.get('nickname').value;
-      this.weddingForm.get('nickname').setValue(playtimes + 1);
-      this._nameBonusMessage = msg;
-    } else {
-      this._hasMessage = false;
-      this._nameBonusMessage = '';
+    const name = this.weddingForm.get('name').value;
+    if (name) {
+      const msg = this.weddingService.getNameBonus(name);
+
+      if (msg.length !== 0) {
+        this._hasMessage = true;
+        const playtimes = this.weddingForm.get('nickname').value;
+        this.weddingForm.get('nickname').setValue(playtimes + 1);
+        this._nameBonusMessage = msg;
+      } else {
+        this._hasMessage = false;
+        this._nameBonusMessage = '';
+      }
+
     }
   }
 

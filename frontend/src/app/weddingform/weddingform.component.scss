@@ -16,35 +16,33 @@ $form-border:3px solid #e9be4c;
 }
 
 
+.wedding-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  max-width: 850px;
+  margin: auto;
+  animation: cardSpin 2s ;
+  background: #fded0026;
+  border: 3px solid #ecc389;
+  padding: 3% 3% 0% 3%;
+  border-radius: 20px;
+}
+
 form {
   border: $form-border;
   box-shadow: 0px 0px 20px #666 inset;
   border-radius: 15px;
-  padding: 25px 15px 95px 15px;
+  padding: 25px 15px 35px 15px;
   margin: 5px;
-  width: 75%;
+  width: 100%;
   max-width: 670px;
   background-color: #de95ab;
   color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: cardSpin 2s ;
-  >div{
-    width: 80%;
-  }
-}
-
-.card-back{
-  background-image: url(../../assets/card_back.jpg);
-  background-repeat: no-repeat;
-  top: -150px;
-  width: 600px;
-  height: 1200px;
-  position: absolute;
-  animation: show 0s 2s, backSpin 2s 2s;
-  animation-fill-mode: backwards;
-  opacity: 0;
 }
 
 .sun{
@@ -77,47 +75,18 @@ h2{
       transform:rotateY(0deg);
   }
   to {
-      transform:rotateY(90deg);
-  }
-}
-
-
-@keyframes backSpin {
-  from {
-      transform:rotateY(90deg);
-  }
-  to {
-      transform:rotateY(180deg);
-  }
-}
-
-
-@keyframes show {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes hide {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
+      transform:rotateY(360deg);
   }
 }
 
 
 .eclipse{
-  width: 300px;
+  width: 100%;
   height: 150px;
   background-color: #fff;
   z-index: 1;
   position: absolute;
-  top: -137px;
+  top: -141px;
 }
 
 .moon {
@@ -127,6 +96,11 @@ h2{
   top: -115px;
 }
 @media screen and (max-width:767px){
+  .wedding-form{
+    width: 100%;
+    padding: 0px;
+  }
+
   form{
     display: flex;
     flex-direction: column;
@@ -145,7 +119,7 @@ h2{
 }
 
 .ribbon {
-  width: 260px;
+  width: 280px;
   top: -128px;
   cursor: pointer;
   position: relative;
