@@ -43,6 +43,7 @@ export class WeddingformComponent implements OnInit {
     });
 
     if (this.weddingForm.valid) {
+      delete this.weddingForm['way'];
       this.weddingService.postWeddingForm(this.weddingForm.value).subscribe(res => {
         console.log(res);
         swal({

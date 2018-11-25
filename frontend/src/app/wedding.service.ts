@@ -13,9 +13,9 @@ export class WeddingService {
     {"name":"Chia","message":"Hi Chia Hi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi ChiaHi Chia"},
     {"name":"鄭而璞","message":"阿璞 感謝一直以來有你相伴 真心希望你愛情與事業都能找到自己喜歡的那條路"},
     {"name":"許庭蓉","message":"許庭蓉 感謝一直以來有你相伴 希望你能想出來對你而言最棒的平衡點"},
-    {"name":"鍾任鴻","message":"老人 真的很感謝有你這個好朋友, "},
-    {"name":"聶簡建安","message":""},
-    {"name":"陳柏翰","message":""},
+    {"name":"鍾任鴻","message":"老人 真的很感謝有你這個好朋友！ 衷心希望你新的環境是更好 且好很多的！"},
+    {"name":"聶簡建安","message":"聶簡 其實蠻開心能和你有話就說 畢竟吵過架的朋友 是真的好朋友！"},
+    {"name":"陳柏翰","message":"姐姐 有去花蓮時, 會去找你玩唷ＸＤ"},
     {"name":"蕭雅文","message":"雅文, 很可惜時間對不上沒辦法請你當伴娘 但還是很開心你的祝福唷！"},
     {"name":"何佳穎","message":"爆點！ 感謝你情義相挺的願意當我的伴娘！"},
     {"name":"王怡人","message":"怡人, 很喜歡聽你講你旅遊的所見所聞, 總是讓我同感喜悅和興奮！"},
@@ -34,11 +34,11 @@ export class WeddingService {
     {"name":"楊茜予","message":"Black, 知道你一直都很忙碌, 真心期待有空時能約出來一起玩"},
     {"name":"李思緯","message":"小五, 下次辦畫畫的活動時希望還能找我 我很期待下次能參加到！"},
     {"name":"盧延毫","message":"延毫, 我一直很崇拜你散發的優雅氣質 "},
-    {"name":"盧盈君","message":"158的盈君, 真的很喜歡跟你一起玩 我已經下訂switch了 找機會一起玩"},
+    {"name":"盧盈君","message":"158的盈君, "},
     {"name":"王書函","message":"書函, 感謝你老是傳很無腦的梗圖, 吃梗補梗 哈哈哈哈哈"},
     {"name":"蔡易達","message":"達叔 真的很開心你來玩！謝謝你的祝福！"},
     {"name":"余澤生","message":"生生 希望你學業與事業都越來越順利"},
-    {"name":"余慈詠","message":"詠詠 真的很少跟你見面, 但真心希望我們有空能一起約易約出去玩"},
+    {"name":"余慈詠","message":"詠詠, 聽說你養了一隻哈利~ 希望有機會可以帶出來一起玩唷！"},
     {"name":"蔡欣蓓","message":"心貝, "},
     {"name":"方傑","message":"親愛的番茄外星人ＸＤ, 真心感謝你有點時間總是為我解惑, 說不定之後我也能幫你解惑唷"},
     {"name":"","message":""},
@@ -85,6 +85,7 @@ export class WeddingService {
   postWeddingForm(body) {
     const url = environment.apiurl + '/api/invitations';
     // console.warn(body);
+    console.log(url);
     return this.httpClient.post(url, body);
   }
 }
