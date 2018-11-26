@@ -5,8 +5,11 @@
       <!-- {{weddingForm.value | json }} -->
       <div class="sun"></div>
       <h2 class="title">婚宴出席調查</h2>
+      <p class="content">毓柔和璟鴻要結婚啦~! 3/24即將在台北大直典華舉行訂婚和宴客(:台北市中山區植福路8號)，4/21會在嘉義水上舉行結婚並宴客。
+        不管有沒有出席都希望能收到你的祝福唷！
 
-      <div>
+      </p>
+      <div class="input-style">
         <mat-form-field class="input-width">
           <input matInput placeholder="請填姓名(全名)" formControlName="name" (blur)="showNameBonus()">
           <mat-error *ngIf="!weddingForm.get('name').valid && weddingForm.get('name').touched">'請填寫姓名(全名)'</mat-error>
@@ -15,13 +18,13 @@
 
       <div class="letter" *ngIf="_hasMessage">{{_nameBonusMessage}}</div>
 
-      <div>
+      <div class="input-style">
         <mat-form-field class="input-width">
           <input matInput placeholder="請填連絡電話" formControlName="phone">
           <mat-error *ngIf="!weddingForm.get('phone').valid && weddingForm.get('phone').touched">'請填連絡電話'</mat-error>
         </mat-form-field>
       </div>
-      <div>
+      <div class="input-style">
         <mat-form-field class="input-width">
           <mat-select placeholder="哪方親友" formControlName="known_from">
             <mat-option [value]="'male'">男方親友</mat-option>
@@ -31,20 +34,20 @@
         </mat-form-field>
       </div>
 
-      <div>
+      <div class="input-style">
         <mat-form-field class="input-width">
           <mat-select placeholder="出席狀態" formControlName="attend">
             <mat-option [value]="'taipei'">台北場 3/24</mat-option>
             <mat-option [value]="'chiayi'">嘉義場 4/21</mat-option>
             <mat-option [value]="'both'">兩場都到</mat-option>
             <mat-option [value]="'no'">無法出席</mat-option>
-            <mat-option [value]="'gift'">會送禮但不克前往</mat-option>
+            <mat-option [value]="'blessing'">會送禮但不克前往</mat-option>
           </mat-select>
           <mat-error *ngIf="!weddingForm.get('attend').valid && weddingForm.get('attend').touched">請選擇任一項</mat-error>
         </mat-form-field>
       </div>
 
-      <div>
+      <div class="input-style">
         <mat-form-field class="input-width">
           <mat-select placeholder="出席人數" formControlName="number_of_people">
             <mat-option *ngFor="let numAttend of numAttends" [value]="numAttend">
@@ -55,7 +58,7 @@
         </mat-form-field>
       </div>
 
-      <div>
+      <div class="input-style">
         <mat-form-field class="input-width">
           <mat-select placeholder="有幾位吃素" formControlName="number_of_vegetarian">
             <mat-option *ngFor="let numVeg of numVegs" [value]="numVeg">
@@ -66,7 +69,7 @@
         </mat-form-field>
       </div>
 
-      <div>
+      <div class="input-style">
         <mat-form-field class="input-width">
           <mat-select placeholder="兒童座椅數量" formControlName="number_of_baby_seat">
             <mat-option *ngFor="let numBaby of numBabys" [value]="numBaby">
@@ -77,7 +80,7 @@
         </mat-form-field>
       </div>
 
-      <div>
+      <div class="input-style">
         <mat-form-field class="input-width">
           <mat-select placeholder="喜帖型式" formControlName="way">
             <mat-option [value]="'email'">電子喜帖</mat-option>
@@ -88,21 +91,21 @@
         </mat-form-field>
       </div>
 
-      <div *ngIf="isShow('address')">
+      <div *ngIf="isShow('address')"  class="input-style">
         <mat-form-field class="input-width">
           <input matInput placeholder="請填喜帖地址" formControlName="address">
           <mat-error *ngIf="!weddingForm.get('address').valid && weddingForm.get('address').touched">'請填收帖地址'</mat-error>
         </mat-form-field>
       </div>
 
-      <div *ngIf="isShow('email')">
+      <div *ngIf="isShow('email')"  class="input-style">
         <mat-form-field class="input-width">
           <input matInput placeholder="請填E-mail" formControlName="email">
           <mat-error *ngIf="!weddingForm.get('email').valid && weddingForm.get('email').touched">'請填E-MAIL'</mat-error>
         </mat-form-field>
       </div>
 
-      <mat-form-field class="input-width">
+      <mat-form-field class="input-width"  class="input-style">
         <textarea matInput placeholder="想跟毓柔和璟鴻說" class="note" formControlName="note"></textarea>
       </mat-form-field>
     </form>

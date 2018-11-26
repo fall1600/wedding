@@ -23,11 +23,10 @@ $form-border:3px solid #e9be4c;
   width: 70%;
   max-width: 850px;
   margin: auto;
-  animation: cardSpin 2s ;
-  background: #fded0026;
-  border: 3px solid #ecc389;
-  padding: 3% 3% 0% 3%;
-  border-radius: 20px;
+  // background: #fded0026;
+  // border: 3px solid #ecc389;
+  // padding: 3% 3% 0% 3%;
+  // border-radius: 20px;
 }
 
 form {
@@ -56,8 +55,19 @@ form {
   animation: spin 13s infinite linear;
 }
 
+.content{
+  width: 65%;
+  color: #fbf7f1;
+}
+
 h2{
   margin-top: 90px;
+  margin-bottom: 0px;
+  color: #fbf7f1;
+}
+
+.input-style{
+  width: 300px;
 }
 
 @keyframes spin {
@@ -115,6 +125,10 @@ h2{
   .field-area {
     font-size: 16px;
     width: 85%;
+  }
+
+  .input-style{
+    width: 80%;
   }
 }
 

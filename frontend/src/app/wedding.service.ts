@@ -41,7 +41,7 @@ export class WeddingService {
     {"name":"余慈詠","message":"詠詠, 聽說你養了一隻哈利~ 希望有機會可以帶出來一起玩唷！"},
     {"name":"蔡欣蓓","message":"心貝, 在台中時的那段時光承蒙照顧了!衷心感謝! 祝你日子越過越順心!"},
     {"name":"方傑","message":"番茄外星人ＸＤ, 真心感謝你有點時間總是為我解惑, 說不定之後我也能幫你解惑唷"},
-    {"name":"","message":""},
+    {"name":"李俊佑","message":"柚子安安 祝福你遇到興趣相投的良緣!"},
     {"name":"","message":""},
     {"name":"","message":""},
     {"name":"","message":""},

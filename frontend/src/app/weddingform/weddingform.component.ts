@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-weddingform',
@@ -43,10 +44,13 @@ export class WeddingformComponent implements OnInit {
     Object.keys(this.weddingForm.controls).forEach(key => {
       this.weddingForm.get(key).markAsTouched();
     });
-
+    const body = Object.assign(this.weddingForm.getRawValue());
     if (this.weddingForm.valid) {
-      delete this.weddingForm['way'];
-      this.weddingService.postWeddingForm(this.weddingForm.value).subscribe(res => {
+      ['way'].forEach(key => {
+         delete body[key];
+       });
+
+      this.weddingService.postWeddingForm(body).subscribe(res => {
         // console.log(res);
         swal({
           title: '送出成功!',
@@ -55,6 +59,19 @@ export class WeddingformComponent implements OnInit {
           confirmButtonText: 'OK'
         });
         this._router.navigate(['/tks']);
+      },
+      err => {
+        Object.keys(err.error).forEach( (key) => {
+          const alertMsg = err.error[key];
+          swal({
+            title: '格式錯誤',
+            text: `${alertMsg}`,
+            type: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#dd3333',
+          });
+
+        });
       });
     } else {
       swal({
@@ -79,6 +96,7 @@ export class WeddingformComponent implements OnInit {
       return true;
     } else {
       this.weddingForm.get(invitationWay).reset();
+      this.weddingForm.get(invitationWay).setValidators(null);
       return false;
     }
   }
