@@ -18,7 +18,7 @@ export class WeddingformComponent implements OnInit {
     private _router: Router
   ) { }
 
-  numAttends = Array.from({ length: 10 }, (v, k) => k + 1);
+  numAttends = Array.from({ length: 10 }, (v, k) => k);
   numVegs = Array.from({ length: 5 }, (v, k) => k);
   numBabys = Array.from({ length: 5 }, (v, k) => k);
   _hasMessage = false;
