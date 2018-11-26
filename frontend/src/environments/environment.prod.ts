@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiurl: 'http://service.fall1600n.com'
+  apiurl: 'https://service.fall1600n.com'
 };
