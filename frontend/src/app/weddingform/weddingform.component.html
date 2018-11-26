@@ -47,7 +47,7 @@
         </mat-form-field>
       </div>
 
-      <div class="input-style">
+      <div class="input-style" *ngIf="attendence()">
         <mat-form-field class="input-width">
           <mat-select placeholder="出席人數" formControlName="number_of_people">
             <mat-option *ngFor="let numAttend of numAttends" [value]="numAttend">
@@ -58,7 +58,7 @@
         </mat-form-field>
       </div>
 
-      <div class="input-style">
+      <div class="input-style" *ngIf="attendence()">
         <mat-form-field class="input-width">
           <mat-select placeholder="有幾位吃素" formControlName="number_of_vegetarian">
             <mat-option *ngFor="let numVeg of numVegs" [value]="numVeg">
@@ -69,7 +69,7 @@
         </mat-form-field>
       </div>
 
-      <div class="input-style">
+      <div class="input-style"  *ngIf="attendence()">
         <mat-form-field class="input-width">
           <mat-select placeholder="兒童座椅數量" formControlName="number_of_baby_seat">
             <mat-option *ngFor="let numBaby of numBabys" [value]="numBaby">

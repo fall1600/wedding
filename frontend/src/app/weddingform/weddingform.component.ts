@@ -89,6 +89,14 @@ export class WeddingformComponent implements OnInit {
   }
 
 
+  attendence() {
+    if (this.weddingForm.get('attend').value === 'no' || this.weddingForm.get('attend').value === 'blessing') {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   isShow(invitationWay) {
     const way = this.weddingForm.get('way').value;
     if (way === 'sendBoth' || way === invitationWay) {
