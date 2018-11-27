@@ -48,6 +48,8 @@ module.exports =
         value:
           true: "male"
           false: "female"
+    updated_at:
+      defaultSorting: 'desc'
   extra: [
     {
       "name": "new"
