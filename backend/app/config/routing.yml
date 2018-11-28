@@ -4,3 +4,9 @@ BackendBaseBundle:
 WidgetInvitationBundle:
     resource: "@WidgetInvitationBundle/Resources/config/routing.yml"
 
+WidgetCategoryBundle:
+    resource: "@WidgetCategoryBundle/Resources/config/routing.yml"
+
+WidgetPhotoBundle:
+    resource: "@WidgetPhotoBundle/Resources/config/routing.yml"
+

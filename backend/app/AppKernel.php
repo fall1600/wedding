@@ -22,6 +22,8 @@ class AppKernel extends Kernel
             new Aws\Symfony\AwsBundle(),
             new Backend\BaseBundle\BackendBaseBundle(),
             new Widget\InvitationBundle\WidgetInvitationBundle(),
+            new Widget\CategoryBundle\WidgetCategoryBundle(),
+            new Widget\PhotoBundle\WidgetPhotoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

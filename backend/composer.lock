@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc2327a6a448b9332d0b532cae86aad9",
+    "content-hash": "f49292c83a1316abd1993fc754024478",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -204,13 +204,13 @@
             "source": {
                 "type": "git",
                 "url": "git@git.dgfactor.com:cm4/widget/base",
-                "reference": "ee4ec52c1397a0e7a303ef81a6a9d1636f779c72"
+                "reference": "c7047c392e04aa96f0f0b0d81f9da3b6054278c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packages.dgfactor.com/dist/dgfactor-cm4-backend-base-v2.0.1-8c29cf.zip",
-                "reference": "ee4ec52c1397a0e7a303ef81a6a9d1636f779c72",
-                "shasum": "a20b1579bcfbdf96e45946b07b66b188326fdf7b"
+                "url": "https://packages.dgfactor.com/dist/dgfactor-cm4-backend-base-v2.0.1-352fd6.zip",
+                "reference": "c7047c392e04aa96f0f0b0d81f9da3b6054278c7",
+                "shasum": "fc4204287da30038e407bc49cb68b1481f7d54ab"
             },
             "require": {
                 "aws/aws-sdk-php-symfony": "^1.1",
@@ -233,7 +233,74 @@
                 }
             ],
             "description": "dgFactor CM4 BackendBaseBundle",
-            "time": "2018-11-09T08:53:20+00:00"
+            "time": "2018-10-16T08:43:09+00:00"
+        },
+        {
+            "name": "dgfactor/cm4-widget-category",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "git@git.dgfactor.com:cm4/widget/category",
+                "reference": "d721a6b1248995ba8fb64eab74490c8c6a902120"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.dgfactor.com/dist/dgfactor-cm4-widget-category-v2.0.0-603781.zip",
+                "reference": "d721a6b1248995ba8fb64eab74490c8c6a902120",
+                "shasum": "7738e8665333b988a4ce123c413dde2c0e27990e"
+            },
+            "require": {
+                "dgfactor/cm4-backend-base": "2.0.*",
+                "symfony/symfony": "2.8.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Widget\\CategoryBundle\\": ""
+                }
+            },
+            "authors": [
+                {
+                    "name": "Ricky Su",
+                    "email": "ricky@dgfactor.com"
+                }
+            ],
+            "description": "CM4 Category Widget",
+            "time": "2017-10-25T06:13:10+00:00"
+        },
+        {
+            "name": "dgfactor/cm4-widget-photo",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "git@git.dgfactor.com:cm4/widget/photo",
+                "reference": "b25a4ce1dc73381da276a1c956d19bd12fa776c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packages.dgfactor.com/dist/dgfactor-cm4-widget-photo-v2.0.1-7c46f5.zip",
+                "reference": "b25a4ce1dc73381da276a1c956d19bd12fa776c3",
+                "shasum": "c906269ea0ef148f6b0a39e71978db4aaaee60a3"
+            },
+            "require": {
+                "dgfactor/cm4-backend-base": "2.0.*",
+                "intervention/image": "^2.3",
+                "symfony/symfony": "2.8.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Widget\\PhotoBundle\\": ""
+                }
+            },
+            "authors": [
+                {
+                    "name": "Ricky Su",
+                    "email": "ricky@dgfactor.com"
+                }
+            ],
+            "description": "CM4 Photo Widget",
+            "time": "2018-11-16T09:53:05+00:00"
         },
         {
             "name": "dgfactor/cm4-widget-script",
@@ -1052,6 +1119,76 @@
             "time": "2018-02-13T18:05:56+00:00"
         },
         {
+            "name": "intervention/image",
+            "version": "2.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "e82d274f786e3d4b866a59b173f42e716f0783eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/e82d274f786e3d4b866a59b173f42e716f0783eb",
+                "reference": "e82d274f786e3d4b866a59b173f42e716f0783eb",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "guzzlehttp/psr7": "~1.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.2",
+                "phpunit/phpunit": "^4.8 || ^5.7"
+            },
+            "suggest": {
+                "ext-gd": "to use GD library based image processing.",
+                "ext-imagick": "to use Imagick based image processing.",
+                "intervention/imagecache": "Caching extension for the Intervention Image library"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Intervention\\Image\\ImageServiceProvider"
+                    ],
+                    "aliases": {
+                        "Image": "Intervention\\Image\\Facades\\Image"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src/Intervention/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@olivervogel.com",
+                    "homepage": "http://olivervogel.com/"
+                }
+            ],
+            "description": "Image handling and manipulation library with support for Laravel integration",
+            "homepage": "http://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2018-05-29T14:19:03+00:00"
+        },
+        {
             "name": "ircmaxell/password-compat",
             "version": "v1.0.4",
             "source": {
@@ -1632,7 +1769,7 @@
                 {
                     "name": "Luís Otávio Cobucci Oblonczyk",
                     "email": "lcobucci@gmail.com",
-                    "role": "Developer"
+                    "role": "developer"
                 }
             ],
             "description": "A simple library to work with JSON Web Token and JSON Web Signature",
