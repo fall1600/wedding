@@ -13,5 +13,10 @@
     "path": "/invitation/new",
     "name": "invitation-new",
     "component": "components/widgetinvitation/router/edit/invitation.vue"
+  },
+  {
+    "path": "/friend/tree",
+    "name": "friend-tree",
+    "component": "components/widgetinvitation/router/tree/friend.vue"
   }
 ]

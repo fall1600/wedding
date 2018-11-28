@@ -15,5 +15,9 @@
         ]
       }
     }
+  },
+  "menu.friend-tree": {
+    "icon": "fa fa-envelop",
+    "route": "friend-tree"
   }
 }
