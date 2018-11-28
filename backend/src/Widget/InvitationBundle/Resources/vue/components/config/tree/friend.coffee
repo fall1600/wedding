@@ -1,5 +1,5 @@
 module.exports =
-  levelLimit: 2
+  levelLimit: 1
   actions: {
     '0': {
       new: true
@@ -7,9 +7,5 @@ module.exports =
     '1': {
       new: true
       update: true
-    },
-    '2': {
-      new: true
-      update: true
-    },
+    }
   }

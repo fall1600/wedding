@@ -10,6 +10,7 @@ index_value:
 
 menu:
   invitation:                         '邀請函'
+  friend-tree:                        '好友樹'
 
 fields:
   invitation:
@@ -27,6 +28,9 @@ invitation:
   update:                             '邀請函資訊'
   create:                             '新增邀請函'
 
+friend:
+  tree:                               '好友樹'
+
 form:
   label:
     edit:
@@ -43,3 +47,4 @@ form:
         known_from:                   '男女方親友'
         session:                      '場次'
         note:                         '祝福的話'
+
