@@ -28,4 +28,19 @@
         <behavior name="addrandompk" />
         <behavior name="timestampable" />
     </table>
+
+    <!-- 用來分類親友 -->
+    <table name="friend_relation" isCrossRef="true">
+        <column name="invitation_id" type="bigint" required="true" primaryKey="true"/>
+        <column name="category_id" type="bigint" required="true" primaryKey="true"/>
+        <behavior name="timestampable" />
+
+        <foreign-key foreignTable="invitation" onUpdate="CASCADE" onDelete="CASCADE">
+            <reference local="invitation_id" foreign="id" />
+        </foreign-key>
+
+        <foreign-key foreignTable="category" onUpdate="CASCADE" onDelete="CASCADE">
+            <reference local="category_id" foreign="id" />
+        </foreign-key>
+    </table>
 </database>

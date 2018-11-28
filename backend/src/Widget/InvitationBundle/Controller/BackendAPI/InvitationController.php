@@ -4,6 +4,7 @@ namespace Widget\InvitationBundle\Controller\BackendAPI;
 
 use Backend\BaseBundle\Controller\BackendAPI\BaseBackendAPIController;
 use Backend\BaseBundle\Form\Type\APIFormTypeItem;
+use Backend\BaseBundle\Form\Type\RelationType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,6 +14,8 @@ use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Widget\CategoryBundle\Model\Category;
+use Widget\InvitationBundle\Model\FriendRelation;
 use Widget\InvitationBundle\Model\Invitation;
 use Widget\InvitationBundle\Model\InvitationPeer;
 use Widget\InvitationBundle\Model\InvitationQuery;
@@ -113,6 +116,12 @@ class InvitationController extends BaseBackendAPIController
                             }
                         })
                     )
+                )),
+            (new APIFormTypeItem("categories"))
+                ->setFieldType(RelationType::class)
+                ->setOptions(array(
+                    'class' => Category::class,
+                    'multiple' => false,
                 )),
             new APIFormTypeItem('note'),
         );

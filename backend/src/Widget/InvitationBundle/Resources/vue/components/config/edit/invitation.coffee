@@ -65,6 +65,11 @@ module.exports =
       label: 'key'
   },
   {
+    name: "friend_relation"
+    type: 'customize'
+    component: require 'components/widgetinvitation/router/edit/_friend_relation.vue'
+  },
+  {
     name: 'note'
     text: 'form.label.edit.invitation.note'
     type: 'textarea'
