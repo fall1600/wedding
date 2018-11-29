@@ -1,23 +1,15 @@
 {
   "menu.invitation": {
     "icon": "fa fa-envelope",
+    "route": "invitation-list",
     "role": [
       "ROLE_INVITATION_READ",
       "ROLE_INVITATION_WRITE"
-    ],
-    "route": {
-      "menu.invitation": {
-        "icon": "fa fa-envelope",
-        "route": "invitation-list",
-        "role": [
-          "ROLE_INVITATION_READ",
-          "ROLE_INVITATION_WRITE"
-        ]
-      }
-    }
-  },
+    ]
+  }
+  ,
   "menu.friend-tree": {
-    "icon": "fa fa-envelop",
+    "icon": "fa fa-tree",
     "route": "friend-tree"
   }
 }
