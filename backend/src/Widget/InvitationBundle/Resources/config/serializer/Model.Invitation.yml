@@ -63,5 +63,6 @@ Widget\InvitationBundle\Model\Invitation:
             serialized_name:        updated_at
         getCategories:
             groups:
+                -                   list
                 -                   detail
             serialized_name:        categories

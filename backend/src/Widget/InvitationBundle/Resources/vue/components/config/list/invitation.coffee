@@ -48,6 +48,16 @@ module.exports =
         value:
           true: "male"
           false: "female"
+    categories:
+      label: 'fields.invitation.categories'
+      type: 'text'
+      search: true
+      searchConfig:
+        key: 'friend_relation.category_id'
+        type: 'select'
+        api: 'invitation.getFriends'
+        choiceValue: 'id'
+        choiceLabel: 'name'
     updated_at:
       defaultSorting: 'desc'
   extra: [
