@@ -23,6 +23,7 @@ fields:
       male:                           '男方'
       female:                         '女方'
     session:                          '場次'
+    categories:                       '好友分類'
 
 invitation:
   update:                             '邀請函資訊'

@@ -50,7 +50,9 @@ module.exports =
           false: "female"
     categories:
       label: 'fields.invitation.categories'
-      type: 'text'
+      type: 'customize'
+      config:
+        component: require 'components/widgetinvitation/router/list/_friends.vue'
       search: true
       searchConfig:
         key: 'friend_relation.category_id'
