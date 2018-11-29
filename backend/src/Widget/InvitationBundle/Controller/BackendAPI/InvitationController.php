@@ -121,7 +121,7 @@ class InvitationController extends BaseBackendAPIController
                 ->setFieldType(RelationType::class)
                 ->setOptions(array(
                     'class' => Category::class,
-                    'multiple' => false,
+                    'multiple' => true,
                 )),
             new APIFormTypeItem('note'),
         );

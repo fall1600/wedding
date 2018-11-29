@@ -65,9 +65,14 @@ module.exports =
       label: 'key'
   },
   {
-    name: "friend_relation"
-    type: 'customize'
-    component: require 'components/widgetinvitation/router/edit/_friend_relation.vue'
+    name: "categories"
+    text: 'form.label.edit.invitation.categories'
+    type: "selector"
+    dataType: 'string_array'
+    config:
+      api: "invitation.getFriends"
+      value: "id"
+      label: "name"
   },
   {
     name: 'note'

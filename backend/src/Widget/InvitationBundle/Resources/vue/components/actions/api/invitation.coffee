@@ -54,3 +54,10 @@ module.exports = (api) ->
         ]
         resolve result
 
+    getFriends: () ->
+      api.request "GET", "/category/friend"
+      .then (root) ->
+        api.request "GET", "/category/#{root.id}"
+      .then (result) ->
+        new Promise (resolve, reject) -> resolve(result)
+

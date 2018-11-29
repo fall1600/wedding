@@ -47,4 +47,5 @@ form:
         known_from:                   '男女方親友'
         session:                      '場次'
         note:                         '祝福的話'
+        categories:                   '好友分類'
 
