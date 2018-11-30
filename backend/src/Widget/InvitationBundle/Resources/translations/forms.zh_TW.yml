@@ -24,6 +24,7 @@ fields:
       female:                         '女方'
     session:                          '場次'
     categories:                       '好友分類'
+    number_of_people:                 '人數'
 
 invitation:
   update:                             '邀請函資訊'

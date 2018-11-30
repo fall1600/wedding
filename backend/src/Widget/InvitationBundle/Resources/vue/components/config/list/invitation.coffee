@@ -48,6 +48,9 @@ module.exports =
         value:
           true: "male"
           false: "female"
+    number_of_people:
+      label: 'fields.invitation.number_of_people'
+      type: 'number'
     categories:
       label: 'fields.invitation.categories'
       type: 'customize'
