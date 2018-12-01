@@ -1,5 +1,5 @@
 <?php
-$apiBase = '__APIBASE__';
+$apiBase = 'https://service.fall1600n.com/api';
 
 if(!preg_match('/^(\w+):\/\//i', $apiBase, $match)){
     header("HTTP/1.0 404 Not Found");
