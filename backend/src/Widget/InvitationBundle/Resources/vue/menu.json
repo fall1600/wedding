@@ -10,6 +10,10 @@
   ,
   "menu.friend-tree": {
     "icon": "fa fa-tree",
-    "route": "friend-tree"
+    "route": "friend-tree",
+    "role": [
+      "ROLE_CATEGORY_READ",
+      "ROLE_CATEGORY_WRITE"
+    ]
   }
 }
