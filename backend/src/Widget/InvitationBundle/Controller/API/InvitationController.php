@@ -4,6 +4,8 @@ namespace Widget\InvitationBundle\Controller\API;
 
 use Backend\BaseBundle\Controller\BackendAPI\BaseBackendAPIController;
 use Backend\BaseBundle\Form\Type\APIFormTypeItem;
+use Backend\BaseBundle\Service\ReCaptchaVerifyService;
+use JMS\DiExtraBundle\Annotation as DI;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,12 +24,27 @@ use Widget\InvitationBundle\Type\InvitationType;
 class InvitationController extends BaseBackendAPIController
 {
     /**
+     * @var ReCaptchaVerifyService
+     * @DI\Inject("widget_invitation.recaptcha_verify")
+     */
+    protected $recaptchaVerify;
+
+    /**
      * @Route("s")
      * @Method({"POST"})
      */
     public function create(Request $request)
     {
         $params = json_decode($request->getContent(), true);
+        if (!isset($params['recaptcha'])) {
+            return $this->createHttpExceptionResponse(Response::HTTP_BAD_REQUEST);
+        }
+        if (!$this->recaptchaVerify->verify($params['recaptcha'])) {
+            return $this->createHttpExceptionResponse(Response::HTTP_BAD_REQUEST);
+        }
+        // 先應硬刪
+        unset($params['recaptcha']);
+
         $form = $this->createForm(
             InvitationType::class,
             $invitation = new Invitation(),

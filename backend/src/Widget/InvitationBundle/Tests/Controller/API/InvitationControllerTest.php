@@ -5,6 +5,7 @@ namespace Widget\InvitationBundle\Tests\Controller\API;
 use Backend\BaseBundle\Tests\Fixture\BaseWebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 use Widget\InvitationBundle\Model\InvitationQuery;
+use Widget\InvitationBundle\Service\ReCaptchaVerifyService;
 
 class InvitationControllerTest extends BaseWebTestCase
 {
@@ -16,8 +17,20 @@ class InvitationControllerTest extends BaseWebTestCase
             "phone" => "0988555666",
             "attend" => "taipei",
             "known_from" => "male",
-            "number_of_people" => 1
+            "number_of_people" => 1,
+            "recaptcha" => "fasfdsfdsaadsadsf"
         );
+
+        $recaptchaVerify = $this->getMockBuilder(ReCaptchaVerifyService::class)
+            ->setMethods(array("verify"))
+            ->getMock();
+
+        $recaptchaVerify->expects($this->once())
+            ->method('verify')
+            ->with($parameter['recaptcha'])
+            ->willReturn(true);
+
+        $this->client->getContainer()->set("widget_invitation.recaptcha_verify", $recaptchaVerify);
 
         //act
         $this->client->request(
@@ -52,6 +65,7 @@ class InvitationControllerTest extends BaseWebTestCase
         InvitationQuery::create()->findOneById($result['id'])->delete();
     }
 
+    /** @group */
     public function test_createAction_來亂的那種()
     {
         //arrange
@@ -60,7 +74,19 @@ class InvitationControllerTest extends BaseWebTestCase
             'name' => array("姓名必填"),
             'phone' => array("聯絡電話必填"),
             'attend' => array("出席意願必填", "出席意願不要給我亂亂填 (╯°▽°)╯ ┻━┻ "),
+            "recaptcha" => "fasfdsfdsaadsadsf"
         );
+
+        $recaptchaVerify = $this->getMockBuilder(ReCaptchaVerifyService::class)
+            ->setMethods(array("verify"))
+            ->getMock();
+
+        $recaptchaVerify->expects($this->once())
+            ->method('verify')
+            ->with($parameter['recaptcha'])
+            ->willReturn(true);
+
+        $this->client->getContainer()->set("widget_invitation.recaptcha_verify", $recaptchaVerify);
 
         //act
         $this->client->request(
