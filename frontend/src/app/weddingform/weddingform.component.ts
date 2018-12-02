@@ -62,7 +62,7 @@ export class WeddingformComponent implements OnInit {
 
       this.weddingService.postWeddingForm({
         ...body,
-        token: this._googleReCaptcha.token
+        recaptcha: this._googleReCaptcha.token
       }).subscribe(res => {
         // console.log(res);
         swal({
@@ -102,7 +102,12 @@ export class WeddingformComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    document.removeChild(this._reCaptchaElement);
+      try {
+          document.body.removeChild(this._reCaptchaElement);
+      } catch (error) {
+          console.error('remove recaptcha script faild');
+          console.error(error);
+      }
   }
 
   async loadGoogleReCAPTCHA() {
