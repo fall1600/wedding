@@ -40,7 +40,7 @@
  *    "attend": "taipei",
  *    "known_from": "male",
  *    "note": "新婚快樂 <3",
- *    "recaptach": "asdfsafdsfffdsfadsfdsafdfjskfjsalfsa"
+ *    "recaptcha": "asdfsafdsfffdsfadsfdsafdfjskfjsalfsa"
  * }
  * @apiSuccessExample {json} 成功回傳範例
  * HTTP/1.1 200 OK
