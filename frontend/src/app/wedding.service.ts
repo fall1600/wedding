@@ -6,7 +6,11 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class WeddingService {
 
-  constructor(private httpClient: HttpClient) { }
+  private _baseUrl: string = null;
+
+  constructor(private httpClient: HttpClient) {
+    this._baseUrl = environment.apiurl;
+  }
 
   nameBunus = [
     // {"name":"","message":""},
@@ -73,7 +77,6 @@ export class WeddingService {
     {"name":"吳孟倫","message":"孟倫安安, 歡迎來玩~ 祝你在感情跟事業都能開花結果唷"},
   ];
 
-
   getNameBonus(name) {
     const messageData = this.nameBunus.filter( v => {
       return v.name === name;
@@ -88,4 +91,21 @@ export class WeddingService {
     // console.log(url);
     return this.httpClient.post(url, body);
   }
+
+  async getReCaptchaKey() {
+    try {
+      const ret = await this.httpClient
+        .get(this._composeEndpoint('/api/config/recaptcha_site_key'))
+        .toPromise();
+      return ret as { config: string };
+    } catch (error) {
+      console.error(error);
+      return { config: '' };
+    }
+  }
+
+  private _composeEndpoint(endpoint: string) {
+    return `${this._baseUrl}${endpoint}`;
+  }
+
 }

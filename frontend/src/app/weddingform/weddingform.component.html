@@ -108,6 +108,10 @@
       <mat-form-field class="input-width"  class="input-style">
         <textarea matInput placeholder="想跟毓柔和璟鴻說" class="note" formControlName="note"></textarea>
       </mat-form-field>
+      <!-- reCAPTCHA field -->
+      <div>
+        <div class="g-recaptcha" [attr.data-sitekey]="_googleReCaptcha.key"></div>
+      </div>
     </form>
 
     <img src="../../assets/moon.png" alt="moon_decoration" class="moon">
