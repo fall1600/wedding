@@ -12,11 +12,21 @@ import { error } from '@angular/compiler/src/util';
 })
 export class WeddingformComponent implements OnInit {
 
+
+
   constructor(
     private fb: FormBuilder,
     private weddingService: WeddingService,
     private _router: Router
   ) { }
+
+  private _googleReCaptcha = {
+    id: 'recaptcha',
+    src: 'https://www.google.com/recaptcha/api.js',
+    key: '',
+    token: '',
+  };
+  private _reCaptchaElement: HTMLScriptElement = null;
 
   numAttends = Array.from({ length: 10 }, (v, k) => k);
   numVegs = Array.from({ length: 5 }, (v, k) => k);
@@ -50,7 +60,10 @@ export class WeddingformComponent implements OnInit {
          delete body[key];
        });
 
-      this.weddingService.postWeddingForm(body).subscribe(res => {
+      this.weddingService.postWeddingForm({
+        ...body,
+        token: this._googleReCaptcha.token
+      }).subscribe(res => {
         // console.log(res);
         swal({
           title: '送出成功!',
@@ -85,9 +98,39 @@ export class WeddingformComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log();
+    this.loadGoogleReCAPTCHA();
   }
 
+  ngOnDestroy() {
+    document.removeChild(this._reCaptchaElement);
+  }
+
+  async loadGoogleReCAPTCHA() {
+    // get key
+    const ret = await this.weddingService.getReCaptchaKey();
+    this._googleReCaptcha.key = ret.config;
+    // load reCAPTCHA api.js
+    const script = document.getElementsByTagName('script')[0];
+    if (document.getElementById(this._googleReCaptcha.id)) {
+      return;
+    }
+    const newScript = document.createElement('script');
+    newScript.id = this._googleReCaptcha.id;
+    newScript.src = this._googleReCaptcha.src + `?render=${this._googleReCaptcha.key}`;
+    this._reCaptchaElement = script.parentNode.insertBefore(newScript, script);
+    this._reCaptchaElement.onload = () => this.onReCaptchaLoad();
+  }
+
+
+  async onReCaptchaLoad() {
+    window['grecaptcha'].ready(() => {
+      window['grecaptcha']
+        .execute(this._googleReCaptcha.key, { action: 'homepage' })
+        .then(token => {
+          this._googleReCaptcha.token = token;
+        });
+    });
+  }
 
   attendence() {
     if (this.weddingForm.get('attend').value === 'no' || this.weddingForm.get('attend').value === 'blessing') {
