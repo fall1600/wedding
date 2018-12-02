@@ -110,7 +110,8 @@
       </mat-form-field>
       <!-- reCAPTCHA field -->
       <div>
-        <div class="g-recaptcha" [attr.data-sitekey]="_googleReCaptcha.key"></div>
+        <!--<div class="g-recaptcha" [attr.data-sitekey]="_googleReCaptcha.key"></div>-->
+        <div class="g-recaptcha" [attr.data-sitekey]="reCaptchaKey"></div>
       </div>
     </form>
 

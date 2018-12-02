@@ -20,7 +20,7 @@ export class WeddingformComponent implements OnInit {
     private _router: Router
   ) { }
 
-  private _googleReCaptcha = {
+  protected _googleReCaptcha = {
     id: 'recaptcha',
     src: 'https://www.google.com/recaptcha/api.js',
     key: '',
@@ -180,4 +180,7 @@ export class WeddingformComponent implements OnInit {
     return (fc.invalid) && (fc.dirty || fc.touched);
   }
 
+  get reCaptchaKey() {
+      return this._googleReCaptcha.key;
+  }
 }
