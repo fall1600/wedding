@@ -26,6 +26,7 @@
  * <li>female (女方)</li>
  * </ul>
  * @apiParam {string} [note] 祝福的話
+ * @apiParam {string} recaptcha recaptcha token
  * @apiParamExample 參數範例
  * {
  *    "name": "fall1600",
@@ -38,7 +39,8 @@
  *    "email": "fall1600@gmail.com",
  *    "attend": "taipei",
  *    "known_from": "male",
- *    "note": "新婚快樂 <3"
+ *    "note": "新婚快樂 <3",
+ *    "recaptach": "asdfsafdsfffdsfadsfdsafdfjskfjsalfsa"
  * }
  * @apiSuccessExample {json} 成功回傳範例
  * HTTP/1.1 200 OK
