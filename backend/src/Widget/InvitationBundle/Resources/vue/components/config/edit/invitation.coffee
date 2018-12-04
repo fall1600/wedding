@@ -75,6 +75,15 @@ module.exports =
       label: "name"
   },
   {
+    name: "desk_number"
+    text: 'form.label.edit.invitation.desk_number'
+    type: "choice"
+    config:
+      api: "invitation.getDesks"
+      value: "id"
+      label: "name"
+  },
+  {
     name: 'note'
     text: 'form.label.edit.invitation.note'
     type: 'textarea'

@@ -18,5 +18,10 @@
     "path": "/friend/tree",
     "name": "friend-tree",
     "component": "components/widgetinvitation/router/tree/friend.vue"
+  },
+  {
+    "path": "/desk/tree",
+    "name": "desk-tree",
+    "component": "components/widgetinvitation/router/tree/desk.vue"
   }
 ]

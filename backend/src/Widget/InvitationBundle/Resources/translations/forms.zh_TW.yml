@@ -11,6 +11,7 @@ index_value:
 menu:
   invitation:                         '邀請函'
   friend-tree:                        '好友樹'
+  desk-tree:                          '桌號樹'
 
 fields:
   invitation:
@@ -33,6 +34,9 @@ invitation:
 friend:
   tree:                               '好友樹'
 
+desk:
+  tree:                               '桌號樹'
+
 form:
   label:
     edit:
@@ -50,4 +54,5 @@ form:
         session:                      '場次'
         note:                         '祝福的話'
         categories:                   '好友分類'
+        desk_number:                  '桌號'
 

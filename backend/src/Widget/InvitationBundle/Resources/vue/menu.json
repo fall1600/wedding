@@ -15,5 +15,13 @@
       "ROLE_CATEGORY_READ",
       "ROLE_CATEGORY_WRITE"
     ]
+  },
+  "menu.desk-tree": {
+    "icon": "fa fa-users",
+    "route": "desk-tree",
+    "role": [
+      "ROLE_CATEGORY_READ",
+      "ROLE_CATEGORY_WRITE"
+    ]
   }
 }

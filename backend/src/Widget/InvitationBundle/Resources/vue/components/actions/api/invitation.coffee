@@ -60,4 +60,10 @@ module.exports = (api) ->
         api.request "GET", "/category/#{root.id}"
       .then (result) ->
         new Promise (resolve, reject) -> resolve(result)
+    getDesks: () ->
+      api.request "GET", "/category/desk"
+      .then (root) ->
+        api.request "GET", "/category/#{root.id}"
+      .then (result) ->
+        new Promise (resolve, reject) -> resolve(result)
 
