@@ -63,7 +63,7 @@ module.exports =
         api: 'invitation.getFriends'
         choiceValue: 'id'
         choiceLabel: 'name'
-    updated_at:
+    created_at:
       defaultSorting: 'desc'
   extra: [
     {
