@@ -1,0 +1,4 @@
+services:
+#    widget_category.example:
+#        class: Widget\CategoryBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

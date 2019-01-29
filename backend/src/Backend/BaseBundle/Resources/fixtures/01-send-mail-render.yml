@@ -1,0 +1,13 @@
+Backend\BaseBundle\Model\SiteConfig:
+    sunny_send:
+        name:         sunny_send.mail
+        config:
+            SunnySend:
+                sunny_send_mail_subject:    "你好 {{testName}}"
+                sunny_send_mail:            "今天天氣 :{{sunny}}"
+
+    mail_template:
+        name:         widget_mail.message
+        config:
+            register_subject:    "你好"
+            register_message:            "今天天氣"

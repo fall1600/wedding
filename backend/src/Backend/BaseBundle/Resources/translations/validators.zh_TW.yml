@@ -1,0 +1,38 @@
+fos_user:
+    username:
+        already_used: 用戶名已存在
+        blank: 請輸入用戶名
+        short: "[-Inf,Inf]用戶名字數不夠"
+        long: "[-Inf,Inf]用戶名字數超出限制"
+    email:
+        already_used: 郵箱已被使用
+        blank: 請輸入郵箱
+        short: "[-Inf,Inf]郵箱字數不夠"
+        long: "[-Inf,Inf]郵箱字數超出限制"
+        invalid: 郵箱格式不正確
+    password:
+        blank: 請輸入密碼
+        short: "[-Inf,Inf]密碼字數不夠"
+        mismatch: 兩次輸入密碼不一致
+    new_password:
+        blank: 請輸入新密碼
+        short: "[-Inf,Inf]新密碼字數不夠"
+    current_password:
+        invalid: 密碼格式不正確
+    group:
+        blank: 請輸入小組名稱
+        short: "[-Inf,Inf]小組名稱字數不夠"
+        long: "[-Inf,Inf]小組名稱字數超出限制"
+    loginName:
+        pattern.error: '所有輸入須為英文小寫或數字，不允許特殊符號'
+        duplicate:     '帳號已存在'
+
+error:
+    save_fail:
+        title:                   '儲存失敗'
+        message:                 '請檢查表單'
+    missing_field:               '此欄位為必填'
+    greater_than_0:              '必須大於0'
+    site_group:
+        name:
+            duplicate:           '群組已存在'

@@ -1,0 +1,58 @@
+{
+  "menu.site_list": {
+    "icon": "fa fa-user",
+    "role": [
+      "ROLE_SUPERADMIN"
+    ],
+    "route": {
+      "menu.siteuser": {
+        "icon": "fa fa-user",
+        "route": "siteuser-list",
+        "role": [
+          "ROLE_SUPERADMIN"
+        ]
+      },
+      "menu.sitegroup": {
+        "icon": "fa fa-users",
+        "route": "sitegroup-list",
+        "role": [
+          "ROLE_SUPERADMIN"
+        ]
+      }
+    }
+  },
+  "menu.site_config":{
+    "icon": "fa fa-cogs",
+    "role": [
+      "ROLE_SUPERADMIN",
+      "ROLE_SETUP",
+      "ROLE_OPERATIONLOG_READ",
+      "ROLE_OPERATIONLOG_WRITE"
+    ],
+    "route": {
+      "menu.9_system_config": {
+        "icon": "fa fa-cog",
+        "group_label": "menu.group.config_base",
+        "route": "setup_system-edit",
+        "role": [
+          "ROLE_SETUP"
+        ]
+      },
+      "menu.9_mail": {
+        "icon": "fa fa-cog",
+        "route": "setup_mail-edit",
+        "role": [
+          "ROLE_SETUP"
+        ]
+      },
+      "menu.9_operation_log": {
+        "icon": "fa fa-cog",
+        "route": "log-list",
+        "role": [
+          "ROLE_OPERATIONLOG_READ",
+          "ROLE_OPERATIONLOG_WRITE"
+        ]
+      }
+    }
+  }
+}

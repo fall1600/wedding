@@ -1,0 +1,22 @@
+DirectoryIndex index.html
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{QUERY_STRING} ^_escaped_fragment_=(.*)$
+    RewriteRule ^$ crawler.php [QSA,L]
+
+    RewriteCond %{HTTP:Accept-encoding} br
+    RewriteCond %{SCRIPT_FILENAME}\.br -s
+    RewriteRule ^(.*)\.(js|css|json)$ $1\.$2\.br [QSA,L]
+    RewriteRule \.css\.br$ - [T=text/css,E=no-gzip:1,E=manualbr:1]
+    RewriteRule \.json\.br$ - [T=application/json,E=no-gzip:1,E=manualbr:1]
+    RewriteRule \.js\.br$ - [T=text/javascript,E=no-gzip:1,E=manualbr:1]
+    Header set Content-Encoding "br" env=manualbr
+
+    RewriteCond %{HTTP:Accept-encoding} gzip
+    RewriteCond %{SCRIPT_FILENAME}\.gz -s
+    RewriteRule ^(.*)\.(js|css|json)$ $1\.$2\.gz [QSA,L]
+    RewriteRule \.css\.gz$ - [T=text/css,E=no-gzip:1,E=manualgzip:1]
+    RewriteRule \.json\.gz$ - [T=application/json,E=no-gzip:1,E=manualgzip:1]
+    RewriteRule \.js\.gz$ - [T=text/javascript,E=no-gzip:1,E=manualgzip:1]
+    Header set Content-Encoding "gzip" env=manualgzip
+</IfModule>

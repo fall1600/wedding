@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database defaultIdMethod="native" name="default" namespace="Backend\BaseBundle\Model">
+
+    <table name="operation_log"> <!-- 操作紀錄 -->
+        <column name="id" type="bigint" required="true" primaryKey="true"/>
+        <column name="site_user_id" type="bigint" required="true"/>
+        <column name="modify_type" type="enum" valueSet="new,update,delete,login" required="true"/>
+        <column name="modify_table" type="varchar" size="128" />
+        <column name="modify_column" type="object" />
+
+        <foreign-key foreignTable="site_user">
+            <reference local="site_user_id" foreign="id" />
+        </foreign-key>
+
+        <behavior name="timestampable" />
+        <behavior name="addrandompk" />
+    </table>
+
+</database>

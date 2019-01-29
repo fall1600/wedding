@@ -1,0 +1,52 @@
+@import "color.sass"
+%form
+    &-radio
+        input[type=radio]
+            display: none
+            &:checked + label:before
+                background: color_main('theme')
+        label
+            font-weight: normal
+            font-size: 1.1em
+            cursor: pointer
+            margin-right: .5em
+            &:before
+                +transition(.2s)
+                content: ''
+                display: inline-block
+                vertical-align: middle
+                height: 1em
+                width: 1em
+                border-radius: 50%
+                background: white
+                box-shadow: inset 0 0 0 3px lighten(black, 80%)
+                margin-right: 0.2em
+    &-checkbox
+        input[type=checkbox]
+            display: none
+            + label
+                position: relative
+                cursor: pointer
+                font-weight: normal
+                &:before
+                    content: ''
+                    background: white
+                    display: inline-block
+                    height: .8em
+                    width: .8em
+                    border-radius: .1em
+                    margin-right: .5em
+                    box-shadow: 1px 1px 0 rgba(black, .1)
+                &:after
+                    +transition(.2s)
+                    @extend %faicon
+                    content: '\f00c'
+                    position: absolute
+                    left: 0
+                    opacity: 0
+                    transform: translateY(-.1em)
+                    color: color_main('theme')
+                    text-shadow: 1px 1px 0 white
+            &:checked + label:after
+                opacity: 1
+                transform: none

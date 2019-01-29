@@ -1,0 +1,11 @@
+Backend\BaseBundle\Model\OperationLog:
+    log0:
+        site_user_id:     admin
+        modify_type:      'new'
+        modify_table:     'site'
+        modify_column:    {}
+    log1:
+        site_user_id:     admin
+        modify_type:      'new'
+        modify_table:     'site'
+        modify_column:    {}

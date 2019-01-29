@@ -1,0 +1,13 @@
+abstractView = require "components/backendbase/actions/abstract-view.coffee"
+
+class {{ moduleName|capitalize }}View extends abstractView
+    _init: () ->
+        require("components/{{ bundleName }}/actions/api/{{ moduleName }}.coffee") @api
+    getConfig: () ->
+        require 'components/{{ bundleName }}/config/view/{{ moduleName }}.coffee'
+# 取得資料
+    _getData: (id) ->
+        @api.{{ moduleName }}.read id
+
+module.exports = (api, id) ->
+    new {{ moduleName|capitalize }}View(api, id)

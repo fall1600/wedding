@@ -1,0 +1,19 @@
+{
+  "menu.site_config":{
+    "icon": "fa fa-cogs",
+    "role": [
+      "ROLE_PHOTO_CONFIG_READ",
+      "ROLE_PHOTO_CONFIG_WRITE"
+    ],
+    "route": {
+      "menu.9_photoconfig": {
+        "icon": "fa fa-cog",
+        "route": "photoconfig-list",
+        "role": [
+          "ROLE_PHOTO_CONFIG_READ",
+          "ROLE_PHOTO_CONFIG_WRITE"
+        ]
+      }
+    }
+  }
+}

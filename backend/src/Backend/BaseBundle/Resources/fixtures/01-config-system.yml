@@ -1,0 +1,6 @@
+Backend\BaseBundle\Model\SiteConfig:
+    system:
+        name:         system
+        config:
+            domains:  '127.0.0.1:8080,localhost:8080'
+

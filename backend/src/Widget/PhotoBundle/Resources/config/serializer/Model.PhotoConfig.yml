@@ -1,0 +1,37 @@
+Widget\PhotoBundle\Model\PhotoConfig:
+    virtual_properties:
+        getId:
+            groups:
+                -               list
+                -               detail
+            serialized_name:    id
+        getName:
+            groups:
+                -               list
+                -               detail
+            serialized_name:    name
+        getBrief:
+            groups:
+                -               list
+                -               detail
+            serialized_name:    brief
+        getCrop:
+            groups:
+                -               list
+                -               detail
+            serialized_name:    crop
+        getConfig:
+            groups:
+                -               list
+                -               detail
+            serialized_name:    config
+        getCreatedAt:
+            groups:
+                -               list
+                -               detail
+            serialized_name:    created_at
+        getUpdatedAt:
+            groups:
+                -               list
+                -               detail
+            serialized_name:    updated_at

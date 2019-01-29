@@ -1,0 +1,20 @@
+{
+    "name": "dgfactor/cm4-widget-photo",
+    "description": "CM4 Photo Widget",
+    "authors": [
+        {
+            "name": "Ricky Su",
+            "email": "ricky@dgfactor.com"
+        }
+    ],
+    "require": {
+        "symfony/symfony": "2.8.*",
+        "dgfactor/cm4-backend-base": "2.0.*",
+        "intervention/image": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Widget\\PhotoBundle\\": ""
+        }
+    }
+}

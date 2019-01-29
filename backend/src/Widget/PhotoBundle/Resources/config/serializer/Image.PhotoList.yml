@@ -1,0 +1,20 @@
+Widget\PhotoBundle\Image\PhotoList:
+    virtual_properties:
+        getMasterPhoto:
+            groups:
+                -               f_member_list
+                -               f_member_detail
+                -               f_anonymous_list
+                -               f_anonymous_detail
+                -               list
+                -               detail
+            serialized_name:    master
+        getArrayCopy:
+            groups:
+                -               f_member_list
+                -               f_member_detail
+                -               f_anonymous_list
+                -               f_anonymous_detail
+                -               list
+                -               detail
+            serialized_name:    photos

@@ -1,0 +1,25 @@
+@import "mixin.scss"
+@import "form.sass"
+@import "color.sass"
+%clearfix
+	&:after
+		content: ''
+		display: block
+		clear: both
+%glyphicon
+    position: relative
+    top: 1px
+    display: inline-block
+    font-family: 'Glyphicons Halflings'
+    font-style: normal
+    font-weight: 400
+    line-height: 1
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+%faicon
+    display: inline-block
+    font: normal normal normal 14px/1 FontAwesome
+    font-size: inherit
+    text-rendering: auto
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale

@@ -1,0 +1,25 @@
+{
+    "name": "dgfactor/cm4-backend-base",
+    "description": "dgFactor CM4 BackendBaseBundle",
+    "authors": [
+        {
+            "name": "Ricky Su",
+            "email": "ricky@dgfactor.com"
+        }
+    ],
+    "require": {
+        "propel/propel-bundle": "^1.4",
+        "jms/di-extra-bundle": "1.8.*",
+        "jms/serializer-bundle": "^1.1",
+        "aws/aws-sdk-php-symfony": "^1.1",
+        "lcobucci/jwt": "^3.1",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Backend\\BaseBundle\\": ""
+        }
+    }
+}

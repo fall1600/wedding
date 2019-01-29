@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/photoconfig",
+    "name": "photoconfig-list",
+    "component": "components/widgetphoto/router/list/photoconfig.vue"
+  },
+  {
+    "path": "/photoconfig/new",
+    "name": "photoconfig-new",
+    "component": "components/widgetphoto/router/edit/photoconfig.vue"
+  },
+  {
+    "path": "/photoconfig/:id",
+    "name": "photoconfig-edit",
+    "component": "components/widgetphoto/router/edit/photoconfig.vue"
+  }
+]

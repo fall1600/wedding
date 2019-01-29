@@ -1,0 +1,30 @@
+<template>
+    <div class="page-content">
+        <edit :editSetting="editSetting" :useCustomize="customize" :customizeConfig="customizeConfig"></edit>
+    </div>
+</template>
+
+<script lang="babel!coffee" type="text/coffeescript">
+    module.exports =
+        mixins: [require "components/backendbase/mixins/editConfig.coffee"]
+        data: () ->
+            customize: []
+{% if hasEdit is defined %}
+            customizeConfig:
+                disableSaveBtn:    {{ hasEdit?'false':'true' }}
+{% endif %}
+        events:
+            "form.postSaveSuccess": (result, redirect) ->
+                if redirect != undefined
+                    @$router.replace
+                        name: "{{ moduleName }}-list"
+                    return
+                @$router.replace
+                    name: "{{ moduleName }}-edit"
+                    params:
+                        id: result.id
+                return
+        methods:
+            getModel: () ->
+                require('components/{{ bundleName }}/actions/edit/{{ moduleName }}.coffee')
+</script>

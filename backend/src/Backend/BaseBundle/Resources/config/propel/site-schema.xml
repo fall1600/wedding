@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database defaultIdMethod="native" name="default" namespace="Backend\BaseBundle\Model">
+    <table name="site_user"> <!-- 網站後台管理帳號 -->
+        <column name="id" type="bigint" required="true" primaryKey="true"/>
+        <column name="login_name" type="varchar" size="128" required="true" primaryString="true"/>
+        <column name="first_name" type="varchar" size="128" />
+        <column name="last_name" type="varchar" size="128" />
+        <column name="email" type="varchar" size="128" required="true"/>
+        <column name="password" type="varchar" size="128"/>
+        <column name="salt" type="varchar" size="128"/>
+        <column name="enabled" type="boolean" required="true" default="true"/>
+        <column name="confirm_token" type="varchar" size="64"/>
+        <column name="password_expired_at" type="timestamp"/>
+        <column name="token_expired_at" type="timestamp" />
+        <column name="default_roles" type="array"/>
+        <column name="custom_roles" type="array" />
+        <column name="last_login" type="timestamp" required="false"/>
+        <unique>
+            <unique-column name="login_name" />
+        </unique>
+
+        <unique>
+            <unique-column name="email" />
+        </unique>
+
+        <behavior name="timestampable" />
+        <behavior name="addrandompk" />
+    </table>
+
+    <table name="site_group">
+        <column name="id" type="bigint" required="true" primaryKey="true"/>
+        <column name="name" type="varchar" size="128" required="true" primaryString="true" />
+        <column name="default_roles" type="array"/>
+        <column name="custom_roles" type="array" />
+
+        <behavior name="timestampable" />
+        <behavior name="addrandompk" />
+    </table>
+
+    <!-- 中繼資料表將category跟product關聯起來 -->
+    <table name="site_user_group" isCrossRef="true">
+        <column name="site_user_id" type="bigint" required="true" primaryKey="true" />
+        <column name="site_group_id" type="bigint" required="true" primaryKey="true" />
+
+        <foreign-key foreignTable="site_user">
+            <reference local="site_user_id" foreign="id" />
+        </foreign-key>
+
+        <foreign-key foreignTable="site_group">
+            <reference local="site_group_id" foreign="id" />
+        </foreign-key>
+    </table>
+
+    <table name="site_config"> <!-- 網站設定 -->
+        <column name="name" type="varchar" size="128" required="true" primaryKey="true"/>
+        <column name="config" type="object" required="true" default="null" sqlType="longtext"/>
+
+        <behavior name="timestampable" />
+    </table>
+
+</database>

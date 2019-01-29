@@ -1,0 +1,65 @@
+ROLE_PHOTO.type:               '照片管理'
+ROLE_PHOTO_CONFIG.type:        '照片管理'
+ROLE_PHOTO_CONFIG_READ:        '檢視照片設定'
+ROLE_PHOTO_CONFIG_READ.hint:   '可以進入列表，以及檢視內容'
+ROLE_PHOTO_CONFIG_WRITE:       '編輯照片設定'
+ROLE_PHOTO_CONFIG_WRITE.hint:  '可以新增、編輯、刪除照片設定'
+ROLE_PHOTO_WRITE:              '上傳照片'
+ROLE_PHOTO_WRITE.hint:         '可以上傳照片'
+ROLE_PHOTO_READ:              '讀取照片'
+ROLE_PHOTO_READ.hint:          '可以讀取照片內容'
+
+
+breadcrumb:
+    route:
+        widget_photo_backend_config_index:          '照片設定管理'
+        widget_photo_backend_config_new:            '新增照片設定'
+        widget_photo_backend_config_edit:           '編輯照片設定'
+
+menu:
+    9_photoconfig:       '照片設定管理'
+    photoconfig:       '照片設定管理'
+
+photoconfig:
+    create:            '新增照片設定'
+    update:            '編輯照片設定'
+
+index:
+    photo_config:
+        name:                  '標題'
+        created_at:            '建立時間'
+
+form:
+    bundle:
+        WidgetPhotoBundle:     '相片管理'
+    button:
+        select_photo:          '選取照片'
+        set_master:            '設為主要照片'
+    choice:
+        photo_config_item:
+            inbox:             '向內貼齊'
+            outbox:            '向外貼齊'
+            crop:              '居中剪裁'
+            resizecrop:        '縮放並剪裁'
+            fit:               '強制縮放'
+    label:
+        help:
+            photo_config:
+                name:          '必須是數字、小寫英文字母以及 _ 的組合 ( 0-9, a-z, _ )'
+        edit:
+            photo_config:
+                name:          '照片組名稱'
+                brief:         '說明'
+                crop:          '是否剪裁'
+                config:        '照片設定'
+                button:        '新增照片'
+            photo_config_item:
+                type:          '類型'
+                suffix:        '結尾識別名稱'
+                width:         '寬'
+                height:        '高'
+
+index_value:
+    operation_log:
+        modify_table:
+            photo_config :    '照片設定管理'

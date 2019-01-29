@@ -1,0 +1,38 @@
+Backend\BaseBundle\Model\SiteGroup:
+    virtual_properties:
+        getId:
+            groups:
+                -       detail
+                -       list
+            type:       string
+            serialized_name:    id
+        getName:
+            groups:
+                -       detail
+                -       list
+            type:       string
+            serialized_name:    name
+        getSiteUsers:
+            groups:
+                -       detail
+            serialized_name:    site_users
+        getDefaultRoles:
+            groups:
+                -       detail
+            type:       array
+            serialized_name:    default_roles
+        getCustomRoles:
+            groups:
+                -       detail
+            type:       array
+            serialized_name:    custom_roles
+        getCreatedAt:
+            groups:
+                -       detail
+                -       list
+            serialized_name:    created_at
+        getUpdatedAt:
+            groups:
+                -       detail
+                -       list
+            serialized_name:    created_at

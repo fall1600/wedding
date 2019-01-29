@@ -1,0 +1,21 @@
+Backend\BaseBundle\Model\SiteUser:
+    admin:
+        login_name:    admin
+        first_name:    adimn
+        last_name:     admin
+        email:         admin@dgfactor.com
+        enabled:       true
+        default_roles:
+            -    ROLE_SUPERADMIN
+    admin_dgfactor:
+        login_name:    admin_dgfactor
+        email:         admin_dgfactor@dgfactor.com
+        enabled:       true
+        default_roles:
+            -    ROLE_SUPERADMIN
+    baduser:
+        login_name:    baduser
+        email:          baduser@dgfactor.com
+        enabled:        false
+        default_roles:
+            -    ROLE_SUPERADMIN

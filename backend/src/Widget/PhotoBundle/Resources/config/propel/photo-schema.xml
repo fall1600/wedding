@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" namespace="Widget\PhotoBundle\Model" defaultIdMethod="native">
+
+    <table name="photo_config">
+        <column name="id" type="bigint" required="true" primaryKey="true"/>
+        <column name="name" type="varchar" size="255" required="true" primaryString="true" /> <!-- 識別代碼 -->
+        <column name="brief" type="varchar" size="255" required="true" /> <!-- 縮圖描述 -->
+        <column name="crop" type="boolean" required="true" default="false"/>
+        <column name="config" type="object"/>
+
+        <unique>
+            <unique-column name="name" />
+        </unique>
+
+        <behavior name="timestampable" />
+        <behavior name="addrandompk" />
+    </table>
+
+    <table name="photo">
+        <column name="id" type="bigint" required="true" primaryKey="true"/>
+        <column name="uid" type="varchar" size="128" />
+        <column name="info" type="object" />
+        <column name="origin_info" type="object" />
+        <column name="size" type="integer" default="0" />
+        <column name="member_id" type="bigint" />
+
+        <unique>
+            <unique-column name="uid" />
+        </unique>
+
+        <behavior name="timestampable" />
+        <behavior name="addrandompk" />
+    </table>
+    
+</database>

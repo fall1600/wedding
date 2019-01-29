@@ -1,0 +1,33 @@
+Backend\BaseBundle\Model\OperationLog:
+    virtual_properties:
+        getId:
+            groups:
+                -       list
+                -       detail
+            serialized_name:    id
+        getSiteUser:
+            groups:
+                -       list
+                -       detail
+            serialized_name:    site_user
+        getModifyType:
+            groups:
+                -       list
+                -       detail
+            serialized_name:    modify_type
+        getModifyTable:
+            groups:
+                -       list
+                -       detail
+            serialized_name:    modify_table
+        getModifyColumn:
+            groups:
+                -       list
+                -       detail
+            serialized_name:    modify_column
+        getCreatedAt:
+            groups:
+                -       list
+                -       detail
+            serialized_name:    created_at
+

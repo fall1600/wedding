@@ -1,0 +1,30 @@
+Widget\CategoryBundle\Model\Category:
+    virtual_properties:
+        getId:
+            groups:
+                -               list
+                -               detail
+            serialized_name:    id
+        getName:
+            groups:
+                -               list
+                -               detail
+            serialized_name:    name
+        getStatus:
+            groups:
+                -               detail
+            serialized_name:    status
+        getLevel:
+            groups:
+                -               detail
+            serialized_name:    level
+        getMetaData:
+            groups:
+                -               list
+                -               detail
+            serialized_name:    meta_data
+        isLeaf:
+            groups:
+                -               list
+                -               detail
+            serialized_name:    is_leaf

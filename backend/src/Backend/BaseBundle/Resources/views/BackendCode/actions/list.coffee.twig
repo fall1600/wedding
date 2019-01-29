@@ -1,0 +1,25 @@
+abstractList = require "components/backendbase/actions/abstract-list.coffee"
+
+class {{ moduleName|capitalize }}List extends abstractList
+  _init: () ->
+    require('components/{{ bundleName }}/actions/api/{{ moduleName }}.coffee') @api
+  _getConfig: () ->
+    require('components/{{ bundleName }}/config/list/{{ moduleName }}.coffee')
+# 資料請求
+  request: () -> @api.{{ moduleName }}.search @_searchData()
+{% if "batch" in allowActions%}
+# 批次處理
+  batch: (ids, action, column, value) ->
+    @api.{{ moduleName }}.batch ids, action, column, value
+{% endif %}
+{% if "quick" in allowActions%}
+# 快速編輯, 切換狀態
+  quickEdit: (id, data) -> @api.{{ moduleName }}.update id, data
+{% endif %}
+{% if "delete" in allowActions%}
+# 刪除資料
+  deleteData: (id) -> @api.{{ moduleName }}.delete id
+{% endif %}
+
+module.exports = (api) ->
+  new {{ moduleName|capitalize }}List(api)

@@ -1,0 +1,52 @@
+Widget\CategoryBundle\Model\Category:
+    root:
+        thread_id:       menu
+        tree_left:       1
+        tree_right:      20
+        tree_level:      0
+    node_1_1:
+        thread_id:       menu
+        tree_left:       2
+        tree_right:      15
+        tree_level:      1
+    node_1_2:
+        thread_id:       menu
+        tree_left:       16
+        tree_right:      17
+        tree_level:      1
+    node_1_3:
+        thread_id:       menu
+        tree_left:       18
+        tree_right:      19
+        tree_level:      1
+    node_2_1:
+        thread_id:       menu
+        tree_left:       3
+        tree_right:      10
+        tree_level:      2
+    node_2_2:
+        thread_id:       menu
+        tree_left:       11
+        tree_right:      12
+        tree_level:      2
+    node_2_3:
+        thread_id:       menu
+        tree_left:       13
+        tree_right:      14
+        tree_level:      2
+    node_3_1:
+        thread_id:       menu
+        tree_left:       4
+        tree_right:      5
+        tree_level:      3
+    node_3_2:
+        thread_id:       menu
+        tree_left:       6
+        tree_right:      7
+        tree_level:      3
+    node_3_3:
+        thread_id:       menu
+        tree_left:       8
+        tree_right:      9
+        tree_level:      3
+

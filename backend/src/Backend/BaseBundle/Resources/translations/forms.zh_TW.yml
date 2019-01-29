@@ -1,0 +1,419 @@
+ROLE_SUPERADMIN.type:     '系統管理員'
+ROLE_SUPERADMIN:          '系統管理員'
+ROLE_SUPERADMIN.hint:     '擁有所有權限'
+
+ROLE_SETUP.type:          '網站設定管理'
+ROLE_SETUP:               '網站設定'
+ROLE_SETUP.hint:          '可以進行網站設定變更'
+
+ROLE_OPERATIONLOG.type:          '操作紀錄'
+ROLE_OPERATIONLOG_READ:          '讀取操作紀錄'
+ROLE_OPERATIONLOG_READ.hint:     '可以檢視操作紀錄'
+ROLE_OPERATIONLOG_WRITE:         '編輯操作紀錄'
+ROLE_OPERATIONLOG_WRITE.hint:    '可以刪除操作紀錄'
+
+login:
+    alert:
+        success:
+            title:              '登入'
+            message:            '登入成功'
+        user_not_found:
+            title:              '登入錯誤'
+            message:            '使用者不存在'
+        password_fail:
+            title:              '登入錯誤'
+            message:            '密碼不正確'
+
+logout:
+    alert:
+        confirm:      '確定要登出？'
+        title:        '登出'
+        message:      '登出成功'
+
+batch:
+    action:
+        delete:       '批次刪除'
+    index:
+        site_user:
+            enabled:   '帳號狀態 啟用/停用 切換'
+            enable:    '帳號啟用'
+            disable:   '帳號停用'
+    select:
+        all:             '全選'
+    confirm:
+        message:         '確定message?'
+    button:
+        action:          '勾選項目'
+    operation_log:
+        delete:          '刪除所選項目'
+        enable:          '啟用所選項目'
+    site_user:
+        enable:          '啟用所選項目'
+        disable:         '停用所選項目'
+        delete:          '刪除所選項目'
+    site_group:
+        delete:          '刪除所選項目'
+
+
+"Bad credentials.":           '帳號或密碼錯誤'
+"User account is disabled.":  '帳號已停用'
+
+editor:
+    upload:
+        success:
+            title:          '圖片上傳成功'
+            message:        '圖片已成功新增到編輯器中'
+        error:
+            title:          '圖片上傳失敗'
+            message:        '圖片上傳失敗, 請重新選擇圖片上傳'
+
+breadcrumb:
+    route:
+        backend_base_backend_siteuser_edit:                  "編輯帳號"
+        backend_base_backend_siteuser_new:                   "新增帳號"
+        backend_base_backend_siteuser_index:                 "帳號列表"
+        backend_base_backend_siteuser_profile:               "個人資料設定"
+        backend_base_backend_sitegroup_edit:                 "編輯群組"
+        backend_base_backend_sitegroup_new:                  "新增群組"
+        backend_base_backend_sitegroup_index:                "群組列表"
+        backend_base_backend_setup_setup:                    "網站設定"
+        backend_base_backend_operationlog_index:             "操作紀錄"
+        backend_base_backend_default_index:                  "首頁"
+message:
+    data:
+        empty:            '目前暫無資料'
+        success:
+            status:       '成功'
+            save:         '資料已更新'
+            delete:       '資料已刪除'
+            status_true:  '啟用資料成功'
+            status_false: '停用資料成功'
+            forgetpassword_mail_send:          '忘記密碼確認信件已送出'
+            password_reset:                    '密碼變更成功，請重新登入'
+        error:
+            status:       '失敗'
+            save:         '資料更新失敗'
+            delete:       '資料刪除失敗'
+            status_true:  '啟用資料失敗'
+            status_false: '停用資料失敗'
+            bad_email:    'Email 錯誤'
+    confirm:
+        delete:           '確定要刪除?'
+    logout:               '登出'
+    profile:              '個人資料'
+    backend:
+        login:
+            err:
+                title:    '登入失敗'
+                message:  '錯誤代碼'
+                400:      '格式錯誤'
+                403:      '帳號或密碼驗證錯誤'
+                404:      '帳號不存在'
+            backend:      '登入'
+            welcome:      '歡迎光臨'
+            info:         '登入管理系統'
+            forgetpassword: '忘記密碼?'
+        forgetpassword:
+            welcome:      '忘記密碼'
+            info:         '請輸入 Email 系統將會發出一封確認信:'
+        resetpassword:
+            welcome:      '重設密碼'
+            info:         '請輸入新密碼'
+setup:
+    system:               '系統設定'
+    mail:                 '寄信設定'
+
+setup_system:
+    update:            '系統設定'
+
+
+setup_mail:
+    update:            '寄信設定'
+
+menu:
+    site_list:         '帳號管理'
+    siteuser:          '帳號列表'
+    sitegroup:         '群組列表'
+    site_config:       '網站設定'
+    category:          '節點管理'
+    9_operation_log:   '操作紀錄'
+    9_system_config:   '系統設定'
+    9_mail:            '寄信設定'
+    z_dashboard:       '主控台'
+    dashboard:       '主控台'
+    operation_log:   '操作紀錄'
+    system_config:   '系統設定'
+    mail:            '寄信設定'
+    log:               '操作紀錄'
+    group:
+        config_base:   '基本設定'
+pagination:
+    data_length:                    '資料筆數'
+    current_page_data_length:       '本頁資料筆數'
+action:
+    edit:              '編輯'
+    delete:            '刪除'
+    view:              '檢視'
+    new:               '新增'
+    quick:             '快速編輯'
+    save:              '存檔'
+    cancel_quick:      '取消'
+    mailto:            '寄信'
+
+sitegroup:
+    create:           '新增群組'
+    update:           '編輯群組'
+siteuser:
+    create:           '新增帳號'
+    update:           '編輯帳號'
+log:
+    view:             '檢視操作紀錄'
+
+quick:
+    success:
+        siteuser:
+            list:     '帳號更新成功'
+index:
+    search:
+        boolean:
+            default_label:
+                'true':   '啟用'
+                'false':  '停用'
+    action:           '動作'
+    site_user:
+        first_name:   '姓名'
+        last_name:    '姓氏'
+        login_name:   '帳號'
+        email:        'email'
+        site_groups:  '帳號群組'
+        enabled:      '狀態'
+        last_login:   '最後登入'
+        created_at:   '建立時間'
+        updated_at:   '更新時間'
+    site_group:
+        name:         '群組名稱'
+        created_at:   '建立時間'
+    operation_log:
+        login_name:   '帳號'
+        modify_type:  '動作'
+        modify_table: '變動項目'
+        created_at:   '操作時間'
+index_value:
+    operation_log:
+        modify_type:
+            new:      '新增'
+            update:   '修改'
+            delete:   '刪除'
+            login:    '登入'
+        modify_table:
+            login:    '登入'
+            site_config:    '網站設定'
+            site_user:      '帳號'
+            site_group:     '群組'
+            category:       '分類項目'
+search:
+    site_user:
+        login_name:   '帳號'
+        email:        'email'
+        enable:       '啟用'
+        created_at:   '建立時間'
+    operation_log:
+        login_name:   '帳號'
+        created_at:   '操作時間'
+    choice:
+        warning:
+            noChoices:                      '目前無任何選項'
+form:
+    bundle:
+        BackendBaseBundle:                  '基本系統'
+        WidgetPostBundle:                   '文章管理'
+    button:
+        send:                               '送出'
+        submit_back:                        '儲存後返回'
+        submit:                             '確定儲存'
+        cancel:                             '取消'
+        previous:                           '返回'
+        reset:                              '重新填寫'
+        add_new_row:                        '新增一筆資料'
+        search:                             '搜尋'
+        add_new_item:                       '新增項目'
+        close:                              '關閉'
+        return:                             '返回'
+        new:                                '新增'
+        edit:                               '編輯'
+        delete:                             '刪除'
+        back:                               '回上一頁'
+    choice:
+        shelves:                            '上架'
+        offshelf:                           '下架'
+        enable:                             '啟用'
+        disable:                            '停用'
+        yes:                                '是'
+        no:                                 '否'
+    label:
+        type:
+            datetimerange:
+                greater:                    '大於'
+                less:                       '小於'
+        setup:
+            system:
+                recaptcha_site_key:             'Recaptcha Site Key'
+                recaptcha_secret_key:           'Recaptcha Secret Key'
+                google_tag_manager:             'Google Tag Manager'
+                allow_domains:                  '允許網址'
+            mail:
+                smtp_host:                      'SMTP主機'
+                smtp_auth_type:                 'SMTP認證方式'
+                smtp_encrypt:                   'SMTP加密方式'
+                smtp_port:                      'SMTP通訊埠'
+                smtp_account:                   'SMTP帳號'
+                smtp_password:                  'SMTP密碼'
+                sender_name:                    '寄件人名稱'
+                sender_mail:                    '寄件人Mail'
+                reply_name:                     '回覆名稱'
+                reply_mail:                     '回覆Mail'
+        edit:
+            column:
+                repeat_password:            '再次確認密碼'
+                repeat_email:               '再次確認Email'
+                error:
+                    message:
+                        password:                 '密碼欄位輸入錯誤'
+                        repeat_password:          '確認密碼需與密碼欄位相同'
+            upload:
+                uploaded:                 '已上傳圖片'
+                new:                      '上傳新圖片'
+                view:                     '圖片預覽'
+                queue:                    '等待上傳'
+                success:                  '上傳完成'
+                fail:                     '上傳失敗, 請重新選取檔案'
+                delete:                   '刪除'
+                delete_confirm:           '確定要刪除圖片?'
+                upload:
+                    limit:
+                        max:              '最多張數'
+                        min:              '最少張數'
+                    not_allow:
+                        title:            '無法上傳'
+                        message:          '請確認圖片數量'
+                    success:
+                        title:            '上傳完成'
+                        message:          '張圖片上傳完成'
+                    fail:
+                        title:            '上傳失敗'
+                        message:          '張圖片上傳失敗'
+            site_user:
+                login_name:                 '帳號'
+                first_name:                 '名字'
+                last_name:                  '姓氏'
+                email:                      'email'
+                enable:                     '狀態'
+                groups:                     '群組'
+                plain_password:             '密碼'
+                repeat_password:            '再次確認密碼'
+                roles:                      '權限'
+                upload_photo:               '上傳照片'
+            site_group:
+                name:                       '群組名稱'
+                users:                      '成員'
+                roles:                      '權限'
+        view:
+            operation_log:
+                id:                         'id'
+                login_name:                 '帳號'
+                modify_type:                '動作'
+                modify_table:               '變動項目'
+                modify_column:              '內容'
+                created_at:                 '操作時間'
+    help:
+        member:
+            login_name:                     '所有輸入須為英文小寫或數字，不允許特殊符號'
+    sub_title:
+        recaptcha:                          'Google Recaptcha'
+        gtm:                                'Google Tag Manager'
+
+ROLE_CONTACTER_READ:                        '檢視聯絡人'
+ROLE_CONTACTER_WRITE:                       '編輯聯絡人'
+ROLE_DISCOUNT_READ:                         '檢視優惠'
+ROLE_DISCOUNT_WRITE:                        '編輯優惠'
+ROLE_CONTACTER:
+    type:                                   '聯絡人管理'
+ROLE_DISCOUNT:
+    type:                                   '優惠管理'
+
+list:
+    export:
+        fail:
+            title:                          '匯出失敗'
+            message:                        '匯出失敗'
+    alert:
+        delete:                             '確定要刪除?'
+        quick:
+            success:
+                title:                      '更新成功'
+                message:                    '更新成功'
+            fail:
+                title:                      '更新失敗'
+                role_not_allow:
+                    title:                  '更新失敗'
+                    message:                '權限不足'
+
+category:
+    form:
+        reject:
+            title:                           '操作錯誤'
+            message:                         '分類名稱為必填'
+
+default_value:
+    boolean:
+        "true":               '是'
+        "false":              '否'
+
+dashboard:
+    member:
+        link:                         '前往會員列表'
+        title:                        '會員資訊'
+        info:
+            total:                    '總會員數'
+            new_signup:               '最新加入會員'
+            recentShopping_count:     '最近有消費的會員數'
+            recentShopping:           '最近有消費的會員'
+            newSignup:                '最新加入會員'
+        table:
+            th:
+                name:                 '姓名'
+                email:                'email'
+                created_at:           '註冊時間'
+                enabled:              '狀態'
+        enabled:
+            "true":                   '已認証(會員)'
+            "false":                  '未認証(非會員)'
+    order:
+        title:                        '訂單資訊'
+        info:
+            last:                     '新訂單'
+            hasNotPaid:               '未付款訂單'
+            paidFail:                 '付款失敗訂單'
+            pending:                  '待出貨訂單'
+            topOrder:                 '消費排行'
+            status_count:             '自訂訂單狀態'
+        table:
+            th:
+                id:                   '訂單編號'
+                name:                 '付款人姓名'
+                email:                '付款人email'
+                amount:               '訂單金額'
+                amount_for_pay:       '折扣後金額'
+        last:
+            title:                    '新訂單'
+        pending:
+            title:                    '待出貨訂單'
+        paidFail:
+            title:                    '付款失敗訂單'
+
+    contactus:
+        untreated:
+            title:                    '未處理訊息'
+404:
+    title:                    '資料讀取失敗'
+    message:                    '找不到這個筆資料, 該筆資料可能已被刪除'

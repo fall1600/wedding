@@ -1,0 +1,15 @@
+{
+    "name": "dgfactor/cm4-widget-script",
+    "description": "CM4 Composer Installer Script",
+    "authors": [
+        {
+            "name": "Ricky Su",
+            "email": "ricky@dgfactor.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dgfactor\\Script\\": ""
+        }
+    }
+}

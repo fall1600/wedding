@@ -1,0 +1,9 @@
+backend_api:
+    resource: "@BackendBaseBundle/Controller/BackendAPI"
+    type:     annotation
+    prefix:   /admin/api
+
+api:
+    resource: "@BackendBaseBundle/Controller/API"
+    type:     annotation
+    prefix:   /api

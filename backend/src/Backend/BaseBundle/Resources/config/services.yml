@@ -1,0 +1,11 @@
+services:
+    jms_serializer.propel_collection_handler:
+        class:            JMS\Serializer\Handler\PropelCollectionHandler
+        tags:
+            -
+                name:     jms_serializer.subscribing_handler
+parameters:
+    backend_base.system_config:                  []
+    backend_base.mail_config:                    []
+    puppeteer_api:                                'http://localhost:9999/render'
+    ssr_engine:                                   phantomjs

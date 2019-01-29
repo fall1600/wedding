@@ -1,0 +1,4 @@
+$theme-color: #169F85
+$color_main: ('theme': #169F85, 'black': #2A3F54)
+@function color_main($_colorname)
+	@return map-get($color_main, $_colorname)

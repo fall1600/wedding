@@ -1,0 +1,18 @@
+abstractEdit = require "components/backendbase/actions/abstract-edit.coffee"
+
+class {{ moduleName|capitalize }}Edit extends abstractEdit
+  _init: () ->
+    require("components/{{ bundleName }}/actions/api/{{ moduleName }}.coffee") @api
+  injectConfig: () ->
+    require 'components/{{ bundleName }}/config/edit/{{ moduleName }}.coffee'
+# 取得資料
+  _getData: (id) ->
+    @api.{{ moduleName }}.read id
+# 儲存表單
+  save: () ->
+    @api.{{ moduleName }}.update @editSetting.dataRow.id, @editSetting.dataRow
+# 新增表單
+  create: () ->
+    @api.{{ moduleName }}.create @editSetting.dataRow
+module.exports = (api, id) ->
+  new {{ moduleName|capitalize }}Edit(api, id)

@@ -1,0 +1,8 @@
+validator:
+    photo_config:
+        name:
+            value_not_allow:        '錯誤的數值, 必須是 0-9, a-z, 以及 _ 的組合'
+            duplicate:              '已經有重複名稱的項目'
+        suffix:
+            value_not_allow:        '錯誤的數值, 必須是 0-9, a-z, 以及 _ 的組合, 並且不能是 origin'
+        greater_than_0:             '必須大於0'

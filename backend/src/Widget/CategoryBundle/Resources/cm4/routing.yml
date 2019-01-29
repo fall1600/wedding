@@ -1,0 +1,2 @@
+WidgetCategoryBundle:
+    resource: "@WidgetCategoryBundle/Resources/config/routing.yml"

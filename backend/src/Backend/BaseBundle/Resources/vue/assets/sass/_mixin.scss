@@ -1,0 +1,95 @@
+@mixin max-screen($res){
+    @media only screen and ( max-width: $res )
+    {
+        @content;
+    }
+}
+@mixin min-screen($res){
+    @media only screen and ( min-width: $res )
+    {
+        @content;
+    }
+}
+
+//border
+@mixin border-radius($coner: 5px){
+    border-radius: $coner;
+    -webkit-border-radius: $coner;
+    -moz-border-radius: $coner;
+}
+@mixin border-radius-dt($top: 5px, $right: 5px, $bottom: 5px, $left: 5px){
+    border-radius: $top $right $bottom $left;
+    -webkit-border-radius: $top $right $bottom $left;
+    -moz-border-radius: $top $right $bottom $left;
+}
+
+//hover
+@mixin hover-opacity($opacity: 0.8){
+    opacity: $opacity;
+    &:hover{ opacity: 1}
+}
+@mixin hover-lighten($bgcolor: #ccc, $amount: 5%){
+    background-color: $bgcolor;
+    &:hover{ background-color: lighten($bgcolor, $amount);}
+}
+@mixin hover-darken($bgcolor: #ccc, $amount: 5%){
+    background-color: $bgcolor;
+    &:hover{ background-color: darken($bgcolor, $amount);}
+}
+@mixin active-press($amount: 0.3){
+    &:active{ box-shadow: inset 1px 2px 3px rgba(0, 0, 0, $amount);}
+}
+
+//gradient
+@mixin bg-gradient($direction: to bottom, $color1: red, $color2: blue){
+    background: $color1 \0; /* For ie8-9*/
+    background: -webkit-linear-gradient($direction, $color1, $color2); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($direction, $color1, $color2); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($direction, $color1, $color2); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($direction, $color1, $color2); /* Standard syntax (must be last) */
+}
+
+//shadow
+@mixin box-shadow($x: 0, $y: 0, $blur: 1px, $alpha: 0.2) {
+    -webkit-box-shadow: $x $y $blur rgba(0, 0, 0, $alpha);
+    -moz-box-shadow: $x $y $blur rgba(0, 0, 0, $alpha);
+    box-shadow: $x $y $blur rgba(0, 0, 0, $alpha);
+}
+@mixin box-shadow-inset($x: 0, $y: 0, $blur: 1px, $alpha: 0.2) {
+    -webkit-box-shadow: inset $x $y $blur rgba(0, 0, 0, $alpha);
+    -moz-box-shadow: inset $x $y $blur rgba(0, 0, 0, $alpha);
+    box-shadow: inset $x $y $blur rgba(0, 0, 0, $alpha);
+}
+@mixin text-shadow($x: 0, $y: 0, $blur: 1px, $alpha: 0.2) {
+    -webkit-text-shadow: $x $y $blur rgba(0, 0, 0, $alpha);
+    -moz-text-shadow: $x $y $blur rgba(0, 0, 0, $alpha);
+    text-shadow: $x $y $blur rgba(0, 0, 0, $alpha);
+}
+
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin inline($itemEachRow, $cardsSpace: 30px, $reset: 0){
+    display: inline-block;
+    $cardsInEachRow: $itemEachRow;
+    @if($itemEachRow == 1){
+        width: 100%
+    }
+    @else{
+        width: calc((100% - (#{$cardsSpace} * (#{$cardsInEachRow} - 1))) / #{$cardsInEachRow});
+    }
+    @if($reset != 0){
+        &:nth-of-type(#{$reset}n+1){
+            margin-left: $cardsSpace;
+        }
+    }
+    margin: 0 0 $cardsSpace $cardsSpace;
+    &:nth-of-type(#{$cardsInEachRow}n+1){
+        margin-left: 0;
+    }
+}

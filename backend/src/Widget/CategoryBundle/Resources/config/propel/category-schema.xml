@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" namespace="Widget\CategoryBundle\Model" defaultIdMethod="native">
+    <table name="category">
+        <column name="id" type="bigint" required="true" primaryKey="true"/>
+        <column name="name" type="varchar" size="255" required="true" default="root" primaryString="true" />
+        <column name="status" type="boolean" required="true" default="true"/>
+        <column name="thread_id" type="bigint" required="true" />
+        <column name="meta_data" type="object" />
+        <foreign-key foreignTable="category_thread">
+            <reference local="thread_id" foreign="id"/>
+        </foreign-key>
+        <behavior name="nested_set">
+            <parameter name="use_scope" value="true" />
+            <parameter name="scope_column" value="thread_id" />
+        </behavior>
+        <behavior name="addrandompk" />
+        <behavior name="i18n">
+            <parameter name="i18n_columns" value="name" />
+        </behavior>
+    </table>
+    <table name="category_thread">
+        <column name="id" type="bigint" required="true" primaryKey="true"/>
+        <column name="thread" type="varchar" size="255"/>
+        <behavior name="addrandompk" />
+    </table>
+
+</database>

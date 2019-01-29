@@ -1,0 +1,6 @@
+assetic:
+    assets:
+        seo:
+            input:
+                -     '@BackendBaseBundle/Resources/assets/coffee/seo/fetch.coffee'
+            output:   '../seo/fetch.js'

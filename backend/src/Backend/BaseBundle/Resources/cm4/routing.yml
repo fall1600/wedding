@@ -1,0 +1,2 @@
+BackendBaseBundle:
+    resource: "@BackendBaseBundle/Resources/config/routing.yml"

@@ -1,0 +1,9 @@
+backend_api:
+    resource: "@WidgetCategoryBundle/Controller/BackendAPI"
+    type:     annotation
+    prefix:   /admin/api
+
+api:
+    resource: "@WidgetCategoryBundle/Controller/API"
+    type:     annotation
+    prefix:   /api

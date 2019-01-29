@@ -1,0 +1,2 @@
+WidgetPhotoBundle:
+    resource: "@WidgetPhotoBundle/Resources/config/routing.yml"

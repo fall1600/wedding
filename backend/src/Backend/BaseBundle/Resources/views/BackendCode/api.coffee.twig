@@ -1,0 +1,16 @@
+module.exports = (api) ->
+  api.{{ moduleName }} =
+{% for name, api in apis %}
+{% if name == 'batch' %}
+    batch: (ids, action, column, value) ->
+      api.request  "PUT", "{{api.path}}",
+        ids: ids
+        action: action
+        column: column
+        value: value
+{% else %}
+    {{name}}: ({{api.params|join(', ')}}) ->
+      api.{% if api.isFileStream %}filestream{%else%}request{%endif%} "{{api.method}}", "{{api.path}}"{% if api.params.data is defined %}, data{% endif %}
+
+{% endif %}
+{% endfor %}

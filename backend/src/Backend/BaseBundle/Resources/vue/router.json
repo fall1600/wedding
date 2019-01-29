@@ -1,0 +1,73 @@
+[
+  {
+    "meta":  {
+      "require-login": false
+    },
+    "path": "/login",
+    "name": "login",
+    "component": "components/backendbase/router/login.vue"
+  },
+  {
+    "meta":  {
+      "require-login": false
+    },
+    "path": "/logout",
+    "name": "logout",
+    "component": "components/backendbase/router/logout.vue"
+  },
+  {
+    "path": "/",
+    "name": "base-home",
+    "component": "components/backendbase/router/home.vue"
+  },
+  {
+    "path": "/siteuser",
+    "name": "siteuser-list",
+    "component": "components/backendbase/router/list/siteuser.vue"
+  },
+  {
+    "path": "/siteuser/new",
+    "name": "siteuser-new",
+    "component": "components/backendbase/router/edit/siteuser.vue"
+  },
+  {
+    "path": "/siteuser/:id",
+    "name": "siteuser-edit",
+    "component": "components/backendbase/router/edit/siteuser.vue"
+  },
+  {
+    "path": "/sitegroup",
+    "name": "sitegroup-list",
+    "component": "components/backendbase/router/list/sitegroup.vue"
+  },
+  {
+    "path": "/sitegroup/new",
+    "name": "sitegroup-new",
+    "component": "components/backendbase/router/edit/sitegroup.vue"
+  },
+  {
+    "path": "/sitegroup/:id",
+    "name": "sitegroup-edit",
+    "component": "components/backendbase/router/edit/sitegroup.vue"
+  },
+  {
+    "path": "/log",
+    "name": "log-list",
+    "component": "components/backendbase/router/list/log.vue"
+  },
+  {
+    "path": "/log/:id/view",
+    "name": "log-view",
+    "component": "components/backendbase/router/view/log.vue"
+  },
+  {
+    "path": "/setup/system",
+    "name": "setup_system-edit",
+    "component": "components/backendbase/router/site_config/system.vue"
+  },
+  {
+    "path": "/setup/mail",
+    "name": "setup_mail-edit",
+    "component": "components/backendbase/router/site_config/mail.vue"
+  }
+]

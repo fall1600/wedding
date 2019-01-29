@@ -1,0 +1,3 @@
+Widget\CategoryBundle\Model\CategoryThread:
+    menu:
+        thread:       menu

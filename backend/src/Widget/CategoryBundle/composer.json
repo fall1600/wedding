@@ -1,0 +1,19 @@
+{
+    "name": "dgfactor/cm4-widget-category",
+    "description": "CM4 Category Widget",
+    "authors": [
+        {
+            "name": "Ricky Su",
+            "email": "ricky@dgfactor.com"
+        }
+    ],
+    "require": {
+        "symfony/symfony": "2.8.*",
+        "dgfactor/cm4-backend-base": "2.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Widget\\CategoryBundle\\": ""
+        }
+    }
+}

@@ -1,0 +1,72 @@
+Backend\BaseBundle\Model\SiteUser:
+    virtual_properties:
+        getId:
+            groups:
+                -       token
+                -       detail
+                -       list
+            type:       string
+            serialized_name:    id
+        getLoginName:
+            groups:
+                -       token
+                -       detail
+                -       list
+            type:       string
+            serialized_name:    login_name
+        getFirstName:
+            groups:
+                -       detail
+                -       list
+            type:       string
+            serialized_name:    first_name
+        getLastName:
+            groups:
+                -       detail
+                -       list
+            type:       string
+            serialized_name:    last_name
+        getEmail:
+            groups:
+                -       token
+                -       list
+                -       detail
+            type:       string
+            serialized_name:    email
+        getRoles:
+            groups:
+                -       token
+            serialized_name:    roles
+        getDefaultRoles:
+            groups:
+                -       detail
+            type:       array
+            serialized_name:    default_roles
+        getCustomRoles:
+            groups:
+                -       detail
+            type:       array
+            serialized_name:    custom_roles
+        getEnabled:
+            groups:
+                -       detail
+                -       list
+            type:       boolean
+            serialized_name:    enabled
+        getCreatedAt:
+            groups:
+                -       token
+                -       detail
+                -       list
+            serialized_name:    created_at
+        getUpdatedAt:
+            groups:
+                -       token
+                -       detail
+                -       list
+            serialized_name:    updated_at
+        getSiteGroups:
+            groups:
+                -       list
+                -       detail
+            serialized_name:  site_groups

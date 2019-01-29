@@ -1,0 +1,9 @@
+api:
+    resource: "@WidgetPhotoBundle/Controller/API"
+    type:     annotation
+    prefix:   /api
+
+backend_api:
+    resource: "@WidgetPhotoBundle/Controller/BackendAPI"
+    type:     annotation
+    prefix:   /admin/api

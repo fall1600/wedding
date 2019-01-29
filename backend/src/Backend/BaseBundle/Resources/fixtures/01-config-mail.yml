@@ -1,0 +1,8 @@
+Backend\BaseBundle\Model\SiteConfig:
+    mail:
+        name:      mail
+        config:
+            host:  mail.dgfactor.com
+            post:  25
+            sender_mail:      ricky@dgfactor.com
+            sender_name:      "Ricky Su"

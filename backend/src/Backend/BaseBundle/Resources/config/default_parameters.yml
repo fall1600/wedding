@@ -1,0 +1,14 @@
+parameters:
+    web.upload.prefix:      'upload'
+    file.store.path: '%kernel.root_dir%/../web/upload'
+    file.store.path_level: 3
+    file.store.service: 'file_store.local.random'
+    assets_base_url: '//'
+    photo_base_url: '//'
+    aws_region:   'us-east-1'
+    aws_version:  'latest'
+    aws_key:    ~
+    aws_secret: ~
+    aws_s3_bucket: ~
+    session_handler: null
+    i18n_behavior:  Backend\BaseBundle\Propel\Behavior\NullI18nBehavior

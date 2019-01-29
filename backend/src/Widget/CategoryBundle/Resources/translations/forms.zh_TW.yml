@@ -1,0 +1,25 @@
+ROLE_CATEGORY.type:        '分類管理'
+ROLE_CATEGORY_READ:        '檢視分類'
+ROLE_CATEGORY_READ.hint:   '可以進入分類管理，以及檢視內容'
+ROLE_CATEGORY_WRITE:       '編輯分類'
+ROLE_CATEGORY_WRITE.hint:  '可以新增，編輯，以及刪除'
+
+breadcrumb:
+    route:
+        widget_category_backend_category_index:              "分類管理"
+
+modal:
+    message:
+        confirm:
+            delete:                         "確認要刪除?"
+    label:
+        index:
+            root:                           "根目錄"
+        category:
+            title:
+                create_category:            "建立分類"
+                edit_category:              "修改分類"
+            name:                           '名稱'
+            status:                         '狀態'
+            error:
+                message:                    '名稱不能為空'
