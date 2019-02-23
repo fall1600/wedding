@@ -90,6 +90,8 @@ class InvitationController extends BaseBackendAPIController
                         ))
                     )
                 )),
+            new APIFormTypeItem('is_sent_address'),
+            new APIFormTypeItem('is_sent_email'),
             (new APIFormTypeItem('attend'))
                 ->setOptions(array(
                     "constraints" => array(

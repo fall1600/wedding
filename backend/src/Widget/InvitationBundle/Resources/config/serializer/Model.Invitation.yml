@@ -67,3 +67,13 @@ Widget\InvitationBundle\Model\Invitation:
                 -                   list
                 -                   detail
             serialized_name:        categories
+        getIsSentEmail:
+            groups:
+                -                   list
+                -                   detail
+            serialized_name:        is_sent_email
+        getIsSentAddress:
+            groups:
+                -                   list
+                -                   detail
+            serialized_name:        is_sent_address

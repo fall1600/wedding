@@ -40,9 +40,27 @@ module.exports =
     type: 'input'
   },
   {
+    name: 'is_sent_address'
+    text: 'form.label.edit.invitation.is_sent_address'
+    type: "switch"
+    config: {
+      on: 'form.choice.yes'
+      off: 'form.choice.no'
+    }
+  },
+  {
     name: 'email'
     text: 'form.label.edit.invitation.email'
     type: 'input'
+  },
+  {
+    name: 'is_sent_email'
+    text: 'form.label.edit.invitation.is_sent_email'
+    type: "switch"
+    config: {
+      on: 'form.choice.yes'
+      off: 'form.choice.no'
+    }
   },
   {
     name: 'attend'

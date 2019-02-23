@@ -25,6 +25,8 @@ fields:
     session:                          '場次'
     categories:                       '好友分類'
     number_of_people:                 '人數'
+    is_sent_email:                    '是否寄過電子喜帖'
+    is_sent_address:                  '是否寄過實體喜帖'
 
 invitation:
   update:                             '邀請函資訊'
@@ -50,4 +52,5 @@ form:
         session:                      '場次'
         note:                         '祝福的話'
         categories:                   '好友分類'
-
+        is_sent_email:                '是否寄過電子喜帖'
+        is_sent_address:              '是否寄過實體喜帖'

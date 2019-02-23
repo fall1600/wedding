@@ -65,6 +65,28 @@ module.exports =
         choiceLabel: 'name'
     created_at:
       defaultSorting: 'desc'
+    is_sent_email:
+      label: "fields.invitation.is_sent_email"
+      type: "checkbox",
+      config:
+        value:
+          true: true
+          false: false
+      search: true
+      searchConfig:
+        key: 'is_sent_email'
+        type: 'boolean'
+    is_sent_address:
+      label: "fields.invitation.is_sent_address"
+      type: "checkbox"
+      config:
+        value:
+          true: true
+          false: false
+      search: true
+      searchConfig:
+        key: 'is_sent_address'
+        type: 'boolean'
   extra: [
     {
       "name": "new"
